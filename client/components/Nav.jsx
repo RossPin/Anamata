@@ -12,7 +12,7 @@ function Nav(props) {
       <div className="navbar-start">
         <h1>Anamata</h1>
         <div className="navbar-end">
-          <span>{props.auth.user.username} </span>
+          <span className='user'>{props.auth.user.username.toUpperCase()} </span>
           <Link className='button' to="/">Home</Link>
           <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
         </div>

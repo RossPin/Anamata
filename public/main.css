@@ -24,7 +24,11 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1em;
   margin: 5px;
   cursor: pointer;
+}
+
+.user {
+  font-size: 1.2em;
 }
