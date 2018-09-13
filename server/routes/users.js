@@ -15,6 +15,16 @@ const {username, password} = req.body
     .catch(err => res.status(500).send({message: err.message}))
 }
 
-router.post('/login', token.issue)
+router.post('/login', login, token.issue)
+
+function login (req, res, next) {
+  const {username} = req.body
+  userExists(username)
+    .then(exists => {
+    if (exists) next()
+    else res.status(400).send({message: "User does not exist"})      
+    })
+    .catch(err => res.status(500).send({message: err.message}))
+}
 
 module.exports = router
