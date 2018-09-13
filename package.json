@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "nodemonConfig": {
+    "watch": [
+      "server/"
+    ],    
+    "ignore": [
+      "client/"
+    ]
+  },
   "scripts": {
     "build": "webpack --mode production",
     "start": "node server/",
