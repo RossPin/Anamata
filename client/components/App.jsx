@@ -3,6 +3,8 @@ import {HashRouter, Route} from 'react-router-dom'
 import Nav from './Nav'
 import Login from './Auth/Login';
 import Register from './Auth/Register';
+import Question from './Question';
+import Complete from './Complete';
 
 class App extends React.Component{
   render(){
@@ -13,6 +15,8 @@ class App extends React.Component{
           <div className="container">                
               <Route path="/login" component={Login} />
               <Route path="/Register" component={Register} />
+              <Route path="/question/:id" component={Question} />
+              <Route path="/complete" component={Complete} />
           </div>
         </div>
       </HashRouter>   
