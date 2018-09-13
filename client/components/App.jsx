@@ -5,6 +5,7 @@ import Login from './Auth/Login';
 import Register from './Auth/Register';
 import Question from './Question';
 import Complete from './Complete';
+import Home from './Home';
 
 class App extends React.Component{
   render(){
@@ -12,7 +13,8 @@ class App extends React.Component{
       <HashRouter>
         <div>
           <Nav/>
-          <div className="container">                
+          <div className="container"> 
+              <Route exact path='/' component={Home} />               
               <Route path="/login" component={Login} />
               <Route path="/Register" component={Register} />
               <Route path="/question/:id" component={Question} />
