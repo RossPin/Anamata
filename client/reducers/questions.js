@@ -9,7 +9,7 @@ const initialState = [
       },
       {
         answer: 'No',
-        next: '3'
+        next: '4'
       }
     ]
   },
@@ -19,21 +19,39 @@ const initialState = [
     responses: [
       {
         answer: 'Yes',
-        next: '2'
+        next: '3'
       },
       {
         answer: 'No',
-        next: '3'
+        next: '4'
+      }
+    ]
+  },
+  {
+    question: 'how was the apple?',
+    id: '3',
+    responses: [
+      {
+        answer: 'Bad',
+        next: '4'
+      },
+      {
+        answer: 'OK',
+        next: '4'
+      },
+      {
+        answer: 'Good',
+        next: '4'
       }
     ]
   },
   {
     question: 'Are you Thirsty?',
-    id: '3',
+    id: '4',
     responses: [
       {
         answer: 'Yes',
-        next: '4'
+        next: '5'
       },
       {
         answer: 'No',
@@ -43,18 +61,36 @@ const initialState = [
   },
   {
     question: 'Do you want some water?',
-    id: '4',
+    id: '5',
     responses: [
       {
         answer: 'Yes',
-        next: 'complete'
+        next: '6'
       },
       {
         answer: 'No',
         next: 'complete'
       }
     ]
-  }
+  },
+  {
+    question: 'how was the water?',
+    id: '6',
+    responses: [
+      {
+        answer: 'Bad',
+        next: 'complete'
+      },
+      {
+        answer: 'OK',
+        next: 'complete'
+      },
+      {
+        answer: 'Good',
+        next: 'complete'
+      }
+    ]
+  },
 ]
 
 export default function questions (state = initialState, action) {
