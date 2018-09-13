@@ -24,15 +24,15 @@ class Register extends React.Component {
   }
   render() {
     return (
-      <form className="Register container" onSubmit={this.submit}>
+      <form onSubmit={this.submit}>
         <label>Username:
-          <input style={{margin: '0.5vw'}} className="input is-medium is-rounded" type="text" name="username" onChange={this.updateDetails}/>
+          <input style={{margin: '0.5vw'}} type="text" name="username" onChange={this.updateDetails}/>
         </label><br/>        
         <label>Password:
-          <input style={{margin: '0.5vw'}} className="input is-medium is-rounded" type="password" name="password" onChange={this.updateDetails}/>
+          <input style={{margin: '0.5vw'}} type="password" name="password" onChange={this.updateDetails}/>
         </label><br/>
         <label>Confirm:
-          <input style={{margin: '0.5vw'}} className="input is-medium is-rounded" type="password" name="confirm_password" onChange={this.updateDetails}/>
+          <input style={{margin: '0.5vw'}} type="password" name="confirm_password" onChange={this.updateDetails}/>
         </label><br/>
           <input className="button" type="submit" />
       </form>
