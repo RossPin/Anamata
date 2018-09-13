@@ -5,7 +5,7 @@ class Question extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      answer: '',
+      answer: '',      
       question: {responses: []}
     }
     this.updateSelection = this.updateSelection.bind(this)
@@ -19,7 +19,7 @@ class Question extends React.Component{
 
   componentWillReceiveProps(nextProps){
     const question = nextProps.questions.find(x => x.id == nextProps.match.params.id)
-    this.setState({question})
+    this.setState({question, answer: ''})
   }
 
   updateSelection(e){    
@@ -30,7 +30,7 @@ class Question extends React.Component{
     e.preventDefault()
     const next = this.state.question.responses.find(response => response.answer === this.state.answer).next
     if (next === 'complete') this.props.history.push(`/complete`) 
-    else {      
+    else {
       this.props.history.push(`/question/${next}`)
     }   
   }
@@ -42,7 +42,8 @@ class Question extends React.Component{
         <form className="Login" onSubmit={this.submit}>
           {this.state.question.responses.map(response => (
             <div>    
-              <input type="radio" name="answer" onChange={this.updateSelection} value={response.answer}/>{response.answer}<br/>            
+              <input type="radio" name="answer" onChange={this.updateSelection} 
+              value={response.answer} checked={this.state.answer === response.answer}/>{response.answer}<br/>            
             </div>
           ))}         
           <input className="button" type="submit" />
