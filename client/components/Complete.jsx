@@ -1,9 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Complete extends React.Component{
   render(){
     return (
-      <div>Survey Complete</div>
+      <div>
+        <h3>Survey Complete</h3>
+        <Link className='button' to='/' >Return</Link>
+      </div>
     )
   }
 }
