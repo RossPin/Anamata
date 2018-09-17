@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost:27017/survey", { useNewUrlParser: true })
+const conn = process.env.MONGODB_URI | "mongodb://localhost:27017/survey"
+mongoose.connect(conn, { useNewUrlParser: true })
 var hash = require('../auth/hash')
 
 var userSchema = new mongoose.Schema({ username: String, hash: String})
