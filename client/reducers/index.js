@@ -2,10 +2,10 @@ import {combineReducers} from 'redux'
 
 import auth from './auth'
 import questions from './questions'
-import yp from './yp'
+import youngPerson from './youngPerson'
 
 export default combineReducers({ 
     auth,
     questions,
-    yp
+    youngPerson
 })

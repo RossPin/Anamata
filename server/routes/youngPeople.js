@@ -1,6 +1,6 @@
 const router = require('express').Router()
 var token = require('../auth/token')
-const {createYp, addResponse, getYp, getCurrent} = require('../db/yp')
+const {createYp, addResponse, getYp, getCurrent} = require('../db/youngPeople')
 
 router.post('/create', (req, res) => {
     const {firstName, lastName, school} = req.body

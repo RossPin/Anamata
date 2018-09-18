@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { createYp } from '../actions/yp'
+import { createYp } from '../actions/youngPeople'
 
 class Details extends React.Component {
   constructor(props) {

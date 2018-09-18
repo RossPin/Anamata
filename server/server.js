@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const server = express()
 const users = require('./routes/users')
-const yp = require('./routes/yp')
+const yp = require('./routes/youngPeople')
 const path = require('path')
 
 server.use(bodyParser.json())
