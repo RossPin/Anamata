@@ -19,7 +19,7 @@ router.post('/response', (req, res) => {
 })
 
 router.get('/view/current', token.decode, (req, res) => {
-    getCurrent.then(current => {
+    getCurrent().then(current => {
         res.json(current)
     })
     .catch(err => res.status(500).send({message: err.message}))
