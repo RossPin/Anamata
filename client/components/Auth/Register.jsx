@@ -32,7 +32,7 @@ class Register extends React.Component {
           <input style={{ margin: '0.5vw' }} type='password' name='password' onChange={this.updateDetails} />
         </label><br />
         <label>Confirm:
-          <input style={{ margin: '0.5vw' }} type='password' name='confirm_password' onChange={this.updateDetails} />
+          <input style={{ margin: '0.5vw' }} type='password' name='confirmPassword' onChange={this.updateDetails} />
         </label><br />
         <input className='button' type='submit' />
       </form>
