@@ -40,8 +40,8 @@ class Question extends React.Component{
       <div>
         <h3>{this.state.question.question}</h3>
         <form className="Login" onSubmit={this.submit}>
-          {this.state.question.responses.map(response => (
-            <div>    
+          {this.state.question.responses.map((response, i) => (
+            <div key={i}>    
               <input type="radio" name="answer" onChange={this.updateSelection} 
               value={response.answer} checked={this.state.answer === response.answer}/>{response.answer}<br/>            
             </div>
