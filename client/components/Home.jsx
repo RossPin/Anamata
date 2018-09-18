@@ -10,7 +10,7 @@ class Home extends React.Component {
   render(){
     return (
       <div>
-        <Link className='button' to='/question/1' >Start Survey</Link>
+        <Link className='button' to='/consent' >Start Survey</Link>
       </div>
     )
   }
