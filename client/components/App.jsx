@@ -8,6 +8,7 @@ import Complete from './Complete'
 import Home from './Home'
 import Consent from './Consent'
 import Details from './Details'
+import Current from './Current'
 
 class App extends React.Component{
   render(){
@@ -19,6 +20,7 @@ class App extends React.Component{
               <Route exact path='/' component={Home} />               
               <Route path="/login" component={Login} />
               <Route path="/Register" component={Register} />
+              <Route path="/current" component={Current} />
               <Route path="/details" component={Details} />
               <Route path="/consent" component={Consent} />
               <Route path="/question/:id" component={Question} />
