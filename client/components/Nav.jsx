@@ -14,6 +14,7 @@ function Nav(props) {
         <div className="navbar-end">
           <span className='user'>{props.auth.user.username.toUpperCase()} </span>
           <Link className='button' to="/">Home</Link>
+          <Link className='button' to="/current">Current</Link>
           <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
         </div>
       </div>
