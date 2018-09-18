@@ -1,9 +1,9 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {loginUser} from '../../actions/login'
+import { connect } from 'react-redux'
+import { loginUser } from '../../actions/login'
 
 class Login extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       username: '',
@@ -12,25 +12,24 @@ class Login extends React.Component {
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
   }
-  updateDetails(e) {
-    this.setState({[e.target.name]: e.target.value})
+  updateDetails (e) {
+    this.setState({ [e.target.name]: e.target.value })
   }
-  submit(e) {
+  submit (e) {
     e.preventDefault()
-    let {username, password} = this.state
-    this.props.dispatch(loginUser({username, password}))
-
+    let { username, password } = this.state
+    this.props.dispatch(loginUser({ username, password }))
   }
-  render() {
+  render () {
     return (
-      <form className="Login" onSubmit={this.submit}>
+      <form className='Login' onSubmit={this.submit}>
         <label>Username:
-          <input style={{margin: '0.5vw'}} type="text" name="username" onChange={this.updateDetails}/>
-        </label><br/>
+          <input style={{ margin: '0.5vw' }} type='text' name='username' onChange={this.updateDetails} />
+        </label><br />
         <label>Password:
-          <input style={{margin: '0.5vw'}} type="password" name="password" onChange={this.updateDetails}/>
-        </label><br/>
-        <input className="button" type="submit" />
+          <input style={{ margin: '0.5vw' }} type='password' name='password' onChange={this.updateDetails} />
+        </label><br />
+        <input className='button' type='submit' />
       </form>
     )
   }

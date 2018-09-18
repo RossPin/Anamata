@@ -33,16 +33,18 @@ export function loginUser (creds) {
     return request('post', 'users/login', creds)
       .then((response) => {
         if (response.status === 403) {
-          alert("Try Again!")
+          window.alert('Try Again!')
           dispatch(loginError(response.body.message))
           return Promise.reject(response.body.message)
         } else {
           const userInfo = saveUserToken(response.body.token)
           dispatch(receiveLogin(userInfo))
-          document.location = "/"
+          document.location = '/'
         }
-      }).catch(err => alert("Try Again!")
-
+      }).catch(err => {
+        console.log(err.message)
+        window.alert('Try Again!')
+      }
       )
   }
 }

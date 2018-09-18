@@ -1,5 +1,5 @@
 
-export function setQuestions(questions){
+export function setQuestions (questions) {
   return {
     type: 'SET_QUESTIONS',
     questions

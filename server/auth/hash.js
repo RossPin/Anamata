@@ -1,10 +1,10 @@
 var bcrypt = require('bcrypt')
 
-function generate(password, cb) {
+function generate (password, cb) {
   bcrypt.hash(password, 12, cb)
 }
 
-function generateSync(password) {
+function generateSync (password) {
   return bcrypt.hashSync(password, 12)
 }
 

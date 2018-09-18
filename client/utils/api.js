@@ -5,13 +5,13 @@ import { isAuthenticated } from './auth'
 
 const baseURL = '/api/'
 
-export default function consume(method = 'get', endpoint, data = {}) {
-  const dataMethod = method.toLowerCase() === 'get' && 'query' || 'send'
+export default function consume (method = 'get', endpoint, data = {}) {
+  const dataMethod = method.toLowerCase() === ('get' && 'query') || 'send'
   const token = get('token')
   const headers = {
     Accept: 'application/json'
   }
-  if(isAuthenticated()) {
+  if (isAuthenticated()) {
     headers['Authorization'] = `Bearer ${token}`
   }
 

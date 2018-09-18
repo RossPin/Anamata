@@ -90,7 +90,7 @@ const initialState = [
         next: 'complete'
       }
     ]
-  },
+  }
 ]
 
 export default function questions (state = initialState, action) {

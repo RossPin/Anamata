@@ -1,5 +1,5 @@
 // webpack v4
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   entry: { main: './client/index.js' },
@@ -13,7 +13,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       }
     ]
@@ -21,5 +21,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: 'source-map' 
-};
+  devtool: 'source-map'
+}

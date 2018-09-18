@@ -3,31 +3,28 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../actions/logout'
 
-function Nav(props) {
-  
+function Nav (props) {
   return (
-    <div className="nav">
-    {props.auth.isAuthenticated
-      ? //display if logged in
-      <div className="navbar-start">
-        <h1>Anamata</h1>
-        <div className="navbar-end">
-          <span className='user'>{props.auth.user.username.toUpperCase()} </span>
-          <Link className='button' to="/">Home</Link>
-          <Link className='button' to="/current">Current</Link>
-          <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
+    <div className='nav'>
+      {props.auth.isAuthenticated
+        ? <div className='navbar-start'>
+          <h1>Anamata</h1>
+          <div className='navbar-end'>
+            <span className='user'>{props.auth.user.username.toUpperCase()} </span>
+            <Link className='button' to='/'>Home</Link>
+            <Link className='button' to='/current'>Current</Link>
+            <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
+          </div>
         </div>
-      </div>
-      : //display if not logged in
-      <div className="navbar-start">
-        <h1>Anamata</h1>
-        <div className="navbar-end">
-          <Link className='button' to="/login">Login</Link>
-          <Link className='button' to="/">Home</Link>
-          <Link className='button' to="/register">Register</Link>
+        : <div className='navbar-start'>
+          <h1>Anamata</h1>
+          <div className='navbar-end'>
+            <Link className='button' to='/login'>Login</Link>
+            <Link className='button' to='/'>Home</Link>
+            <Link className='button' to='/register'>Register</Link>
+          </div>
         </div>
-      </div>     
-    }
+      }
     </div>
   )
 }
