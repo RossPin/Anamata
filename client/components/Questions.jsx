@@ -7,7 +7,7 @@ class Question extends React.Component {
     super(props)
     this.state = {
       answers: {},
-      question: { responses: [] }
+      questions: this.props.questions
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
@@ -18,7 +18,15 @@ class Question extends React.Component {
     this.setState({ question })
   }
 
-  updateSelection (e, id, question) {
+  componentWillReceiveProps (nextProps) {
+    const questions = this.nextProps.questions
+    this.setState({ questions })
+  }
+
+  updateSelection (e, id, question, show, hide) {
+    const questions = this.state.questions
+    if (show) questions.find(q => q.id === show).conditional = false
+    if (hide) questions.find(q => q.id === hide).conditional = true
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
@@ -34,10 +42,10 @@ class Question extends React.Component {
     const answers = this.state.answers
     return (
       <div>
-        {this.props.questions.map(question => (
+        {this.state.questions.map(question => (
           <div key={question.id}>
-            <Radio question={question} answer={answers[question.id] ? answers[question.id].answer : null}
-              update={this.updateSelection} submit={this.submit} />
+            {!question.conditional && <Radio question={question} answer={answers[question.id] ? answers[question.id].answer : null}
+              update={this.updateSelection} submit={this.submit} />}
           </div>
         ))}
         <button className='button' onClick={this.submit} >Submit</button>
