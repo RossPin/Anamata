@@ -6,7 +6,7 @@ class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      answer: '',
+      answers: {},
       question: { responses: [] }
     }
     this.updateSelection = this.updateSelection.bind(this)
@@ -18,29 +18,28 @@ class Question extends React.Component {
     this.setState({ question })
   }
 
-  componentWillReceiveProps (nextProps) {
-    const question = nextProps.questions.find(x => x.id === nextProps.match.params.id)
-    this.setState({ question, answer: '' })
-  }
-
-  updateSelection (e) {
-    this.setState({ answer: e.target.value })
+  updateSelection (e, id, question) {
+    const { answers } = this.state
+    answers[id] = { id, question, answer: e.target.value }
+    this.setState({ answers })
   }
 
   submit (e) {
     e.preventDefault()
-    const next = this.state.question.responses.find(response => response.answer === this.state.answer).next
-    if (next === 'complete') this.props.history.push(`/complete`)
-    else {
-      this.props.history.push(`/question/${next}`)
-    }
+    console.log(this.state.answers)
+    this.props.history.push('/complete')
   }
 
   render () {
+    const answers = this.state.answers
     return (
       <div>
-        <Radio question={this.state.question} answer={this.state.answer}
-          update={this.updateSelection} submit={this.submit} />
+        {this.props.questions.map(question => (
+          <div key={question.id}>
+            <Radio question={question} answer={answers[question.id] ? answers[question.id].answer : null}
+              update={this.updateSelection} submit={this.submit} />
+          </div>
+        ))}
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )

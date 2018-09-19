@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
 import Question from './Question'
+import Questions from './Questions'
 import Complete from './Complete'
 import Home from './Home'
 import Consent from './Consent'
@@ -24,6 +25,7 @@ class App extends React.Component {
             <Route path='/details' component={Details} />
             <Route path='/consent' component={Consent} />
             <Route path='/question/:id' component={Question} />
+            <Route path='/questions' component={Questions} />
             <Route path='/complete' component={Complete} />
           </div>
         </div>

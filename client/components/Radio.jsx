@@ -2,14 +2,18 @@ import React from 'react'
 
 class Radio extends React.Component {
   render () {
+    const { question, update, answer } = this.props
     return (
       <div>
-        {this.props.question.responses.map((response, i) => (
-          <div key={i}>
-            <input type='radio' name='answer' onChange={this.props.update}
-              value={response.answer} checked={this.props.answer === response.answer} />{response.answer}<br />
-          </div>
-        ))}
+        <h3>{question.question}</h3>
+        <form>
+          {question.responses.map((response, i) => (
+            <div key={i}>
+              <input type='radio' name='answer' onChange={e => update(e, question.id, question.question)}
+                value={response.answer} checked={answer === response.answer} />{response.answer}<br />
+            </div>
+          ))}
+        </form>
       </div>
     )
   }
