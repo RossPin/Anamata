@@ -1,24 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import questions from '../data/sample.json'
 
 class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       answers: {},
-      question: { responses: [] }
+      questions: questions
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
+    this.renderQuestion = this.renderQuestion.bind(this)
   }
 
-  componentDidMount () {
-    const question = this.props.questions.find(x => x.id === this.props.match.params.id)
-    this.setState({ question })
-  }
-
-  updateSelection (e, id, question) {
+  updateSelection (e, id, question, show, hide) {
+    const questions = this.state.questions
+    if (show) questions.find(q => q.id === show).conditional = false
+    if (hide) questions.find(q => q.id === hide).conditional = true
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
@@ -30,14 +30,22 @@ class Question extends React.Component {
     this.props.history.push('/complete')
   }
 
+  renderQuestion (question) {
+    switch (question.type) {
+      case 'Radio':
+        return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
+      default:
+        return null
+    }
+  }
+
   render () {
-    const answers = this.state.answers
     return (
       <div>
-        {this.props.questions.map(question => (
+        {this.state.questions.map(question => (
           <div key={question.id}>
-            <Radio question={question} answer={answers[question.id] ? answers[question.id].answer : null}
-              update={this.updateSelection} submit={this.submit} />
+            {!question.conditional && this.renderQuestion(question)}
           </div>
         ))}
         <button className='button' onClick={this.submit} >Submit</button>
