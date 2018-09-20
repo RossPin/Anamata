@@ -21,6 +21,7 @@ function Nav (props) {
           <div className='navbar-end'>
             <Link className='button' to='/login'>Login</Link>
             <Link className='button' to='/'>Home</Link>
+            <Link className='button' to='/about'>About</Link>
             <Link className='button' to='/register'>Register</Link>
           </div>
         </div>
