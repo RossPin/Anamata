@@ -15,11 +15,11 @@ class Emoji extends React.Component {
       <div>
         <div>{this.props.question.question}</div>
         <div>
-          <span><button className='emoji' id='sad' value='1' onClick={this.handleChange}> ☹️</button></span>
-          <span><button className='emoji' id='semiSad' value='2' onClick={this.handleChange}> 🙁</button></span>
-          <span><button className='emoji' id='neutral' value='3' onClick={this.handleChange}> 😐</button></span>
-          <span><button className='emoji' id='semiHappy' value='4' onClick={this.handleChange}> 🙂</button></span>
-          <span><button className='emoji' id='Happy' value='5' onClick={this.handleChange}> 😁</button></span>
+          <span><button className='emoji' id='sad' value='sad' onClick={this.handleChange}> ☹️</button></span>
+          <span><button className='emoji' id='semiSad' value='semiSad' onClick={this.handleChange}> 🙁</button></span>
+          <span><button className='emoji' id='neutral' value='neutral' onClick={this.handleChange}> 😐</button></span>
+          <span><button className='emoji' id='semiHappy' value='semiHappy' onClick={this.handleChange}> 🙂</button></span>
+          <span><button className='emoji' id='happy' value='happy' onClick={this.handleChange}> 😁</button></span>
         </div>
       </div>
     )

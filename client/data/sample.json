@@ -118,11 +118,13 @@
   "branching" : {
     "value": 50,
     "above": {
-      "show": "8"
+      "show": "9"
     },
     "below": {
-      "hide": "8"
+      "hide": "9"
     }
+
+   
   }
   },
   {
@@ -130,7 +132,7 @@
     "id": "9",
     "type": "Slider", 
     "conditional":true
-    },
+  },
   {
     "question": "how do you feel about what your thinking about right now",
     "id": "10",
@@ -138,4 +140,5 @@
     
     
   }
+  
 ]
