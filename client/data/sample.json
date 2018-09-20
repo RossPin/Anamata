@@ -110,5 +110,27 @@
         "answer": "No"
       }
     ]
+  },
+  {
+  "question": "scale of one to yum, how epic was the water",
+  "id": "7",
+  "type": "Slider",
+  "branching" : {
+    "value": 50,
+    "above": {
+      "show": "8"
+    },
+    "below": {
+      "hide": "8"
+    }
+
+   
   }
+  },
+  {
+    "question": "how fun was drinking out of the glass",
+    "id": "8",
+    "type": "Slider", 
+    "conditional":true
+    }
 ]

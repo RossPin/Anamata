@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import Slider from './Slider'
 import Dropdown from './Dropdown'
 import questions from '../data/sample.json'
 
@@ -35,6 +36,9 @@ class Question extends React.Component {
     switch (question.type) {
       case 'Radio':
         return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
+      case 'Slider':
+        return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
