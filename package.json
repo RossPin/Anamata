@@ -49,5 +49,7 @@
   "devDependencies": {
     "nodemon": "^1.18.4",
     "standard": "^12.0.1"
-  }
+  },
+  "repository": "https://github.com/RossPin/Anamata.git",
+  "author": "Caitlyn <caitlyn.bayley@gmail.com>"
 }

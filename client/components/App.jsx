@@ -7,6 +7,7 @@ import Question from './Question'
 import Questions from './Questions'
 import Complete from './Complete'
 import Home from './Home'
+import Help from './Help'
 import Consent from './Consent'
 import Details from './Details'
 import Current from './Current'
@@ -20,6 +21,7 @@ class App extends React.Component {
           <div className='container'>
             <Route exact path='/' component={Home} />
             <Route path='/login' component={Login} />
+            <Route exact path='/help' component={Help} />
             <Route path='/Register' component={Register} />
             <Route path='/current' component={Current} />
             <Route path='/details' component={Details} />
