@@ -132,5 +132,12 @@
     "id": "8",
     "type": "Slider", 
     "conditional":true
-    }
+    },
+  {
+    "question": "how do you feel about what your thinking about right now",
+    "id": "9",
+    "type": "Emoji"
+    
+    
+  }
 ]
