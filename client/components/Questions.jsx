@@ -5,7 +5,7 @@ import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
 import YNifSo from './YNifSo'
-import questions from '../data/sample.json'
+import health from '../data/Hquestions.json'
 import Checkbox from './Checkbox'
 
 class Question extends React.Component {
@@ -13,7 +13,8 @@ class Question extends React.Component {
     super(props)
     this.state = {
       answers: {},
-      questions: questions
+      questions: health.questions,
+      title: health.title
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
@@ -91,6 +92,7 @@ class Question extends React.Component {
   render () {
     return (
       <div>
+        <h1>{this.state.title}</h1>
         {this.state.questions.map(question => (
           <div key={question.id}>
             {!question.conditional && this.renderQuestion(question)}
