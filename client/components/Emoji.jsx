@@ -5,20 +5,25 @@ class Emoji extends React.Component {
     super(props)
     this.state = {}
   }
+
   render () {
     return (
       <div>
-        <button className='emoji' id='sad' value='1'> ☹️</button>
-        <button className='emoji' id='sad' value='2'> 🙁</button>
-        <button className='emoji' id='sad' value='3'> 😐</button>
-        <button className='emoji' id='sad' value='4'> 🙂</button>
-        <button className='emoji' id='sad' value='5'> 😁</button>
+        <div>
+          <h3>{this.props.question.question}</h3>
+        </div>
+        <div>
+          <span><button className='emoji' id='sad' value='1' onClick={e => this.props.update(e, this.props.question.id, this.props.question.question)}> ☹️</button></span>
+          <span><button className='emoji' id='sad' value='2' onClick={e => this.props.update(e, this.props.question.id, this.props.question.question)}> 🙁</button></span>
+          <span><button className='emoji' id='sad' value='3' onClick={e => this.props.update(e, this.props.question.id, this.props.question.question)}> 😐</button></span>
+          <span><button className='emoji' id='sad' value='4' onClick={e => this.props.update(e, this.props.question.id, this.props.question.question)}> 🙂</button></span>
+          <span><button className='emoji' id='sad' value='5' onClick={e => this.props.update(e, this.props.question.id, this.props.question.question)}> 😁</button></span>
+        </div>
       </div>
     )
   }
 }
 export default Emoji
-
 
 {/* <form class='rating'>
           <label>
