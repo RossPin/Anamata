@@ -94,5 +94,15 @@
         "answer": "Good"
       }
     ]
-  }
+  },
+  {
+  "question": "scale of one to yum, how epic was the water",
+  "id": "7",
+  "type": "Slider" 
+  },
+  {
+    "question": "how fun was drinking out of the glass",
+    "id": "8",
+    "type": "Slider" 
+    }
 ]
