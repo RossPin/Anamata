@@ -79,7 +79,7 @@
             }
         },
         {
-            "question": "Do you wear glasses or contac lenses?",
+            "question": "Do you wear glasses or contact lenses?",
             "id": "8",
             "type": "Radio", 
             "responses": [
