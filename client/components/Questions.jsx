@@ -1,26 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import questions from '../data/sample.json'
 
 class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       answers: {},
-      questions: this.props.questions
+      questions: questions
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
-  }
-
-  componentDidMount () {
-    const question = this.props.questions.find(x => x.id === this.props.match.params.id)
-    this.setState({ question })
-  }
-
-  componentWillReceiveProps (nextProps) {
-    const questions = this.nextProps.questions
-    this.setState({ questions })
   }
 
   updateSelection (e, id, question, show, hide) {
