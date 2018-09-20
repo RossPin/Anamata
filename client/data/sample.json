@@ -50,6 +50,7 @@
   {
     "question": "Are you Thirsty?",
     "id": "4",
+    "type": "Radio",
     "responses": [
       {
         "answer": "Yes",
