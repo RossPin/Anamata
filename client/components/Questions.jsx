@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import TextForm from './TextForm'
 import questions from '../data/sample.json'
 
 class Question extends React.Component {
@@ -34,6 +35,9 @@ class Question extends React.Component {
     switch (question.type) {
       case 'Radio':
         return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
+      case 'TextForm':
+        return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
       default:
         return null
