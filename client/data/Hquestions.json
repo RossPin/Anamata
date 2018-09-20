@@ -1,0 +1,95 @@
+{
+    "title":"YOUR HEALTH HISTORY / TAHA TINANA",
+
+    "questions" : [
+        {
+            "question": "Are you registered with a dentist?",
+            "id": "0",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "Which dentist are you registered with?"
+            }
+        },
+        {
+            "question": "Are you registered with a doctor?",
+            "id": "1",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "Which doctor are you registered with?"
+            }
+        },
+        {
+            "question": "Do you have any serious medical conditions?",
+            "id": "2",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "Please give details:"
+            }
+        },  
+        {
+            "question": "Do you take any medication for anything?",
+            "id": "3",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "Please give details:"
+            }
+        },
+        {
+            "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
+            "id": "4",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "Please give details:"
+            }
+        },
+        {
+            "question": "Did you have your year 8 vaccinations (immunisation injection)?",
+            "id": "5",
+            "type": "Radio", 
+            "responses": [
+                {
+                    "answer": "Yes"
+                },
+                {
+                    "answer": "No"
+                }
+            ]
+        },
+        {
+            "question": "Have you recently had a hearing check?",
+            "id": "6",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "When did you have it?"
+            }
+        },
+        {
+            "question": "Have you recently had a vision check?",
+            "id": "7",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "When did you have it?"
+            }
+        },
+        {
+            "question": "Do you wear glasses or contac lenses?",
+            "id": "8",
+            "type": "Radio", 
+            "responses": [
+                {
+                    "answer": "Yes"
+                },
+                {
+                    "answer": "No"
+                }
+            ]
+        }
+    ]
+}
