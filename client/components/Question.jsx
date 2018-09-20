@@ -42,8 +42,8 @@ class Question extends React.Component {
       <div>
         <Radio question={this.state.question} answer={this.state.answer}
           update={this.updateSelection} submit={this.submit} />
-        <Dropdown question={this.state.question} answer={this.state.answer}
-          update={this.updateSelection} submit={this.submit} />
+        {/* <Dropdown question={this.state.question} answer={this.state.answer}
+          update={this.updateSelection} submit={this.submit} /> */}
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
