@@ -37,7 +37,7 @@ class Question extends React.Component {
         return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
       case 'Slider':
-        return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       default:
         return null
