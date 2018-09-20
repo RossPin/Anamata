@@ -2,7 +2,8 @@ import React from 'react'
 
 class Radio extends React.Component {
   render () {
-    const { question, update, answer } = this.props
+    // eslint-disable-next-line
+    const {question, update, answer} = this.props
     return (
       <div>
         <h3>{question.question}</h3>

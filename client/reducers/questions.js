@@ -17,7 +17,7 @@ const initialState = [
   {
     question: 'Do you want an apple?',
     id: '2',
-    type: 'Dropdown',
+    type: 'Radio',
     conditional: true,
     responses: [
       {
@@ -91,6 +91,20 @@ const initialState = [
       },
       {
         answer: 'Good'
+      }
+    ]
+  },
+  {
+    question: 'Did you feel hydrated?',
+    id: '7',
+    type: 'Dropdown',
+    conditional: false,
+    responses: [
+      {
+        answer: 'Yes'
+      },
+      {
+        answer: 'No'
       }
     ]
   }
