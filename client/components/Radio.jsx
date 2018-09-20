@@ -10,7 +10,7 @@ class Radio extends React.Component {
           {question.responses.map((response, i) => (
             <div key={i}>
               <input type='radio' name='answer' onChange={e => update(e, question.id, question.question, response.show, response.hide)}
-                value={response.answer} checked={answer === response.answer} />{response.answer}<br />
+                value={response.answer} checked={answer === response.answer} />{response.answer}
             </div>
           ))}
         </form>
