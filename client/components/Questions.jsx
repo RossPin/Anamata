@@ -1,10 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
+import questions from '../data/sample.json'
+
 import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
-import questions from '../data/sample.json'
+import Emoji from './Emoji'
 
 class Question extends React.Component {
   constructor (props) {
@@ -46,6 +49,9 @@ class Question extends React.Component {
           update={this.updateSelection} submit={this.submit} />
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
+      case 'Emoji':
+        return <Emoji question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
       default:
         return null
