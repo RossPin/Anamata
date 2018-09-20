@@ -22,13 +22,21 @@
     "responses": [
       {
         "answer": "Yes",
-        "show": "'3'"
+        "show": "3",
+        "hide": "21"
       },
       {
         "answer": "No",
+        "show": "21",
         "hide": "3"
       }
     ]
+  },
+  {
+    "question": "Why Not?",
+    "id": "21",
+    "type": "TextForm",
+    "conditional": true
   },
   {
     "question": "how was the apple?",
