@@ -5,6 +5,7 @@ import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
 import questions from '../data/sample.json'
+import Checkbox from './Checkbox'
 
 class Question extends React.Component {
   constructor (props) {
@@ -16,6 +17,7 @@ class Question extends React.Component {
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
     this.renderQuestion = this.renderQuestion.bind(this)
+    this.updateCheckbox = this.updateCheckbox.bind(this)
   }
 
   updateSelection (e, id, question, show, hide) {
@@ -25,6 +27,26 @@ class Question extends React.Component {
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
+  }
+
+  updateCheckbox (e, questionObj) {
+    let question = questionObj.question
+    let id = questionObj.id
+    const target = e.target
+    const { answers } = this.state
+    let answer = Object.assign({}, answers[id] ? answers[id].answer : this.createCheckboxArray(questionObj))
+    answer[target.value] = target.checked
+    answers[id] = { id, question, answer }
+    this.setState({ answers })
+  }
+
+  createCheckboxArray (question) {
+    let response = question.responses
+    let answer = {}
+    for (let i = 0; i < response.length; i++) {
+      answer[response[i].answer] = false
+    }
+    return answer
   }
 
   submit (e) {
@@ -38,6 +60,9 @@ class Question extends React.Component {
       case 'Radio':
         return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
+      case 'Checkbox':
+        return <Checkbox question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : {}}
+          update={this.updateCheckbox} submit={this.submit} />
       case 'TextForm':
         return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
