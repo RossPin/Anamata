@@ -1,5 +1,24 @@
 [
   {
+    "question": "What have you eaten today?",
+    "id": "0",
+    "type": "Checkbox",
+    "responses": [
+      {
+        "answer": "Breakfast"
+      },
+      {
+        "answer": "Second breakfast"
+      },
+      {
+        "answer": "Lunch"
+      },
+      {
+        "answer": "Dinner"
+      }
+    ]
+  },
+  {
     "question": "Are you hungry?",
     "id": "1",
     "type": "Radio",
@@ -29,7 +48,7 @@
         "hide": "3"
       }
     ]
-  },
+  },  
   {
     "question": "how was the apple?",
     "id": "3",
@@ -82,7 +101,7 @@
     "question": "how was the water?",
     "id": "6",
     "type": "Radio",
-    "conditional": true,
+    "conditional": "true",
     "responses": [
       {
         "answer": "Bad",
@@ -104,10 +123,12 @@
     "conditional": true,
     "responses": [
       {
-        "answer": "Yes"
+        "answer": "Yes",
+        "show": "9"
       },
       {
-        "answer": "No"
+        "answer": "No",
+        "hide": "9"
       }
     ]
   },
@@ -115,16 +136,15 @@
   "question": "scale of one to yum, how epic was the water",
   "id": "8",
   "type": "Slider",
+  "conditional":true,
   "branching" : {
     "value": 50,
     "above": {
-      "show": "8"
+      "show": "9"
     },
     "below": {
-      "hide": "8"
+      "hide": "9"
     }
-
-   
   }
   },
   {
@@ -133,9 +153,18 @@
     "type": "Slider", 
     "conditional":true
     },
-    {
-      "question": "Please list any other pleasant or unpleasant attributes of the water",
-      "id": "10",
-      "type": "Listing"
+  {
+    "question": "Please list any other pleasant or unpleasant attributes of the water",
+    "id": "10",
+    "type": "Listing"
+  },
+  {
+    "question": "did you enjoy this survey",
+    "id": "11",
+    "type": "YNifSo", 
+    "ifSo": {
+      "val": "Yes",
+      "question": "What was the best part?"
     }
+  }
 ]

@@ -6,18 +6,24 @@ import Slider from './Slider'
 import Dropdown from './Dropdown'
 import Listing from './Listing'
 import questions from '../data/sample.json'
+import YNifSo from './YNifSo'
+import health from '../data/Hquestions.json'
+import Checkbox from './Checkbox'
 
 class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       answers: {},
-      questions: questions
+      questions: health.questions,
+      title: health.title
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.updateSelectionArray = this.updateSelectionArray.bind(this)
     this.submit = this.submit.bind(this)
     this.renderQuestion = this.renderQuestion.bind(this)
+    this.updateIfSo = this.updateIfSo.bind(this)
+    this.updateCheckbox = this.updateCheckbox.bind(this)
   }
 
   updateSelection (e, id, question, show, hide) {
@@ -36,6 +42,32 @@ class Question extends React.Component {
     this.setState({ answers })
   }
 
+  updateIfSo (e, id, question) {
+    const { answers } = this.state
+    Object.assign(answers[id], { ifSoQuestion: question, ifSoAnswer: e.target.value })
+    this.setState({ answers })
+  }
+
+  updateCheckbox (e, questionObj) {
+    let question = questionObj.question
+    let id = questionObj.id
+    const target = e.target
+    const { answers } = this.state
+    let answer = Object.assign({}, answers[id] ? answers[id].answer : this.createCheckboxArray(questionObj))
+    answer[target.value] = target.checked
+    answers[id] = { id, question, answer }
+    this.setState({ answers })
+  }
+
+  createCheckboxArray (question) {
+    let response = question.responses
+    let answer = {}
+    for (let i = 0; i < response.length; i++) {
+      answer[response[i].answer] = false
+    }
+    return answer
+  }
+
   submit (e) {
     e.preventDefault()
     console.log(this.state.answers)
@@ -47,6 +79,9 @@ class Question extends React.Component {
       case 'Radio':
         return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
+      case 'Checkbox':
+        return <Checkbox question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : {}}
+          update={this.updateCheckbox} submit={this.submit} />
       case 'TextForm':
         return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
@@ -59,6 +94,9 @@ class Question extends React.Component {
       case 'Listing':
         return <Listing question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : []}
           update={this.updateSelectionArray} submit={this.submit} />
+      case 'YNifSo':
+        return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
       default:
         return null
     }
@@ -67,6 +105,7 @@ class Question extends React.Component {
   render () {
     return (
       <div>
+        <h1>{this.state.title}</h1>
         {this.state.questions.map(question => (
           <div key={question.id}>
             {!question.conditional && this.renderQuestion(question)}
