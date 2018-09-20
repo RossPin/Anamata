@@ -48,7 +48,7 @@
         "hide": "3"
       }
     ]
-  },
+  },  
   {
     "question": "how was the apple?",
     "id": "3",
@@ -123,24 +123,27 @@
     "conditional": true,
     "responses": [
       {
-        "answer": "Yes"
+        "answer": "Yes",
+        "show": "9"
       },
       {
-        "answer": "No"
+        "answer": "No",
+        "hide": "9"
       }
     ]
   },
   {
   "question": "scale of one to yum, how epic was the water",
-  "id": "7",
+  "id": "8",
   "type": "Slider",
+  "conditional":true,
   "branching" : {
     "value": 50,
     "above": {
-      "show": "8"
+      "show": "9"
     },
     "below": {
-      "hide": "8"
+      "hide": "9"
     }
 
    
@@ -148,8 +151,17 @@
   },
   {
     "question": "how fun was drinking out of the glass",
-    "id": "8",
+    "id": "9",
     "type": "Slider", 
     "conditional":true
+  },
+  {
+    "question": "did you enjoy this survey",
+    "id": "10",
+    "type": "YNifSo", 
+    "ifSo": {
+      "val": "Yes",
+      "question": "What was the best part?"
     }
+  }
 ]

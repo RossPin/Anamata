@@ -4,6 +4,7 @@ import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
+import YNifSo from './YNifSo'
 import questions from '../data/sample.json'
 import Checkbox from './Checkbox'
 
@@ -17,6 +18,7 @@ class Question extends React.Component {
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
     this.renderQuestion = this.renderQuestion.bind(this)
+    this.updateIfSo = this.updateIfSo.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
   }
 
@@ -26,6 +28,12 @@ class Question extends React.Component {
     if (hide) questions.find(q => q.id === hide).conditional = true
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
+    this.setState({ answers })
+  }
+
+  updateIfSo (e, id, question) {
+    const { answers } = this.state
+    Object.assign(answers[id], { ifSoQuestion: question, ifSoAnswer: e.target.value })
     this.setState({ answers })
   }
 
@@ -72,6 +80,9 @@ class Question extends React.Component {
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
+      case 'YNifSo':
+        return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
       default:
         return null
     }
