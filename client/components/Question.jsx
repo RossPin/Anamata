@@ -17,8 +17,8 @@ class Question extends React.Component {
     const question = this.props.questions.find(x => x.id === this.props.match.params.id)
     this.setState({ question })
   }
-
-  componentWillReceiveProps (nextProps) {
+  // eslint-disable-next-line
+    componentWillReceiveProps (nextProps) {
     const question = nextProps.questions.find(x => x.id === nextProps.match.params.id)
     this.setState({ question, answer: '' })
   }

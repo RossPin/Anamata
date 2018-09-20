@@ -22,11 +22,11 @@
     "responses": [
       {
         "answer": "Yes",
-        "show": "'3'"
+        "show": "3"
       },
       {
         "answer": "No",
-        "hide": "'3'"
+        "hide": "3"
       }
     ]
   },
@@ -85,13 +85,29 @@
     "conditional": true,
     "responses": [
       {
-        "answer": "Bad"
+        "answer": "Bad",
+        "hide": "7"
       },
       {
-        "answer": "OK"
+        "answer": "OK",
+        "show": "7"
       },
       {
-        "answer": "Good"
+        "answer": "Good",
+        "show": "7"
+      }
+    ]
+  },{
+    "question": "Did you feel hydrated?",
+    "id": "7",
+    "type": "Dropdown",
+    "conditional": true,
+    "responses": [
+      {
+        "answer": "Yes"
+      },
+      {
+        "answer": "No"
       }
     ]
   }
