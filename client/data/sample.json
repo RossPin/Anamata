@@ -1,5 +1,24 @@
 [
   {
+    "question": "What have you eaten today?",
+    "id": "0",
+    "type": "Checkbox",
+    "responses": [
+      {
+        "answer": "Breakfast"
+      },
+      {
+        "answer": "Second breakfast"
+      },
+      {
+        "answer": "Lunch"
+      },
+      {
+        "answer": "Dinner"
+      }
+    ]
+  },
+  {
     "question": "Are you hungry?",
     "id": "1",
     "type": "Radio",
@@ -82,7 +101,7 @@
     "question": "how was the water?",
     "id": "6",
     "type": "Radio",
-    "conditional": true,
+    "conditional": "true",
     "responses": [
       {
         "answer": "Bad"
