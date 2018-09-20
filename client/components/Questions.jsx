@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Radio from './Radio'
 import Dropdown from './Dropdown'
 import questions from '../data/sample.json'
@@ -20,9 +20,9 @@ class Question extends React.Component {
     const questions = this.state.questions
     if (show) questions.find(q => q.id === show).conditional = false
     if (hide) questions.find(q => q.id === hide).conditional = true
-    const {answers} = this.state
-    answers[id] = {id, question, answer: e.target.value}
-    this.setState({answers})
+    const { answers } = this.state
+    answers[id] = { id, question, answer: e.target.value }
+    this.setState({ answers })
   }
 
   submit (e) {
@@ -58,8 +58,8 @@ class Question extends React.Component {
   }
 }
 
-const mapStateToProps = ({questions}) => {
-  return {questions}
+const mapStateToProps = ({ questions }) => {
+  return { questions }
 }
 
 export default connect(mapStateToProps)(Question)

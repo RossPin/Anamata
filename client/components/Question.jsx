@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Radio from './Radio'
 
 class Question extends React.Component {
@@ -7,7 +7,7 @@ class Question extends React.Component {
     super(props)
     this.state = {
       answer: '',
-      question: {responses: []}
+      question: { responses: [] }
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.submit = this.submit.bind(this)
@@ -15,16 +15,16 @@ class Question extends React.Component {
 
   componentDidMount () {
     const question = this.props.questions.find(x => x.id === this.props.match.params.id)
-    this.setState({question})
+    this.setState({ question })
   }
   // eslint-disable-next-line
     componentWillReceiveProps (nextProps) {
     const question = nextProps.questions.find(x => x.id === nextProps.match.params.id)
-    this.setState({question, answer: ''})
+    this.setState({ question, answer: '' })
   }
 
   updateSelection (e) {
-    this.setState({answer: e.target.value})
+    this.setState({ answer: e.target.value })
   }
 
   submit (e) {
@@ -47,8 +47,8 @@ class Question extends React.Component {
   }
 }
 
-const mapStateToProps = ({questions}) => {
-  return {questions}
+const mapStateToProps = ({ questions }) => {
+  return { questions }
 }
 
 export default connect(mapStateToProps)(Question)
