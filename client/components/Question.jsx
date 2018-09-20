@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Radio from './Radio'
+import CheckboxQ from './CheckboxQ'
 
 class Question extends React.Component {
   constructor (props) {
@@ -39,7 +39,7 @@ class Question extends React.Component {
   render () {
     return (
       <div>
-        <Radio question={this.state.question} answer={this.state.answer}
+        <CheckboxQ question={this.state.question} answer={this.state.answer}
           update={this.updateSelection} submit={this.submit} />
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
