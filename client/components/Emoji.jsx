@@ -13,6 +13,7 @@ class Emoji extends React.Component {
   render () {
     return (
       <div>
+        <div>{this.props.question.question}</div>
         <div>
           <span><button className='emoji' id='sad' value='1' onClick={this.handleChange}> ☹️</button></span>
           <span><button className='emoji' id='semiSad' value='2' onClick={this.handleChange}> 🙁</button></span>
@@ -25,36 +26,3 @@ class Emoji extends React.Component {
   }
 }
 export default Emoji
-
-{/* <form class='rating'>
-          <label>
-            <input type='radio' name='emoji' value='1' />
-            <span class='icon'>☹️</span>
-          </label>
-          <label>
-            <input type='radio' name='emoji' value='2' />
-            <span class='icon'>🙁</span>
-            <span class='icon'>🙁</span>
-          </label>
-          <label>
-            <input type='radio' name='emoji' value='3' />
-            <span class='icon'>😐</span>
-            <span class='icon'>😐</span>
-            <span class='icon'>😐</span>
-          </label>
-          <label>
-            <input type='radio' name='emoji' value='4' />
-            <span class='icon'>🙂</span>
-            <span class='icon'>🙂</span>
-            <span class='icon'>🙂</span>
-            <span class='icon'>🙂</span>
-          </label>
-          <label>
-            <input type='radio' name='emoji' value='5' />
-            <span class='icon'>😁</span>
-            <span class='icon'>😁</span>
-            <span class='icon'>😁</span>
-            <span class='icon'>😁</span>
-            <span class='icon'>😁</span>
-          </label>
-        </form> */}

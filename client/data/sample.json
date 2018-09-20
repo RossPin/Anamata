@@ -113,7 +113,7 @@
   },
   {
   "question": "scale of one to yum, how epic was the water",
-  "id": "7",
+  "id": "8",
   "type": "Slider",
   "branching" : {
     "value": 50,
@@ -123,19 +123,17 @@
     "below": {
       "hide": "8"
     }
-
-   
   }
   },
   {
     "question": "how fun was drinking out of the glass",
-    "id": "8",
+    "id": "9",
     "type": "Slider", 
     "conditional":true
     },
   {
     "question": "how do you feel about what your thinking about right now",
-    "id": "9",
+    "id": "10",
     "type": "Emoji"
     
     
