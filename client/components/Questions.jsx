@@ -19,7 +19,6 @@ class Question extends React.Component {
     this.submit = this.submit.bind(this)
     this.renderQuestion = this.renderQuestion.bind(this)
     this.updateIfSo = this.updateIfSo.bind(this)
-
     this.updateCheckbox = this.updateCheckbox.bind(this)
   }
 
