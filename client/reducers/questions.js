@@ -93,6 +93,20 @@ const initialState = [
         answer: 'Good'
       }
     ]
+  },
+  {
+    question: 'Did you feel hydrated?',
+    id: '7',
+    type: 'Dropdown',
+    conditional: false,
+    responses: [
+      {
+        answer: 'Yes'
+      },
+      {
+        answer: 'No'
+      }
+    ]
   }
 ]
 
