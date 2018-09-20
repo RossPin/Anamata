@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import Slider from './Slider'
 import questions from '../data/sample.json'
 
 class Question extends React.Component {

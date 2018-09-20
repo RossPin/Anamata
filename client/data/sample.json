@@ -22,17 +22,17 @@
     "responses": [
       {
         "answer": "Yes",
-        "show": "'3'"
+        "show": "3"
       },
       {
         "answer": "No",
-        "hide": "'3'"
+        "hide": "3"
       }
     ]
   },
   {
     "question": "how was the apple?",
-    "id": "'3'",
+    "id": "3",
     "type": "Radio",
     "conditional": true,
     "responses": [
