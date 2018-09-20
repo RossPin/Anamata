@@ -123,8 +123,6 @@
     "below": {
       "hide": "9"
     }
-
-   
   }
   },
   {
@@ -136,9 +134,17 @@
   {
     "question": "how do you feel about what your thinking about right now",
     "id": "10",
-    "type": "Emoji"
-    
-    
+    "type": "Emoji",
+    "branching" : {
+      "value": "sad",
+      "show": "11"
+    }
+  },
+  {
+    "question": "how do you feel about what your thinking about right now",
+    "id": "11",
+    "type": "Emoji",
+    "conditional": true
   }
   
 ]
