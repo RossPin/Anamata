@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Radio from './Radio'
+import TextForm from './TextForm'
+import Slider from './Slider'
+import Dropdown from './Dropdown'
 import questions from '../data/sample.json'
 import Checkbox from './Checkbox'
 
@@ -60,6 +63,15 @@ class Question extends React.Component {
       case 'Checkbox':
         return <Checkbox question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : {}}
           update={this.updateCheckbox} submit={this.submit} />
+      case 'TextForm':
+        return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
+      case 'Slider':
+        return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
+          update={this.updateSelection} submit={this.submit} />
+      case 'Dropdown':
+        return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
       default:
         return null
     }
