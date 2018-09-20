@@ -2,46 +2,48 @@ const initialState = [
   {
     question: 'Are you hungry?',
     id: '1',
+    type: 'Radio',
     responses: [
       {
         answer: 'Yes',
-        next: '2'
+        show: '2'
       },
       {
         answer: 'No',
-        next: '4'
+        hide: '2'
       }
     ]
   },
   {
     question: 'Do you want an apple?',
     id: '2',
+    type: 'Radio',
+    conditional: true,
     responses: [
       {
         answer: 'Yes',
-        next: '3'
+        show: '3'
       },
       {
         answer: 'No',
-        next: '4'
+        hide: '3'
       }
     ]
   },
   {
     question: 'how was the apple?',
     id: '3',
+    type: 'Radio',
+    conditional: true,
     responses: [
       {
-        answer: 'Bad',
-        next: '4'
+        answer: 'Bad'
       },
       {
-        answer: 'OK',
-        next: '4'
+        answer: 'OK'
       },
       {
-        answer: 'Good',
-        next: '4'
+        answer: 'Good'
       }
     ]
   },
@@ -51,43 +53,44 @@ const initialState = [
     responses: [
       {
         answer: 'Yes',
-        next: '5'
+        show: '5'
       },
       {
         answer: 'No',
-        next: 'complete'
+        hide: '5'
       }
     ]
   },
   {
     question: 'Do you want some water?',
     id: '5',
+    type: 'Radio',
+    conditional: true,
     responses: [
       {
         answer: 'Yes',
-        next: '6'
+        show: '6'
       },
       {
         answer: 'No',
-        next: 'complete'
+        hide: '6'
       }
     ]
   },
   {
     question: 'how was the water?',
     id: '6',
+    type: 'Radio',
+    conditional: true,
     responses: [
       {
-        answer: 'Bad',
-        next: 'complete'
+        answer: 'Bad'
       },
       {
-        answer: 'OK',
-        next: 'complete'
+        answer: 'OK'
       },
       {
-        answer: 'Good',
-        next: 'complete'
+        answer: 'Good'
       }
     ]
   }
