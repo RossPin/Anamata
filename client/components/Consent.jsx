@@ -5,13 +5,14 @@ import { addConsent } from '../actions/youngPerson'
 class Consent extends React.Component {
   constructor (props) {
     super(props)
-    this.submit = this.submit.bind
+    this.submit = this.submit.bind(this)
   }
 
   submit (e) {
     e.preventDefault()
     const consent = (e.target.value === 'Yes')
     this.props.dispatch(addConsent(consent, Date.now()))
+    this.props.history.push('/questions')
   }
 
   render () {

@@ -7,8 +7,8 @@ export default function youngPerson (state = initialState, action) {
     case 'ADD_CONSENT':
       return Object.assign(state, { consent: action.consent, timestamp: action.timestamp })
     case 'ADD_SECTION':
-      Object.assign(state.answers, { [action.title]: action.answers })
-      return { ...state }
+      state.answers[action.title] = action.answers
+      return Object.assign({}, state)
     case 'RESET_YP':
       return { answers: {} }
     default:
