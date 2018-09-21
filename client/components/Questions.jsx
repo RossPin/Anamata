@@ -9,7 +9,6 @@ import Slider from './Slider'
 import Dropdown from './Dropdown'
 import Emoji from './Emoji'
 import Listing from './Listing'
-import questions from '../data/sample.json'
 import YNifSo from './YNifSo'
 import health from '../data/Hquestions.json'
 import Checkbox from './Checkbox'
@@ -101,7 +100,7 @@ class Question extends React.Component {
           update={this.updateSelectionArray} submit={this.submit} />
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
-          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />v
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
       default:
         return null
     }
