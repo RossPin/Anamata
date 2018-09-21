@@ -183,10 +183,10 @@
   },
   {
     "question": "Do you want to do it again?",
-    "id": "12",
+    "id": "13",
     "type": "Radio",
     "conditions": {
-      "target": "11",
+      "target": "12",
       "compare": "=",
       "value": "Yes"
     },
@@ -201,10 +201,10 @@
   },
   {
     "question": "Do you want to go outside?",
-    "id": "13",
+    "id": "14",
     "type": "Radio",
     "conditions": {
-      "target": "11",
+      "target": "12",
       "compare": "=",
       "value": "No"
     },
