@@ -37,15 +37,17 @@
     "question": "Do you want an apple?",
     "id": "2",
     "type": "Radio",
-    "conditional": true,
+    "conditions": {
+      "target": "1",
+      "compare": "=",
+      "value": "Yes"
+    },
     "responses": [
       {
-        "answer": "Yes",
-        "show": "3"
+        "answer": "Yes"        
       },
       {
-        "answer": "No",
-        "hide": "3"
+        "answer": "No"
       }
     ]
   },  
@@ -53,7 +55,11 @@
     "question": "how was the apple?",
     "id": "3",
     "type": "Radio",
-    "conditional": true,
+    "conditions": {
+      "target": "2",
+      "compare": "=",
+      "value": "Yes"
+    },
     "responses": [
       {
         "answer": "Bad"
@@ -72,12 +78,10 @@
     "type": "Radio",
     "responses": [
       {
-        "answer": "Yes",
-        "show": "5"
+        "answer": "Yes"
       },
       {
-        "answer": "No",
-        "hide": "5"
+        "answer": "No"
       }
     ]
   },
@@ -85,15 +89,17 @@
     "question": "Do you want some water?",
     "id": "5",
     "type": "Radio",
-    "conditional": true,
+    "conditions": {
+      "target": "4",
+      "compare": "=",
+      "value": "Yes"
+    },
     "responses": [
       {
-        "answer": "Yes",
-        "show": "6"
+        "answer": "Yes"
       },
       {
-        "answer": "No",
-        "hide": "6"
+        "answer": "No"
       }
     ]
   },
@@ -101,67 +107,109 @@
     "question": "how was the water?",
     "id": "6",
     "type": "Radio",
-    "conditional": "true",
+    "conditions": {
+      "target": "5",
+      "compare": "=",
+      "value": "Yes"
+    },
     "responses": [
       {
-        "answer": "Bad",
-        "hide": "7"
+        "answer": "Bad"
       },
       {
-        "answer": "OK",
-        "show": "7"
+        "answer": "OK"
       },
       {
-        "answer": "Good",
-        "show": "7"
-      }
-    ]
-  },{
-    "question": "Did you feel hydrated?",
-    "id": "7",
-    "type": "Dropdown",
-    "conditional": true,
-    "responses": [
-      {
-        "answer": "Yes",
-        "show": "9"
-      },
-      {
-        "answer": "No",
-        "hide": "9"
+        "answer": "Good"
       }
     ]
   },
   {
-  "question": "scale of one to yum, how epic was the water",
-  "id": "8",
-  "type": "Slider",
-  "conditional":true,
-  "branching" : {
-    "value": 50,
-    "above": {
-      "show": "9"
+    "question": "Did you feel hydrated?",
+    "id": "7",
+    "type": "Dropdown",
+    "conditions": {
+      "target": "6",
+      "compare": "=",
+      "value": "Good"
     },
-    "below": {
-      "hide": "9"
-    }
-
-   
-  }
+    "responses": [
+      {
+        "answer": "Yes"
+      },
+      {
+        "answer": "No"
+      }
+    ]
   },
+  {
+    "question": "scale of one to yum, how epic was the water",
+    "id": "8",
+    "type": "Slider",
+    "conditions": {
+      "target": "7",
+      "compare": "=",
+      "value": "Yes"
+    }
+  }, 
   {
     "question": "how fun was drinking out of the glass",
     "id": "9",
     "type": "Slider", 
-    "conditional":true
+    "conditions": {
+      "target": "8",
+      "compare": ">",
+      "value": 50
+    }
+  },
+  {
+    "question": "Please list any other pleasant or unpleasant attributes of the water",
+    "id": "10",
+    "type": "Listing"
   },
   {
     "question": "did you enjoy this survey",
-    "id": "10",
+    "id": "11",
     "type": "YNifSo", 
     "ifSo": {
       "val": "Yes",
       "question": "What was the best part?"
     }
+  },
+  {
+    "question": "Do you want to do it again?",
+    "id": "12",
+    "type": "Radio",
+    "conditions": {
+      "target": "11",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Yes"        
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },
+  {
+    "question": "Do you want to go outside?",
+    "id": "13",
+    "type": "Radio",
+    "conditions": {
+      "target": "11",
+      "compare": "=",
+      "value": "No"
+    },
+    "responses": [
+      {
+        "answer": "Yes"        
+      },
+      {
+        "answer": "No"
+      }
+    ]
   }
 ]
