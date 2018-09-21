@@ -1,0 +1,164 @@
+{ "health": {
+        "title":"YOUR HEALTH HISTORY / TAHA TINANA",
+        "description" : "Be healthy please blah blah blah blah blah",
+        "questions" : [
+            {
+                "question": "Are you registered with a dentist?",
+                "id": "0",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Which dentist are you registered with?"
+                }
+            },
+            {
+                "question": "Are you registered with a doctor?",
+                "id": "1",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Which doctor are you registered with?"
+                }
+            },
+            {
+                "question": "Do you have any serious medical conditions?",
+                "id": "2",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Please give details:"
+                }
+            },  
+            {
+                "question": "Do you take any medication for anything?",
+                "id": "3",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Please give details:"
+                }
+            },
+            {
+                "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
+                "id": "4",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Please give details:"
+                }
+            },
+            {
+                "question": "Did you have your year 8 vaccinations (immunisation injection)?",
+                "id": "5",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Have you recently had a hearing check?",
+                "id": "6",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "When did you have it?"
+                }
+            },
+            {
+                "question": "Have you recently had a vision check?",
+                "id": "7",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "When did you have it?"
+                }
+            },
+            {
+                "question": "Do you wear glasses or contact lenses?",
+                "id": "8",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            }
+        ]
+    },
+    "spirit": {
+        "title":"SPIRITUAL HEALTH / WAIRUATANGA",
+        "description": "Spirituality means different things to different people. Spirituality is our sense of connection to something bigger than us. It may include a search for beliefs and values; a sense of meaning and a purpose in life; a sense of connectedness; identity and awareness; and for some people, religion.",
+        "questions" : [
+            {
+                "question": "Are you connected to a certain religion/faith/culture or spiritual belief? (e.g Ratana/Christian/Buddhist/Muslim)",
+                "id": "0",
+                "type": "YNifSo", 
+                "ifSo": {
+                    "val": "Yes",
+                    "question": "Which one are you connected with?"
+                }
+            },
+            {
+                "question": "Is this something that is important to you?",
+                "id": "1",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Do you have a wish to change that and connect with something on a deeper level?",
+                "id": "2",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },  
+            {
+                "question": "Do you have a strong connection with you culture that is a spiritual one for you?",
+                "id": "3",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Is this something you would like to change?",
+                "id": "5",
+                "type": "Radio", 
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            }
+        ],
+        "footer" : "If there are any areas of concern that come from this assessment, the nurse will see you. If you’d like to see the nurse then please feel free to drop into the clinic"
+    }
+}
