@@ -1,8 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import questions from '../data/sample.json'
-
 import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
@@ -120,7 +117,7 @@ class Question extends React.Component {
           update={this.updateSelectionArray} submit={this.submit} />
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
-          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />v
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
       default:
         return null
     }
