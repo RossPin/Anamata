@@ -1,8 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import questions from '../data/sample.json'
-
 import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
@@ -10,16 +7,19 @@ import Dropdown from './Dropdown'
 import Emoji from './Emoji'
 import Listing from './Listing'
 import YNifSo from './YNifSo'
-import health from '../data/Hquestions.json'
+import questions from '../data/questions.json'
 import Checkbox from './Checkbox'
 
 class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      answers: {},
-      questions: health.questions,
-      title: health.title
+      categories: ['health', 'spirit'],
+      currentCategory: 0,
+      answers: {
+      },
+      questions: questions.health.questions,
+      title: questions.health.title
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.updateSelectionArray = this.updateSelectionArray.bind(this)
@@ -72,7 +72,24 @@ class Question extends React.Component {
   submit (e) {
     e.preventDefault()
     console.log(this.state.answers)
-    this.props.history.push('/complete')
+    const categories = this.state.categories
+    let currentCategory = this.state.currentCategory
+
+    //TODO save answers in redux state
+    
+    if (currentCategory < categories.length) {
+      currentCategory++
+      const nextQuestions = questions[categories[currentCategory]].questions
+      const nextTitle = questions[categories[currentCategory]].title
+      this.setState({
+        currentCategory,
+        questions: nextQuestions,
+        title: nextTitle,
+        answers: {}
+      })
+    }
+
+    // this.props.history.push('/complete')
   }
 
   renderQuestion (question) {
