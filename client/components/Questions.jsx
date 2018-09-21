@@ -92,28 +92,28 @@ class Question extends React.Component {
   renderQuestion (question) {
     switch (question.type) {
       case 'Radio':
-        return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <Radio question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Checkbox':
         return <Checkbox question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : {}}
           update={this.updateCheckbox} submit={this.submit} />
       case 'TextForm':
-        return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <TextForm question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Slider':
         return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Dropdown':
-        return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Emoji':
-        return <Emoji question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <Emoji question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
       case 'Listing':
         return <Listing question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : []}
           update={this.updateSelectionArray} submit={this.submit} />
       case 'YNifSo':
-        return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+        return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
       default:
         return null

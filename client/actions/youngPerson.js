@@ -30,10 +30,8 @@ export function resetYp () {
 }
 
 export function createYp (data) {
-  return dispatch => {
-    return request('post', 'yp/create', data)
-      .then((response) => {
-        dispatch(setYp(response.body))
-      })
-  }
+  request('post', 'yp/create', data)
+    .then((response) => {
+      return response.body
+    })
 }
