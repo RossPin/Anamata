@@ -3,7 +3,7 @@ const initialState = { answers: {} }
 export default function youngPerson (state = initialState, action) {
   switch (action.type) {
     case 'SET_YP':
-      return Object.assign(state, action.yp)
+      return Object.assign(state, { details: action.yp })
     case 'ADD_CONSENT':
       return Object.assign(state, { consent: action.consent, timestamp: action.timestamp })
     case 'ADD_SECTION':

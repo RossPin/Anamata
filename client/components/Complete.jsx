@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { resetYp } from '../actions/youngPerson'
 
 class Complete extends React.Component {
+  constructor (props) {
+    super(props)
+    this.submit = this.submit.bind(this)
+  }
   submit (e) {
     e.preventDefault()
     this.props.dispatch(resetYp())
