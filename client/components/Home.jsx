@@ -7,7 +7,7 @@ class Home extends React.Component {
       <div>
         <h1>Intro</h1>
         <h3>This is a sample survey</h3>
-        <Link className='button' to='/consent' >Start Survey</Link>
+        <Link className='button' to='/details' >Start Survey</Link>
       </div>
     )
   }
