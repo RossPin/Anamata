@@ -4,17 +4,17 @@
   "questions" : [
       {
           "question": "What do you like about school?",
-          "id": "2001",
+          "id": "2010",
           "type": "TextForm"
       },
       {
           "question": "What don't you like about school?",
-          "id": "2002",
+          "id": "2020",
           "type": "TextForm"
       },
       {
           "question": "Do you think you need extra help with any subjects at school?",
-          "id": "2003",
+          "id": "2030",
           "type": "YNifSo",
           "ifSo": {
               "val": "Yes",
@@ -23,68 +23,75 @@
       },  
       {
           "question": "How well do you get along with the teachers at school?",
-          "id": "2004",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "Please give details:"
-          }
+          "id": "2040",
+          "type": "Emoji"
       },
       {
           "question": "Do you feel the teachers are fair?",
-          "id": "2005",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "Please give details:"
-          }
+          "id": "2050",
+          "type": "Radio",
+          "responses": [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            },
+            {
+                "answer": "Some"
+            }
+        ]
       },
       {
           "question": "Do you feel the adults at school care about you?",
-          "id": "2006",
-          "type": "Radio", 
+          "id": "2060",
+          "type": "Radio",
           "responses": [
-              {
-                  "answer": "Yes"
-              },
-              {
-                  "answer": "No"
-              }
-          ]
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            },
+            {
+                "answer": "Some"
+            }
+        ]
       },
       {
           "question": "Are there adults at school you feel you could talk to about something important or personal?",
-          "id": "2007",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "When did you have it?"
-          }
-      },
+          "id": "2070",
+          "type": "Radio",
+          "responses": [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            },
       {
           "question": "Do you ever skip classes?",
-          "id": "2008",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "When did you have it?"
+          "id": "2080",
+          "type": "Radio",
+          "responses": [
+            {
+                "answer": "Never"
+            },
+            {
+                "answer": "Once"
+            },
+            {
+              "answer": "Occasionally"
+          },
+          {
+              "answer": "Lots"
           }
+        ]
       },
       {
           "question": "How well do you get on with other students?",
-          "id": "2009",
-          "type": "Radio", 
-          "responses": [
-              {
-                  "answer": "Yes"
-              },
-              {
-                  "answer": "No"
-              },
-                    {
-          "question": "Do you feel the adults at school care about you?",
-          "id": "2010",
-          "type": "Radio", 
+          "id": "2090",
+          "type": "Emoji", 
           "responses": [
               {
                   "answer": "Yes"
@@ -92,42 +99,10 @@
               {
                   "answer": "No"
               }
-          ]
-      },
-      {
-          "question": "Are there adults at school you feel you could talk to about something important or personal?",
-          "id": "2011",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "When did you have it?"
-          }
-      },
-      {
-          "question": "Do you ever skip classes?",
-          "id": "2012",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "When did you have it?"
-          }
-      },
-      {
-          "question": "How well do you get on with other students?",
-          "id": "2013",
-          "type": "Radio", 
-          "responses": [
-              {
-                  "answer": "Yes"
-              },
-              {
-                  "answer": "No"
-              }
-          ]
-      },
+            ,
       {
           "question": "Are you being bullied in any way?",
-          "id": "2014",
+          "id": "2100",
           "type": "YNifSo", 
           "ifSo": {
               "val": "Yes",
@@ -136,21 +111,24 @@
       },
       {
         "question": "Are you doing any work outside of school? (e.g: a job)",
-        "id": "2015",
+        "id": "2150",
         "type": "YNifSo", 
         "ifSo": {
             "val": "Yes",
-            "question": "If yes, in what way?"
+            "question": "If yes, then what work do you do?",
+            "question": "How often"
         }
     },
     {
       "question": "Any idea of what you want to do when you have finished school?",
-      "id": "2016",
-      "type": "YNifSo", 
-      "ifSo": {
-          "val": "Yes",
-          "question": "If yes, in what way?"
-      }
+      "id": "2160",
+      "type": "TextForm"
     }
   ]
-}
+
+      }
+
+    ]
+
+  }
+  
