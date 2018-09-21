@@ -75,8 +75,8 @@ class Question extends React.Component {
     const categories = this.state.categories
     let currentCategory = this.state.currentCategory
 
-    //TODO save answers in redux state
-    
+    // TODO save answers in redux state
+
     if (currentCategory < categories.length) {
       currentCategory++
       const nextQuestions = questions[categories[currentCategory]].questions
