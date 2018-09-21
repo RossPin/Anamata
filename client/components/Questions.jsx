@@ -9,6 +9,7 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questions from '../data/questions.json'
 import Checkbox from './Checkbox'
+import { addSection } from '../actions/youngPerson';
 
 class Question extends React.Component {
   constructor (props) {
@@ -72,11 +73,9 @@ class Question extends React.Component {
   submit (e) {
     e.preventDefault()
     console.log(this.state.answers)
-    const categories = this.state.categories
+    const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
-
-    // TODO save answers in redux state
-
+    this.props.dispatch(addSection(categories[currentCategory], answers))
     if (currentCategory < categories.length - 1) {
       currentCategory++
       const nextQuestions = questions[categories[currentCategory]].questions
@@ -87,9 +86,7 @@ class Question extends React.Component {
         title: nextTitle,
         answers: {}
       })
-    }
-
-    // this.props.history.push('/complete')
+    } else this.props.history.push('/complete')
   }
 
   renderQuestion (question) {
