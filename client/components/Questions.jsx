@@ -14,7 +14,7 @@ class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      categories: ['health', 'spirit'],
+      categories: Object.keys(questions),
       currentCategory: 0,
       answers: {
       },
@@ -77,7 +77,7 @@ class Question extends React.Component {
 
     // TODO save answers in redux state
 
-    if (currentCategory < categories.length) {
+    if (currentCategory < categories.length - 1) {
       currentCategory++
       const nextQuestions = questions[categories[currentCategory]].questions
       const nextTitle = questions[categories[currentCategory]].title
