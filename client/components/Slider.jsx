@@ -24,7 +24,7 @@ class Slider extends React.Component {
     return (
       <div>
         <h3>{this.props.question.question}</h3>
-        <div className='sonliderContainer'>
+        <div>
           <input type='range' min='1' max='100' value={this.props.answer} onChange={this.handleChange} className='slider' id='myRange' />
         </div>
       </div>

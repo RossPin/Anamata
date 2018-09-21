@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
+import questions from '../data/sample.json'
+
 import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
+import Emoji from './Emoji'
 import Listing from './Listing'
 import questions from '../data/sample.json'
 import YNifSo from './YNifSo'
@@ -91,12 +95,15 @@ class Question extends React.Component {
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
+      case 'Emoji':
+        return <Emoji question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
       case 'Listing':
         return <Listing question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : []}
           update={this.updateSelectionArray} submit={this.submit} />
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
-          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />v
       default:
         return null
     }
