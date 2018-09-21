@@ -151,7 +151,7 @@
       "compare": "=",
       "value": "Yes"
     }
-  }, 
+  },
   {
     "question": "how fun was drinking out of the glass",
     "id": "9",
@@ -163,13 +163,18 @@
     }
   },
   {
-    "question": "Please list any other pleasant or unpleasant attributes of the water",
+    "question": "how do you feel about what your thinking about right now",
     "id": "10",
+    "type": "Emoji"
+  },
+  {
+    "question": "Please list any other pleasant or unpleasant attributes of the water",
+    "id": "11",
     "type": "Listing"
   },
   {
     "question": "did you enjoy this survey",
-    "id": "11",
+    "id": "12",
     "type": "YNifSo", 
     "ifSo": {
       "val": "Yes",
