@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
+import questions from '../data/sample.json'
+
 import Radio from './Radio'
 import TextForm from './TextForm'
 import Slider from './Slider'
 import Dropdown from './Dropdown'
+import Emoji from './Emoji'
 import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questions from '../data/questions.json'
@@ -26,12 +30,10 @@ class Question extends React.Component {
     this.renderQuestion = this.renderQuestion.bind(this)
     this.updateIfSo = this.updateIfSo.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
+    this.checkConditions = this.checkConditions.bind(this)
   }
 
-  updateSelection (e, id, question, show, hide) {
-    const questions = this.state.questions
-    if (show) questions.find(q => q.id === show).conditional = false
-    if (hide) questions.find(q => q.id === hide).conditional = true
+  updateSelection (e, id, question) {
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
@@ -110,14 +112,36 @@ class Question extends React.Component {
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
           update={this.updateSelection} submit={this.submit} />
+      case 'Emoji':
+        return <Emoji question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
+          update={this.updateSelection} submit={this.submit} />
       case 'Listing':
         return <Listing question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : []}
           update={this.updateSelectionArray} submit={this.submit} />
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : null}
-          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
+          update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />v
       default:
         return null
+    }
+  }
+
+  checkConditions (question) {
+    const { compare, target, value } = question.conditions
+    if (this.state.answers[target]) {
+      switch (compare) {
+        case '=':
+          if (this.state.answers[target].answer === value) return this.renderQuestion(question)
+          break
+        case '>':
+          if (this.state.answers[target].answer > value) return this.renderQuestion(question)
+          break
+        case '<':
+          if (this.state.answers[target].answer < value) return this.renderQuestion(question)
+          break
+        default:
+          return null
+      }
     }
   }
 
@@ -127,7 +151,7 @@ class Question extends React.Component {
         <h1>{this.state.title}</h1>
         {this.state.questions.map(question => (
           <div key={question.id}>
-            {!question.conditional && this.renderQuestion(question)}
+            {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
           </div>
         ))}
         <button className='button' onClick={this.submit} >Submit</button>
