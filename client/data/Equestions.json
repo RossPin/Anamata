@@ -5,25 +5,17 @@
       {
           "question": "What do you like about school?",
           "id": "2001",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "Which dentist are you registered with?"
-          }
+          "type": "TextForm"
       },
       {
           "question": "What don't you like about school?",
           "id": "2002",
-          "type": "YNifSo", 
-          "ifSo": {
-              "val": "Yes",
-              "question": "Which doctor are you registered with?"
-          }
+          "type": "TextForm"
       },
       {
           "question": "Do you think you need extra help with any subjects at school?",
           "id": "2003",
-          "type": "YNifSo", 
+          "type": "YNifSo",
           "ifSo": {
               "val": "Yes",
               "question": "If so, which subject(s)?"
