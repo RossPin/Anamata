@@ -98,8 +98,7 @@
               },
               {
                   "answer": "No"
-              }
-            ,
+        },
       {
           "question": "Are you being bullied in any way?",
           "id": "2100",
@@ -112,11 +111,23 @@
       {
         "question": "Are you doing any work outside of school? (e.g: a job)",
         "id": "2150",
-        "type": "YNifSo", 
+        "type": "Radio", 
+        "responses": [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+        ]
+    },
+    {
+        "question": "If yes, then what work do you do?",
+        "id": "2160",
+        "type":"TextForm",
         "ifSo": {
             "val": "Yes",
-            "question": "If yes, then what work do you do?",
-            "question": "How often"
+            "question": "Which one are you connected with?"
         }
     },
     {
@@ -125,10 +136,4 @@
       "type": "TextForm"
     }
   ]
-
-      }
-
-    ]
-
-  }
-  
+}
