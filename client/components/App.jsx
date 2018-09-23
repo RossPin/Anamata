@@ -10,6 +10,7 @@ import Help from './Help'
 import Consent from './Consent'
 import Details from './Details'
 import Current from './Current'
+import ViewAnswers from './ViewAnswers'
 
 class App extends React.Component {
   render () {
@@ -24,9 +25,10 @@ class App extends React.Component {
             <Route path='/Register' component={Register} />
             <Route path='/current' component={Current} />
             <Route path='/details' component={Details} />
-            <Route path='/consent' component={Consent} />            
+            <Route path='/consent' component={Consent} />
             <Route path='/questions' component={Questions} />
             <Route path='/complete' component={Complete} />
+            <Route path='/viewanswers' component={ViewAnswers} />
           </div>
         </div>
       </HashRouter>
