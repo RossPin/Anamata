@@ -21,6 +21,22 @@ class ViewAnswers extends React.Component {
     this.props.history.push('/current')
   }
 
+  answerList (answerObj) {
+    const { answer, question } = answerObj
+    return (
+      <div>
+        <p><strong>{question}</strong></p>
+        <ul>
+          {Object.keys(answer).map(key => (
+            <div key={key}>
+              {(typeof answer[key] === 'string') ? <li>{answer[key]}</li> : <li>{key}: {answer[key] ? 'Yes' : 'No'}</li>}
+            </div>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
   render () {
     const answers = this.state.answers
     const keys = Object.keys(answers)
@@ -31,7 +47,7 @@ class ViewAnswers extends React.Component {
             <h1>{key}</h1>
             {Object.keys(answers[key]).map(id => (
               <div key={id}>
-                <p><strong>{answers[key][id].question}</strong> {answers[key][id].answer}</p>
+                {(typeof answers[key][id].answer === 'object') ? this.answerList(answers[key][id]) : <p><strong>{answers[key][id].question}</strong> {answers[key][id].answer}</p>}
                 {answers[key][id].ifSoQuestion && <p><strong>{answers[key][id].ifSoQuestion}</strong> {answers[key][id].ifSoAnswer}</p>}
               </div>
             ))}
