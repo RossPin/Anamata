@@ -14,7 +14,7 @@ class Question extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      categories: ['health', 'spirit'],
+      categories: ['health', 'spirit', 'eduation/employment'],
       currentCategory: 0,
       answers: {
       },
