@@ -9,7 +9,7 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questions from '../data/questions.json'
 import Checkbox from './Checkbox'
-import { addSection } from '../actions/youngPerson';
+import { addSection } from '../actions/youngPerson'
 
 class Question extends React.Component {
   constructor (props) {
@@ -71,7 +71,7 @@ class Question extends React.Component {
   }
 
   submit (e) {
-    e.preventDefault()    
+    e.preventDefault()
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))

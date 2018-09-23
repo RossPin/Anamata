@@ -1,7 +1,6 @@
 import React from 'react'
 
 class Checkbox extends React.Component {
-
   handleChange (e, i) {
     const target = e.target
     const value = target.checked

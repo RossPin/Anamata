@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setYp, removeYp } from '../actions/youngPerson'
+import { setYp } from '../actions/youngPerson'
 import request from '../utils/api'
 
 class Current extends React.Component {
