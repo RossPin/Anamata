@@ -1,0 +1,220 @@
+[
+  {
+    "question": "What have you eaten today?",
+    "id": "0",
+    "type": "Checkbox",
+    "responses": [
+      {
+        "answer": "Breakfast"
+      },
+      {
+        "answer": "Second breakfast"
+      },
+      {
+        "answer": "Lunch"
+      },
+      {
+        "answer": "Dinner"
+      }
+    ]
+  },
+  {
+    "question": "Are you hungry?",
+    "id": "1",
+    "type": "Radio",
+    "responses": [
+      {
+        "answer": "Yes",
+        "show": "2"
+      },
+      {
+        "answer": "No",
+        "hide": "2"
+      }
+    ]
+  },
+  {
+    "question": "Do you want an apple?",
+    "id": "2",
+    "type": "Radio",
+    "conditions": {
+      "target": "1",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Yes"        
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },  
+  {
+    "question": "how was the apple?",
+    "id": "3",
+    "type": "Radio",
+    "conditions": {
+      "target": "2",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Bad"
+      },
+      {
+        "answer": "OK"
+      },
+      {
+        "answer": "Good"
+      }
+    ]
+  },
+  {
+    "question": "Are you Thirsty?",
+    "id": "4",
+    "type": "Radio",
+    "responses": [
+      {
+        "answer": "Yes"
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },
+  {
+    "question": "Do you want some water?",
+    "id": "5",
+    "type": "Radio",
+    "conditions": {
+      "target": "4",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Yes"
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },
+  {
+    "question": "how was the water?",
+    "id": "6",
+    "type": "Radio",
+    "conditions": {
+      "target": "5",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Bad"
+      },
+      {
+        "answer": "OK"
+      },
+      {
+        "answer": "Good"
+      }
+    ]
+  },
+  {
+    "question": "Did you feel hydrated?",
+    "id": "7",
+    "type": "Dropdown",
+    "conditions": {
+      "target": "6",
+      "compare": "=",
+      "value": "Good"
+    },
+    "responses": [
+      {
+        "answer": "Yes"
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },
+  {
+    "question": "scale of one to yum, how epic was the water",
+    "id": "8",
+    "type": "Slider",
+    "conditions": {
+      "target": "7",
+      "compare": "=",
+      "value": "Yes"
+    }
+  },
+  {
+    "question": "how fun was drinking out of the glass",
+    "id": "9",
+    "type": "Slider", 
+    "conditions": {
+      "target": "8",
+      "compare": ">",
+      "value": 50
+    }
+  },
+  {
+    "question": "how do you feel about what your thinking about right now",
+    "id": "10",
+    "type": "Emoji"
+  },
+  {
+    "question": "Please list any other pleasant or unpleasant attributes of the water",
+    "id": "11",
+    "type": "Listing"
+  },
+  {
+    "question": "did you enjoy this survey",
+    "id": "12",
+    "type": "YNifSo", 
+    "ifSo": {
+      "val": "Yes",
+      "question": "What was the best part?"
+    }
+  },
+  {
+    "question": "Do you want to do it again?",
+    "id": "13",
+    "type": "Radio",
+    "conditions": {
+      "target": "12",
+      "compare": "=",
+      "value": "Yes"
+    },
+    "responses": [
+      {
+        "answer": "Yes"        
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  },
+  {
+    "question": "Do you want to go outside?",
+    "id": "14",
+    "type": "Radio",
+    "conditions": {
+      "target": "12",
+      "compare": "=",
+      "value": "No"
+    },
+    "responses": [
+      {
+        "answer": "Yes"        
+      },
+      {
+        "answer": "No"
+      }
+    ]
+  }
+]

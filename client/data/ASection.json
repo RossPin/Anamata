@@ -1,0 +1,90 @@
+{ "activities": {
+  "title":"Activities",
+  "description" : "Be healthy please blah blah blah blah blah",
+  "questions" : [
+      {
+          "question": "What do you like to do for fun?",
+          "id": "3010",
+          "type": "Listing"
+      },
+      {
+        "question": "How do you spend your time when your not at school?",
+        "id": "3020",
+        "type": "Listing"
+      },
+      {
+        "question": "Do you like...",
+        "id": "3020",
+        "type": "Checkbox",
+        "responses": [
+          {
+            "answer": "To spend time with friends"
+          },
+          {
+            "answer": "Prefer to be by yourself"
+          },
+          {
+            "answer": "Both"
+          }
+        ]
+      },
+      {
+        "question": "When you are with your friends, what do you do?",
+        "id":"3030",
+        "type": "TextForm",
+        "conditions": {
+          "target": "3020",
+          "compare": "=",
+          "value": "To spend time with friends"
+        }
+      },
+      {
+          "question": "How do you think your friends would describe you?",
+          "id":"3040",
+          "type": "TextForm",
+          "conditions": {
+            "target": "3020",
+            "compare": "=",
+            "value": "To spend time with friends"
+          }
+      },
+      {
+        "question": "Are you involved in any of the following...",
+        "id":"3050",
+        "type": "Checkbox",
+        "responses": [
+          {
+            "answer": "music"
+          },
+          {
+            "answer": "church"
+          },
+          {
+            "answer": "kapahaka"
+          },
+          {
+            "answer": "drama"
+          },
+          {
+            "answer": "dance"
+          },
+          {
+            "answer": "sports"
+          },
+          {
+            "answer": "clubs/scouts"
+          }
+        ]
+      },
+      {
+        "question": "is there a sport or activity that you would like to do but cant?",
+            "id": "3060",
+            "type": "YNifSo", 
+            "ifSo": {
+                "val": "Yes",
+                "question": "What is presenting you from doing this?"
+            }
+      }
+  ]
+}
+}

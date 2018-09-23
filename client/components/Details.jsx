@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createYp } from '../actions/youngPeople'
+import { setDetails } from '../actions/youngPerson'
 
 class Details extends React.Component {
   constructor (props) {
@@ -20,7 +20,8 @@ class Details extends React.Component {
     e.preventDefault()
     e.target.reset()
     let { firstName, lastName, school } = this.state
-    this.props.dispatch(createYp({ firstName, lastName, school }))
+    this.props.dispatch(setDetails({ firstName, lastName, school }))
+    this.props.history.push('/consent')
   }
   render () {
     return (

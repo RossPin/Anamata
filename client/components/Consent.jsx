@@ -1,16 +1,27 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { addConsent } from '../actions/youngPerson'
 
 class Consent extends React.Component {
+  constructor (props) {
+    super(props)
+    this.submit = this.submit.bind(this)
+  }
+
+  submit (e) {
+    e.preventDefault()
+    const consent = (e.target.value === 'Yes')
+    this.props.dispatch(addConsent(consent, Date.now()))
+    this.props.history.push('/questions')
+  }
+
   render () {
-    const first = this.props.questions[0].id
     return (
       <div>
         <h1>Consent</h1>
         <h3>Do you consent to this?</h3>
-        <Link className='button' to={`/question/${first}`}>Yes</Link>
-        <Link className='button' to='/'>No</Link>
+        <button value='Yes' onClick={this.submit} className='button'>Yes</button>
+        <button value='No' onClick={this.submit} className='button'>No</button>
       </div>
     )
   }
