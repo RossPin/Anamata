@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { removeYp } from '../actions/youngPerson'
 
 class ViewAnswers extends React.Component {
@@ -40,6 +41,7 @@ class ViewAnswers extends React.Component {
             ))}
           </div>
         ))}
+        <Link className='button' to='/current'>Back</Link>
         <button className='button' onClick={e => this.delete(e, this.props.youngPerson._id)} >Delete</button>
       </div>
     )
