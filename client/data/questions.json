@@ -442,5 +442,43 @@
                   }
             }
         ]
+    },
+    "technology and social media": 
+    {
+        "title":"technology and social media",
+        "questions" : 
+        [
+            {
+                "question": "How much screen time do you have a day (TV/Internet) in hours?",
+                "id": "4010",
+                "type": "TextForm"
+            },
+            {
+              "question": "Have you sent messages or images to other people that you later regretted?",
+              "id": "4020",
+              "type": "TextForm"
+            },
+            {
+              "question": "What do you mainly use the internet for?",
+              "id": "4030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "To spend time with friends"
+                },
+                {
+                  "answer": "Prefer to be by yourself"
+                },
+                {
+                  "answer": "Both"
+                }
+              ]
+            },
+            {
+              "question": "In what ways can you keep yourself sage when using social media? (E.g. I don't share my address with someone I don't know). What are your ideas?",
+              "id":"4040",
+              "type": "TextForm"
+            }
+        ]
     }     
 }
