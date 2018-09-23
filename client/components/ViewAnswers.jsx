@@ -32,11 +32,7 @@ class ViewAnswers extends React.Component {
             {Object.keys(answers[key]).map(id => (
               <div>
                 <p><strong>{answers[key][id].question}</strong> {answers[key][id].answer}</p>
-                {answers[key][id].ifSo && (
-                  <div>
-                    <p><strong>{answers[key][id].ifSo.question}</strong> {answers[key][id].ifSo.answer}</p>
-                  </div>
-                )}
+                {answers[key][id].ifSoQuestion && <p><strong>{answers[key][id].ifSoQuestion}</strong> {answers[key][id].ifSoAnswer}</p>}
               </div>
             ))}
           </div>
