@@ -220,7 +220,7 @@
                 "ifSo": 
                 {
                     "val": "Yes",
-                    "question": "If so, which subject(s)?"
+                    "question": "Which subject(s)?"
                 }
             },  
             {
@@ -299,16 +299,7 @@
             {
                 "question": "How well do you get on with other students?",
                 "id": "2090",
-                "type": "Emoji", 
-                "responses": 
-                [
-                    {
-                        "answer": "Yes"
-                    },
-                    {
-                        "answer": "No"
-                    }
-                ]
+                "type": "Emoji"
             },
             {
                 "question": "Are you being bullied in any way?",
@@ -317,33 +308,19 @@
                 "ifSo": 
                 {
                     "val": "Yes",
-                    "question": "If yes, in what way?"
+                    "question": "In what way?"
                 }
             },
             {
                 "question": "Are you doing any work outside of school? (e.g: a job)",
                 "id": "2150",
-                "type": "Radio", 
-                "responses": 
-                    [
-                        {
-                            "answer": "Yes"
-                        },
-                        {
-                            "answer": "No"
-                        }
-                    ]
-                },
-            {
-                "question": "If yes, then what work do you do?",
-                "id": "2160",
-                "type":"TextForm",
+                "type": "YNifSo", 
                 "ifSo": 
                 {
                     "val": "Yes",
-                    "question": "Which one are you connected with?"
+                    "question": "What work do you do?"
                 }
-            },
+            },           
             {
                 "question": "Any idea of what you want to do when you have finished school?",
                 "id": "2160",
