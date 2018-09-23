@@ -9,7 +9,7 @@ export function setYp (yp) {
 
 export function setDetails (details) {
   return {
-    type: 'SET_YP',
+    type: 'SET_DETAILS',
     details
   }
 }
