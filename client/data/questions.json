@@ -201,6 +201,7 @@
     },
 "education and employment": 
     {
+    "title":"Education and Employment",
     "questions" : 
         [
             {
@@ -443,9 +444,9 @@
             }
         ]
     },
-    "technology and social media": 
+    "echnology and social media": 
     {
-        "title":"technology and social media",
+        "title":"Technology and Social Media",
         "questions" : 
         [
             {
