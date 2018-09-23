@@ -352,7 +352,6 @@
             }
         ]
     },
-
     "activities": 
     {
         "title":"Activities",
@@ -444,7 +443,7 @@
             }
         ]
     },
-    "echnology and social media": 
+    "technology and social media": 
     {
         "title":"Technology and Social Media",
         "questions" : 
@@ -481,5 +480,155 @@
               "type": "TextForm"
             }
         ]
-    }     
+    },
+
+        "drugs": {
+            "title": "SUBSTANCE USE:",
+            "description": "This information will not be passed on without your permission.",
+            "questions": [
+        {"question": "Do you smoke cigarettes / tobacco?",
+          "id": "5000",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Do you ever have a drink containing alcohol?",
+          "id": "5100",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used weed(Cannabis)?",
+          "id": "5200",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used P(Meth)?",
+          "id": "5300",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used synthetics?",
+          "id": "5400",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used solvents(Huffing)?",
+          "id": "5500",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {
+          "question": "Are there any other substances you have used?",
+          "id":"5600",
+          "type": "TextForm"
+        },
+        {"question": "Would you like to speak to someone about substance use, or get help with stopping?",
+          "id": "5700",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "Yes"
+              },
+              {
+                  "answer": "No"
+              }
+          ]
+        }
+      ]
+    } 
 }
