@@ -20,9 +20,14 @@ function getCurrent () {
   return YP.find({ resolved: false })
 }
 
+function removeYp (id) {
+  return YP.remove({ _id: id })
+}
+
 module.exports = {
   createYp,
   addResponse,
   getYp,
-  getCurrent
+  getCurrent,
+  removeYp
 }
