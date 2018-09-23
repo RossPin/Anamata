@@ -71,8 +71,7 @@ class Question extends React.Component {
   }
 
   submit (e) {
-    e.preventDefault()
-    console.log(this.state.answers)
+    e.preventDefault()    
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
