@@ -33,7 +33,7 @@ class Current extends React.Component {
         <h1>Un-Reviewed surveys</h1>
         <ul>
           {this.state.current.map((yp, i) => (
-            <li key={i} onClick={() => this.select(yp)} > {`${yp.details.firstName} ${yp.details.lastName}`}</li>
+            <li key={i}><div className='link' onClick={() => this.select(yp)}> {`${yp.details.firstName} ${yp.details.lastName}`}</div></li>
           ))}
         </ul>
       </div>

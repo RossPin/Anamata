@@ -37,4 +37,10 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: inline-block; 
+}
+
+.link {  
+  margin: 0 auto;
+  cursor: pointer;
 }
