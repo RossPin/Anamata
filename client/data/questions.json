@@ -351,7 +351,6 @@
             }
         ]
     },
-
     "activities": 
     {
         "title":"Activities",
@@ -442,5 +441,154 @@
                   }
             }
         ]
-    }     
+    },
+    "drugs": {
+      "title": "SUBSTANCE USE:",
+      "description": "This information will not be passed on without your permission.",
+      "questions": [
+        {"question": "Do you smoke cigarettes / tobacco?",
+          "id": "4000",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Do you ever have a drink containing alcohol?",
+          "id": "4100",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used weed(Cannabis)?",
+          "id": "4200",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used P(Meth)?",
+          "id": "4300",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used synthetics?",
+          "id": "4400",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used solvents(Huffing)?",
+          "id": "4500",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {
+          "question": "Are there any other substances you have used?",
+          "id":"4600",
+          "type": "TextForm"
+        },
+        {"question": "Would you like to speak to someone about substance use, or get help with stopping?",
+          "id": "4700",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "Yes"
+              },
+              {
+                  "answer": "No"
+              }
+          ]
+        }
+      ]
+    } 
 }
