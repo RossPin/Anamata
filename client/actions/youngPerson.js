@@ -7,6 +7,13 @@ export function setYp (yp) {
   }
 }
 
+export function setDetails (details) {
+  return {
+    type: 'SET_DETAILS',
+    details
+  }
+}
+
 export function addConsent (consent, timestamp) {
   return {
     type: 'ADD_CONSENT',
@@ -32,6 +39,13 @@ export function resetYp () {
 export function createYp (data) {
   request('post', 'yp/create', data)
     .then((response) => {
+      return response.body
+    })
+}
+
+export function removeYp (id) {
+  request('delete', `yp/del/${id}`)
+    .then(response => {
       return response.body
     })
 }
