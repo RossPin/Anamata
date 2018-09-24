@@ -515,6 +515,131 @@
         }
       ]
     },
+    "emotional health": {
+        "title": "Emotional Health",
+        "description": "If any of the answers to the following questions change for you, or you feel you need further support, please see the: school nurse, school counsellor or REAL, your school dean.",
+        "questions": [
+    {"question": "In the past few months have you felt sad more than you have felt happy?",
+      "id": "8000",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+      ]
+    },
+    {"question": "Do you feel good about yourself?",
+      "id": "8100",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Are you getting any help from anyone for problems you've had? (E.g. Counselor)",
+      "id": "8200",
+      "type": "YNifSo", 
+        "ifSo": 
+            {
+                "val": "Yes",
+                "question": "If so, who?"
+            }
+
+    },
+    {"question": "Do you ever think life is not worth living?",
+      "id": "8300",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Do you ever think about hurting yourself?",
+      "id": "8400",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Have you ever done anything to hurt yourself on purpose?",
+      "id": "8500",
+      "type": "Radio", 
+      "responses": [
+        {    
+            "answer": "Yes"
+        },
+        {
+            "answer": "No"
+        }
+      ]
+    },
+    {
+      "question": "How do you think you feel most of the time?",
+      "id":"8600",
+      "type": "Emoji"
+    },
+    {"question": "Is there anything in your life right now that is causing you a lot of stress?",
+      "id": "8700",
+      "type": "YNifSo", 
+      "ifSo": 
+      {
+          "val": "Yes",
+          "question": "If so, what?"
+      }
+    },
+    {"question": "Has anyone close to you committed suicide?",
+        "id": "8800",
+        "type": "Radio", 
+        "responses": [
+          {    
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+        ]
+      },
+      {"question": "Do you need any more help around this?",
+        "id": "8900",
+        "type": "Radio", 
+        "responses": [
+          {    
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+        ]
+      }
+  ],
+  "footer" : "If today or recently, you have felt really low, suicidal or are self-harming, please see one of the following people today or as soon as possible: school nurse, school consellor or REAl or your school dean."
+
+},
     "safety": 
     {
         "title":"Safety",
