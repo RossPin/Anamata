@@ -33,9 +33,8 @@ class Details extends React.Component {
   submit (e) {
     e.preventDefault()
     e.target.reset()
-    console.log(this.state.details)
-    let { firstName, lastName, school } = this.state
-    this.props.dispatch(createYp({ firstName, lastName, school }))
+    let details = this.state.details
+    this.props.dispatch(createYp({ details }))
   }
 
   updateRadio (e) {
