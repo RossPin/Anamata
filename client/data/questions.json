@@ -104,7 +104,136 @@
                 ]
             }
         ]
-    },    
+    },
+    "home": 
+    {
+        "title":"HOME/WHANAU",
+        "questions" : 
+        [
+            {
+                "question": "Who do you live with? (E.g mum, step–dad, nana, cousin, uncle, caregiver, sister, brother etc.)",
+                "id": "2010",
+                "type": "Listing"
+            },
+            {
+                "question": "How are things at home?",
+                "id": "2020",
+                "type": "Emoji"
+            },
+            {
+                "question": "What are your relationships like with the people you live with?",
+                "id": "2030",
+                "type": "Emoji"
+            },  
+            {
+                "question": "Do you feel safe at home?",
+                "id": "2040",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "No",
+                    "question": "Can you explain why?"
+                }
+            },
+            {
+                "question": "Is there someone at home you can talk to if you feel upset or who you could go to if you needed help with a problem?",
+                "id": "2050",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Have there been any big changes in your family or at home recently? (Eg: Moving, someone leaving, someone new)",
+                "id": "2060",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "What have the changes been?"
+                }
+            },
+            {
+                "question": "Do you or your caregivers worry about not having enough money for essential things ? (e.g food, clothes, school equipment, petrol for the car)",
+                "id": "2070",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "What jobs or responsibilities do you have at home? (E.g chores like dishes, looking after siblings)",
+                "id": "2080",
+                "type": "TextForm"
+            },
+            {
+                "question": "Do you ever feel like you have too much responsibility?",
+                "id": "2090",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Do you have rules you need to stick to at home? (eg: always tidy up after yourself, no smoking, curfew)",
+                "id": "2100",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "What are some of these rules?"
+                }
+            },
+            {
+                "question": "Who makes the rules in your house? (eg: Dad, Mum, both, older brother or sister)",
+                "id": "2110",
+                "type": "TextForm"
+            },
+            {
+                "question": "What are the consequences for breaking the rules? (e.g: grounded, phone confiscated, hiding)",
+                "id": "2120",
+                "type": "TextForm"
+            },
+            {
+                "question": "Do you think the rules and consequences are FAIR or UNFAIR?",
+                "id": "2130",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Fair"
+                    },
+                    {
+                        "answer": "Unfair"
+                    }
+                ]
+            },
+            {
+                "question": "What do you like to do with your family for fun? (e.g: go swimming together, camping, hunting, games, road trips)",
+                "id": "21400",
+                "type": "TextForm"
+            }
+            
+        ]
+    },     
   "education and employment": 
     {
     "title":"Education and Employment",
