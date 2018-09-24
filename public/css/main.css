@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(200,230,255);
+  background-color: #c8e6ff;
 }
 
 .nav {
@@ -7,7 +7,6 @@ body {
   width: 90%;
   margin: 1em auto;
   padding: 1em;
-  background-color: rgb(100, 225, 115);
 }
 
 .container {
@@ -37,10 +36,15 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block; 
+  display: inline-block;
 }
 
-.link {  
+.link {
   margin: 0 auto;
   cursor: pointer;
 }
+
+body {
+  background: url("/img/backgrounds/home_background.png") center/cover;
+}
+/*# sourceMappingURL=main.css.map */

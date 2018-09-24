@@ -1,12 +1,16 @@
-{ "health": {
+{ 
+    "health": 
+    {
         "title":"YOUR HEALTH HISTORY / TAHA TINANA",
         "description" : "Be healthy please blah blah blah blah blah",
-        "questions" : [
+        "questions" : 
+        [
             {
                 "question": "Are you registered with a dentist?",
                 "id": "1010",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "Which dentist are you registered with?"
                 }
@@ -15,7 +19,8 @@
                 "question": "Are you registered with a doctor?",
                 "id": "1020",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "Which doctor are you registered with?"
                 }
@@ -24,7 +29,8 @@
                 "question": "Do you have any serious medical conditions?",
                 "id": "1030",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "Please give details:"
                 }
@@ -33,7 +39,8 @@
                 "question": "Do you take any medication for anything?",
                 "id": "1040",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "Please give details:"
                 }
@@ -42,7 +49,8 @@
                 "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
                 "id": "1050",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "Please give details:"
                 }
@@ -51,7 +59,8 @@
                 "question": "Did you have your year 8 vaccinations (immunisation injection)?",
                 "id": "1060",
                 "type": "Radio", 
-                "responses": [
+                "responses": 
+                [
                     {
                         "answer": "Yes"
                     },
@@ -64,7 +73,8 @@
                 "question": "Have you recently had a hearing check?",
                 "id": "1070",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "When did you have it?"
                 }
@@ -73,7 +83,8 @@
                 "question": "Have you recently had a vision check?",
                 "id": "1080",
                 "type": "YNifSo", 
-                "ifSo": {
+                "ifSo": 
+                {
                     "val": "Yes",
                     "question": "When did you have it?"
                 }
@@ -82,7 +93,8 @@
                 "question": "Do you wear glasses or contact lenses?",
                 "id": "1090",
                 "type": "Radio", 
-                "responses": [
+                "responses": 
+                [
                     {
                         "answer": "Yes"
                     },
@@ -93,29 +105,42 @@
             }
         ]
     },
-    "spirit": {
-        "title":"SPIRITUAL HEALTH / WAIRUATANGA",
-        "description": "Spirituality means different things to different people. Spirituality is our sense of connection to something bigger than us. It may include a search for beliefs and values; a sense of meaning and a purpose in life; a sense of connectedness; identity and awareness; and for some people, religion.",
-        "questions" : [
+    "home": 
+    {
+        "title":"HOME/WHANAU",
+        "questions" : 
+        [
             {
-                "question": "Are you connected to a certain religion/faith/culture or spiritual belief? (e.g Ratana/Christian/Buddhist/Muslim)",
-                "id": "0",
+                "question": "Who do you live with? (E.g mum, step–dad, nana, cousin, uncle, caregiver, sister, brother etc.)",
+                "id": "2010",
+                "type": "Listing"
+            },
+            {
+                "question": "How are things at home?",
+                "id": "2020",
+                "type": "Emoji"
+            },
+            {
+                "question": "What are your relationships like with the people you live with?",
+                "id": "2030",
+                "type": "Emoji"
+            },  
+            {
+                "question": "Do you feel safe at home?",
+                "id": "2040",
                 "type": "YNifSo", 
-                "ifSo": {
-                    "val": "Yes",
-                    "question": "Which one are you connected with?"
+                "ifSo": 
+                {
+                    "val": "No",
+                    "question": "Can you explain why?"
                 }
             },
             {
-                "question": "Is this something that is important to you?",
-                "id": "1",
+                "question": "Is there someone at home you can talk to if you feel upset or who you could go to if you needed help with a problem?",
+                "id": "2050",
                 "type": "Radio", 
-                "conditions": {
-                    "target": "0",
-                    "compare": "=",
-                    "value": "Yes"
-                  },
-                "responses": [
+                "responses": 
+                [
                     {
                         "answer": "Yes"
                     },
@@ -125,15 +150,21 @@
                 ]
             },
             {
-                "question": "Do you have a wish to change that and connect with something on a deeper level?",
-                "id": "2",
-                "type": "Radio",
-                "conditions": {
-                    "target": "0",
-                    "compare": "=",
-                    "value": "No"
-                  },
-                "responses": [
+                "question": "Have there been any big changes in your family or at home recently? (Eg: Moving, someone leaving, someone new)",
+                "id": "2060",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "What have the changes been?"
+                }
+            },
+            {
+                "question": "Do you or your caregivers worry about not having enough money for essential things ? (e.g food, clothes, school equipment, petrol for the car)",
+                "id": "2070",
+                "type": "Radio", 
+                "responses": 
+                [
                     {
                         "answer": "Yes"
                     },
@@ -141,12 +172,138 @@
                         "answer": "No"
                     }
                 ]
+            },
+            {
+                "question": "What jobs or responsibilities do you have at home? (E.g chores like dishes, looking after siblings)",
+                "id": "2080",
+                "type": "TextForm"
+            },
+            {
+                "question": "Do you ever feel like you have too much responsibility?",
+                "id": "2090",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Do you have rules you need to stick to at home? (eg: always tidy up after yourself, no smoking, curfew)",
+                "id": "2100",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "What are some of these rules?"
+                }
+            },
+            {
+                "question": "Who makes the rules in your house? (eg: Dad, Mum, both, older brother or sister)",
+                "id": "2110",
+                "type": "TextForm"
+            },
+            {
+                "question": "What are the consequences for breaking the rules? (e.g: grounded, phone confiscated, hiding)",
+                "id": "2120",
+                "type": "TextForm"
+            },
+            {
+                "question": "Do you think the rules and consequences are FAIR or UNFAIR?",
+                "id": "2130",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Fair"
+                    },
+                    {
+                        "answer": "Unfair"
+                    }
+                ]
+            },
+            {
+                "question": "What do you like to do with your family for fun? (e.g: go swimming together, camping, hunting, games, road trips)",
+                "id": "21400",
+                "type": "TextForm"
+            }
+            
+        ]
+    },     
+  "education and employment": 
+    {
+    "title":"Education and Employment",
+    "questions" : 
+        [
+            {
+                "question": "What do you like about school?",
+                "id": "3010",
+                "type": "TextForm"
+            },
+            {
+                "question": "What don't you like about school?",
+                "id": "3020",
+                "type": "TextForm"
+            },
+            {
+                "question": "Do you think you need extra help with any subjects at school?",
+                "id": "3030",
+                "type": "YNifSo",
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "Which subject(s)?"
+                }
             },  
             {
-                "question": "Do you have a strong connection with your culture that is a spiritual one for you?",
-                "id": "3",
-                "type": "Radio", 
-                "responses": [
+                "question": "How well do you get along with the teachers at school?",
+                "id": "3040",
+                "type": "Emoji"
+            },
+            {
+                "question": "Do you feel the teachers are fair?",
+                "id": "3050",
+                "type": "Radio",
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    },
+                    {
+                        "answer": "Some"
+                    }
+                ]
+            },
+            {
+                "question": "Do you feel the adults at school care about you?",
+                "id": "3060",
+                "type": "Radio",
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    },
+                    {
+                        "answer": "Some"
+                    }
+                ]
+            },
+            {
+                "question": "Are there adults at school you feel you could talk to about something important or personal?",
+                "id": "3070",
+                "type": "Radio",
+                "responses": 
+                [
                     {
                         "answer": "Yes"
                     },
@@ -156,43 +313,209 @@
                 ]
             },
             {
-                "question": "Is this something you would like to change?",
-                "id": "5",
-                "type": "Radio", 
-                "conditions": {
-                    "target": "3",
-                    "compare": "=",
-                    "value": "No"
-                  },
-                "responses": [
+                "question": "Do you ever skip classes?",
+                "id": "3080",
+                "type": "Radio",
+                "responses": 
+                [
                     {
-                        "answer": "Yes"
+                        "answer": "Never"
                     },
                     {
-                        "answer": "No"
+                        "answer": "Once"
+                    },
+                    {
+                        "answer": "Occasionally"
+                    },
+                    {
+                        "answer": "Lots"
                     }
                 ]
+            },
+            {
+                "question": "How well do you get on with other students?",
+                "id": "3090",
+                "type": "Emoji"
+            },
+            {
+                "question": "Are you being bullied in any way?",
+                "id": "3100",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "In what way?"
+                }
+            },
+            {
+                "question": "Are you doing any work outside of school? (e.g: a job)",
+                "id": "3150",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "What work do you do?"
+                }
+            },           
+            {
+                "question": "Any idea of what you want to do when you have finished school?",
+                "id": "3160",
+                "type": "TextForm"
             }
-        ],
-        "footer" : "If there are any areas of concern that come from this assessment, the nurse will see you. If you’d like to see the nurse then please feel free to drop into the clinic"
+        ]
     },
-    "activities": {
+    "nutrition": {
+      "title": "NUTRITION  AND  EXERCISE",    
+      "questions": [
+        {
+          "question": "How much exercise do you do in an average week?",
+          "id": "4000",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "None"
+            },
+            {
+                "answer": "At least twice a week"
+            },
+            {
+              "answer": "Most Days"
+            },
+            {
+                "answer": "Everyday"
+            }
+          ]
+        },
+        {
+          "question": "What do you like to do for exercise?",
+          "id": "4010",
+          "type": "Listing"
+        },
+        {
+          "question": "Most days do you have...",
+          "id":"4100",
+          "type": "Checkbox",
+          "responses": [
+            {
+              "answer": "Breakfast"
+            },
+            {
+              "answer": "Lunch"
+            },
+            {
+              "answer": "Dinner"
+            }
+          ]
+        },
+        {
+          "question": "How many times a week  would someone in your home cook you dinner?",
+          "id": "4200",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Everyday"
+            },
+            {
+                "answer": "Most days"
+            },
+            {
+              "answer": "More than 3 times a week"
+            },
+            {
+              "answer": "Less than 3 times a week"
+            },
+            {
+              "answer": "Never"
+            }
+          ]
+        },
+        {
+          "question": "How often would you have a sugary drink? (eg:  Fizzy, energy drinks, cordial, Raro)",
+          "id":"4300",
+          "type": "TextForm"        
+        },
+        {
+          "question": "Do you think you have a healthy diet?",
+          "id": "4400",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Sometimes when people are stressed they can over-eat or under-eat. Do you find yourself doing either of these?",
+          "id": "4500",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            },
+            {
+              "answer": "Sometimes"
+          }
+          ]
+        },
+        {
+          "question": "Have there been any big changes in your weight or in your dietary habit? (What you eat and how often)",
+          "id": "4600",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Are you happy with your weight?",
+          "id": "4700",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        }
+      ]
+    },
+    "activities": 
+    {
         "title":"Activities",
         "description" : "Be healthy please blah blah blah blah blah",
-        "questions" : [
+        "questions" : 
+        [
             {
                 "question": "What do you like to do for fun?",
-                "id": "3010",
+                "id": "5010",
                 "type": "Listing"
             },
             {
               "question": "How do you spend your time when your not at school?",
-              "id": "3020",
+              "id": "5020",
               "type": "Listing"
             },
             {
               "question": "Do you like...",
-              "id": "3030",
+              "id": "5030",
               "type": "Radio",
               "responses": [
                 {
@@ -208,27 +531,27 @@
             },
             {
               "question": "When you are with your friends, what do you do?",
-              "id":"3040",
+              "id":"5040",
               "type": "TextForm",
               "conditions": {
-                "target": "3030",
+                "target": "5030",
                 "compare": "=",
                 "value": "To spend time with friends"
               }
             },
             {
                 "question": "How do you think your friends would describe you?",
-                "id":"3050",
+                "id":"5050",
                 "type": "TextForm",
                 "conditions": {
-                  "target": "3030",
+                  "target": "5030",
                   "compare": "=",
                   "value": "To spend time with friends"
                 }
             },
             {
               "question": "Are you involved in any of the following...",
-              "id":"3060",
+              "id":"5060",
               "type": "Checkbox",
               "responses": [
                 {
@@ -256,7 +579,7 @@
             },
             {
               "question": "is there a sport or activity that you would like to do but cant?",
-                  "id": "3070",
+                  "id": "5070",
                   "type": "YNifSo", 
                   "ifSo": {
                       "val": "Yes",
@@ -264,7 +587,527 @@
                   }
             }
         ]
+    },
+    "technology and social media": 
+    {
+        "title":"Technology and Social Media",
+        "questions" : 
+        [
+            {
+                "question": "How much screen time do you have a day (TV/Internet) in hours?",
+                "id": "6010",
+                "type": "TextForm"
+            },
+            {
+              "question": "Have you sent messages or images to other people that you later regretted?",
+              "id": "6020",
+              "type": "TextForm"
+            },
+            {
+              "question": "What do you mainly use the internet for?",
+              "id": "6030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "To spend time with friends"
+                },
+                {
+                  "answer": "Prefer to be by yourself"
+                },
+                {
+                  "answer": "Both"
+                }
+              ]
+            },
+            {
+              "question": "In what ways can you keep yourself sage when using social media? (E.g. I don't share my address with someone I don't know). What are your ideas?",
+              "id":"6040",
+              "type": "TextForm"
+            }
+        ]
+    },
+
+        "drugs": {
+            "title": "SUBSTANCE USE:",
+            "description": "This information will not be passed on without your permission.",
+            "questions": [
+        {"question": "Do you smoke cigarettes / tobacco?",
+          "id": "7000",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Do you ever have a drink containing alcohol?",
+          "id": "7100",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used weed(Cannabis)?",
+          "id": "7200",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used P(Meth)?",
+          "id": "7300",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used synthetics?",
+          "id": "7400",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {"question": "Have you ever used solvents(Huffing)?",
+          "id": "7500",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "No"
+              },
+              {
+                  "answer": "Tried it didn’t like it"
+              },
+              {
+                "answer": "Now and again"
+              },
+              {
+                "answer": "weekly"
+              },
+              {
+                "answer": "daily"
+              }
+          ]
+        },
+        {
+          "question": "Are there any other substances you have used?",
+          "id":"7600",
+          "type": "TextForm"
+        },
+        {"question": "Would you like to speak to someone about substance use, or get help with stopping?",
+          "id": "7700",
+          "type": "Radio", 
+          "responses": [
+              {
+                  "answer": "Yes"
+              },
+              {
+                  "answer": "No"
+              }
+          ]
+        }
+      ]
+    },
+    "emotional health": {
+        "title": "Emotional Health",
+        "description": "If any of the answers to the following questions change for you, or you feel you need further support, please see the: school nurse, school counsellor or REAL, your school dean.",
+        "questions": [
+    {"question": "In the past few months have you felt sad more than you have felt happy?",
+      "id": "8000",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+      ]
+    },
+    {"question": "Do you feel good about yourself?",
+      "id": "8100",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Are you getting any help from anyone for problems you've had? (E.g. Counselor)",
+      "id": "8200",
+      "type": "YNifSo", 
+        "ifSo": 
+            {
+                "val": "Yes",
+                "question": "If so, who?"
+            }
+
+    },
+    {"question": "Do you ever think life is not worth living?",
+      "id": "8300",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Do you ever think about hurting yourself?",
+      "id": "8400",
+      "type": "Radio", 
+      "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          },
+          {
+            "answer": "Sometimes"
+          }
+      ]
+    },
+    {"question": "Have you ever done anything to hurt yourself on purpose?",
+      "id": "8500",
+      "type": "Radio", 
+      "responses": [
+        {    
+            "answer": "Yes"
+        },
+        {
+            "answer": "No"
+        }
+      ]
+    },
+    {
+      "question": "How do you think you feel most of the time?",
+      "id":"8600",
+      "type": "Emoji"
+    },
+    {"question": "Is there anything in your life right now that is causing you a lot of stress?",
+      "id": "8700",
+      "type": "YNifSo", 
+      "ifSo": 
+      {
+          "val": "Yes",
+          "question": "If so, what?"
+      }
+    },
+    {"question": "Has anyone close to you committed suicide?",
+        "id": "8800",
+        "type": "Radio", 
+        "responses": [
+          {    
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+        ]
+      },
+      {"question": "Do you need any more help around this?",
+        "id": "8900",
+        "type": "Radio", 
+        "responses": [
+          {    
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
+        ]
+      }
+  ],
+  "footer" : "If today or recently, you have felt really low, suicidal or are self-harming, please see one of the following people today or as soon as possible: school nurse, school consellor or REAl or your school dean."
+},
+    "safety": 
+    {
+        "title":"Safety",
+        "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
+        "questions" : 
+        [
+            {
+                "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
+                "id": "10000",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answers": "Yes"
+                    },
+                    {
+                        "answers": "No"
+                    }
+                ]
+            },
+            {
+              "question": "Are you afraid of violence in your school/neighbourhood?",
+              "id": "10010",
+              "type": "YNifSo",
+              "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "If yes, then where?"
+                }
+            },
+            {
+              "question": "Do you ever get in to fights?",
+              "id": "10030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Do you ever find it hard to keep your anger under control?",
+              "id": "10040",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+              "id": "10050",
+              "type": "TextForm"
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "10060",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "10070",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+                "question": "How often would you wear a seatbelt in a car?",
+                "id": "10080",
+                "type": "Radio",
+                "responses": [
+                  {
+                    "answer": "All the time"
+                  },  
+                  {
+                    "answer": "Sometimes"
+                  },
+                  {
+                    "answer": "Never"
+                  },
+                {
+                "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
+                "id": "10090",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                    ]
+                  }
+                ]
+              }
+        ]
+    },
+    "spirit": 
+    {
+        "title":"SPIRITUAL HEALTH / WAIRUATANGA",
+        "description": "Spirituality means different things to different people. Spirituality is our sense of connection to something bigger than us. It may include a search for beliefs and values; a sense of meaning and a purpose in life; a sense of connectedness; identity and awareness; and for some people, religion.",
+        "questions" : 
+        [
+            {
+                "question": "Are you connected to a certain religion/faith/culture or spiritual belief? (e.g Ratana/Christian/Buddhist/Muslim)",
+                "id": "11000",
+                "type": "YNifSo", 
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "Which one are you connected with?"
+                }
+            },
+            {
+                "question": "Is this something that is important to you?",
+                "id": "11010",
+                "type": "Radio", 
+                "conditions": 
+                {
+                    "target": "11000",
+                    "compare": "=",
+                    "value": "Yes"
+                  },
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Do you have a wish to change that and connect with something on a deeper level?",
+                "id": "11030",
+                "type": "Radio",
+                "conditions": 
+                {
+                    "target": "11000",
+                    "compare": "=",
+                    "value": "No"
+                  },
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },  
+            {
+                "question": "Do you have a strong connection with your culture that is a spiritual one for you?",
+                "id": "11100",
+                "type": "Radio", 
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            },
+            {
+                "question": "Is this something you would like to change?",
+                "id": "11110",
+                "type": "Radio", 
+                "conditions": 
+                {
+                    "target": "11100",
+                    "compare": "=",
+                    "value": "No"
+                  },
+                "responses": 
+                [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                ]
+            }
+        ],
+        "footer" : "If there are any areas of concern that come from this assessment, the nurse will see you. If you’d like to see the nurse then please feel free to drop into the clinic"
     }
-      
-      
 }

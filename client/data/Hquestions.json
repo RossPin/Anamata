@@ -4,7 +4,7 @@
     "questions" : [
         {
             "question": "Are you registered with a dentist?",
-            "id": "0",
+            "id": "1000",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -13,7 +13,7 @@
         },
         {
             "question": "Are you registered with a doctor?",
-            "id": "1",
+            "id": "1001",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -22,7 +22,7 @@
         },
         {
             "question": "Do you have any serious medical conditions?",
-            "id": "2",
+            "id": "1002",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -31,7 +31,7 @@
         },  
         {
             "question": "Do you take any medication for anything?",
-            "id": "3",
+            "id": "1003",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -40,7 +40,7 @@
         },
         {
             "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
-            "id": "4",
+            "id": "1004",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -49,7 +49,7 @@
         },
         {
             "question": "Did you have your year 8 vaccinations (immunisation injection)?",
-            "id": "5",
+            "id": "1005",
             "type": "Radio", 
             "responses": [
                 {
@@ -62,7 +62,7 @@
         },
         {
             "question": "Have you recently had a hearing check?",
-            "id": "6",
+            "id": "1006",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -71,7 +71,7 @@
         },
         {
             "question": "Have you recently had a vision check?",
-            "id": "7",
+            "id": "1007",
             "type": "YNifSo", 
             "ifSo": {
                 "val": "Yes",
@@ -80,7 +80,7 @@
         },
         {
             "question": "Do you wear glasses or contact lenses?",
-            "id": "8",
+            "id": "1008",
             "type": "Radio", 
             "responses": [
                 {
