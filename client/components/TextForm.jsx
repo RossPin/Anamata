@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Radio extends React.Component {
+class TextForm extends React.Component {
   render () {
     const { question, update, answer } = this.props
     return (
@@ -15,4 +15,4 @@ class Radio extends React.Component {
   }
 }
 
-export default Radio
+export default TextForm
