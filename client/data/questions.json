@@ -235,7 +235,139 @@
             }
         ]
     },
-    
+    "nutrition": {
+      "title": "NUTRITION  AND  EXERCISE",    
+      "questions": [
+        {
+          "question": "How much exercise do you do in an average week?",
+          "id": "4000",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "None"
+            },
+            {
+                "answer": "At least twice a week"
+            },
+            {
+              "answer": "Most Days"
+            },
+            {
+                "answer": "Everyday"
+            }
+          ]
+        },
+        {
+          "question": "What do you like to do for exercise?",
+          "id": "4010",
+          "type": "Listing"
+        },
+        {
+          "question": "Most days do you have...",
+          "id":"4100",
+          "type": "Checkbox",
+          "responses": [
+            {
+              "answer": "Breakfast"
+            },
+            {
+              "answer": "Lunch"
+            },
+            {
+              "answer": "Dinner"
+            }
+          ]
+        },
+        {
+          "question": "How many times a week  would someone in your home cook you dinner?",
+          "id": "4200",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Everyday"
+            },
+            {
+                "answer": "Most days"
+            },
+            {
+              "answer": "More than 3 times a week"
+            },
+            {
+              "answer": "Less than 3 times a week"
+            },
+            {
+              "answer": "Never"
+            }
+          ]
+        },
+        {
+          "question": "How often would you have a sugary drink? (eg:  Fizzy, energy drinks, cordial, Raro)",
+          "id":"4300",
+          "type": "TextForm"        
+        },
+        {
+          "question": "Do you think you have a healthy diet?",
+          "id": "4400",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Sometimes when people are stressed they can over-eat or under-eat. Do you find yourself doing either of these?",
+          "id": "4500",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            },
+            {
+              "answer": "Sometimes"
+          }
+          ]
+        },
+        {
+          "question": "Have there been any big changes in your weight or in your dietary habit? (What you eat and how often)",
+          "id": "4600",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Are you happy with your weight?",
+          "id": "4700",
+          "type": "Radio", 
+          "responses": 
+          [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        }
+      ]
+    },
     "activities": 
     {
         "title":"Activities",
