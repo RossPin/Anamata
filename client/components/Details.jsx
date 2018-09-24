@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createYp } from '../actions/youngPeople'
+import { setDetails } from '../actions/youngPerson'
 
 class Details extends React.Component {
   constructor (props) {
@@ -34,7 +34,8 @@ class Details extends React.Component {
     e.preventDefault()
     e.target.reset()
     let details = this.state.details
-    this.props.dispatch(createYp({ details }))
+    this.props.dispatch(setDetails({ details }))
+    this.props.history.push('/consent')
   }
 
   updateRadio (e) {

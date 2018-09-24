@@ -22,7 +22,6 @@ function Nav (props) {
             <Link className='button' to='/login'>Login</Link>
             <Link className='button' to='/'>Home</Link>
             <Link className='button' to='/help'>Help</Link>
-            <Link className='button' to='/register'>Register</Link>
           </div>
         </div>
       }
