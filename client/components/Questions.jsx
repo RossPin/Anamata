@@ -135,6 +135,11 @@ class Question extends React.Component {
         case '<':
           if (this.state.answers[target].answer < value) return this.renderQuestion(question)
           break
+        case '=*':
+          for (let i = 0; i < value.length; i++) {
+            if (this.state.answers[target].answer === value[i]) return this.renderQuestion(question)
+          }
+          break
         default:
           return null
       }
