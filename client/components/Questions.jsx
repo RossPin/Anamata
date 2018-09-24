@@ -101,7 +101,7 @@ class Question extends React.Component {
           update={this.updateSelection} submit={this.submit} />
       case 'Slider':
         return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
-          update={this.updateSelection} submit={this.submit} />
+          update={this.updateSelection} />
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
