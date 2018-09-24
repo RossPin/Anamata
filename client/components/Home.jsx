@@ -9,6 +9,9 @@ class Home extends React.Component {
         <h3>This is a sample survey</h3>
         <Link className='button' to='/details' >Start Survey</Link>
       </div>
+      // <div className='columns'>
+
+      // </div>
     )
   }
 }
