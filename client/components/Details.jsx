@@ -34,7 +34,7 @@ class Details extends React.Component {
     e.preventDefault()
     e.target.reset()
     let details = this.state.details
-    this.props.dispatch(setDetails({ details }))
+    this.props.dispatch(setDetails(details))
     this.props.history.push('/consent')
   }
 
