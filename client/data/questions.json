@@ -201,6 +201,7 @@
     },
 "education and employment": 
     {
+    "title":"Education and Employment",
     "questions" : 
         [
             {
@@ -328,6 +329,123 @@
             }
         ]
     },
+    "safety": 
+    {
+        "title":"Safety",
+        "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
+        "questions" : 
+        [
+            {
+                "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
+                "id": "6000",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answers": "Yes"
+                    },
+                    {
+                        "answers": "No"
+                    }
+                ]
+            },
+            {
+              "question": "Are you afraid of violence in your school/neighbourhood?",
+              "id": "6010",
+              "type": "YNifSo",
+              "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "If yes, then where?"
+                }
+            },
+            {
+              "question": "Do you ever get in to fights?",
+              "id": "6030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Do you ever find it hard to keep your anger under control?",
+              "id": "6040",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+              "id": "6050",
+              "type": "TextForm"
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "6060",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "6070",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+                "question": "How often would you wear a seatbelt in a car?",
+                "id": "6080",
+                "type": "Radio",
+                "responses": [
+                  {
+                    "answer": "All the time"
+                  },  
+                  {
+                    "answer": "Sometimes"
+                  },
+                  {
+                    "answer": "Never"
+                  },
+                {
+                "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
+                "id": "6090",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                    ]
+                  }
+                ]
+              }
+        ]
+    },
     "activities": 
     {
         "title":"Activities",
@@ -419,12 +537,51 @@
             }
         ]
     },
-    "drugs": {
-      "title": "SUBSTANCE USE:",
-      "description": "This information will not be passed on without your permission.",
-      "questions": [
+    "technology and social media": 
+    {
+        "title":"Technology and Social Media",
+        "questions" : 
+        [
+            {
+                "question": "How much screen time do you have a day (TV/Internet) in hours?",
+                "id": "4010",
+                "type": "TextForm"
+            },
+            {
+              "question": "Have you sent messages or images to other people that you later regretted?",
+              "id": "4020",
+              "type": "TextForm"
+            },
+            {
+              "question": "What do you mainly use the internet for?",
+              "id": "4030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "To spend time with friends"
+                },
+                {
+                  "answer": "Prefer to be by yourself"
+                },
+                {
+                  "answer": "Both"
+                }
+              ]
+            },
+            {
+              "question": "In what ways can you keep yourself sage when using social media? (E.g. I don't share my address with someone I don't know). What are your ideas?",
+              "id":"4040",
+              "type": "TextForm"
+            }
+        ]
+    },
+
+        "drugs": {
+            "title": "SUBSTANCE USE:",
+            "description": "This information will not be passed on without your permission.",
+            "questions": [
         {"question": "Do you smoke cigarettes / tobacco?",
-          "id": "4000",
+          "id": "5000",
           "type": "Radio", 
           "responses": [
               {
@@ -445,7 +602,7 @@
           ]
         },
         {"question": "Do you ever have a drink containing alcohol?",
-          "id": "4100",
+          "id": "5100",
           "type": "Radio", 
           "responses": [
               {
@@ -466,7 +623,7 @@
           ]
         },
         {"question": "Have you ever used weed(Cannabis)?",
-          "id": "4200",
+          "id": "5200",
           "type": "Radio", 
           "responses": [
               {
@@ -487,7 +644,7 @@
           ]
         },
         {"question": "Have you ever used P(Meth)?",
-          "id": "4300",
+          "id": "5300",
           "type": "Radio", 
           "responses": [
               {
@@ -508,7 +665,7 @@
           ]
         },
         {"question": "Have you ever used synthetics?",
-          "id": "4400",
+          "id": "5400",
           "type": "Radio", 
           "responses": [
               {
@@ -529,7 +686,7 @@
           ]
         },
         {"question": "Have you ever used solvents(Huffing)?",
-          "id": "4500",
+          "id": "5500",
           "type": "Radio", 
           "responses": [
               {
@@ -551,11 +708,11 @@
         },
         {
           "question": "Are there any other substances you have used?",
-          "id":"4600",
+          "id":"5600",
           "type": "TextForm"
         },
         {"question": "Would you like to speak to someone about substance use, or get help with stopping?",
-          "id": "4700",
+          "id": "5700",
           "type": "Radio", 
           "responses": [
               {
