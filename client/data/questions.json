@@ -352,6 +352,123 @@
             }
         ]
     },
+    "safety": 
+    {
+        "title":"Safety",
+        "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
+        "questions" : 
+        [
+            {
+                "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
+                "id": "6000",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answers": "Yes"
+                    },
+                    {
+                        "answers": "No"
+                    }
+                ]
+            },
+            {
+              "question": "Are you afraid of violence in your school/neighbourhood?",
+              "id": "6010",
+              "type": "YNifSo",
+              "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "If yes, then where?"
+                }
+            },
+            {
+              "question": "Do you ever get in to fights?",
+              "id": "6030",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Do you ever find it hard to keep your anger under control?",
+              "id": "6040",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+              "id": "6050",
+              "type": "TextForm"
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "6060",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+              "id": "6070",
+              "type": "Radio",
+              "responses": [
+                {
+                  "answer": "Yes"
+                },
+                {
+                  "answer": "No"
+                }
+              ]
+            },
+            {
+                "question": "How often would you wear a seatbelt in a car?",
+                "id": "6080",
+                "type": "Radio",
+                "responses": [
+                  {
+                    "answer": "All the time"
+                  },  
+                  {
+                    "answer": "Sometimes"
+                  },
+                  {
+                    "answer": "Never"
+                  },
+                {
+                "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
+                "id": "6090",
+                "type": "Radio",
+                "responses": [
+                    {
+                        "answer": "Yes"
+                    },
+                    {
+                        "answer": "No"
+                    }
+                    ]
+                  }
+                ]
+              }
+        ]
+    },
     "activities": 
     {
         "title":"Activities",
