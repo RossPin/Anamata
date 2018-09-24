@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addConsent } from '../actions/youngPerson'
+
 class Consent extends React.Component {
   constructor (props) {
     super(props)
