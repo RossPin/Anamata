@@ -17,11 +17,13 @@ class Consent extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>Consent</h1>
+      <div className='consent'>
+        <h1>Know your rights!</h1>
+        <img src='./img/video.png' />
+        <p>Input paragraph about consent ra ra ra </p>
         <h3>Do you consent to this?</h3>
-        <button value='Yes' onClick={this.submit} className='button'>Yes</button>
-        <button value='No' onClick={this.submit} className='button'>No</button>
+        <button value='Yes' onClick={this.submit} className='button'>I accept</button>
+        <button value='No' onClick={this.submit} className='button'>I decline</button>
       </div>
     )
   }
