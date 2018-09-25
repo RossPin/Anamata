@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
+import Slider from './Slider'
 
 class Details extends React.Component {
   constructor (props) {
@@ -19,7 +20,16 @@ class Details extends React.Component {
         school: ''
       },
       ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'South African', 'Fillipino', 'Other'],
-      genderList: ['Male', 'Female', 'Other']
+      genderObj: {
+        question: ' Indicate where you think you see yourself on this sliding scale:',
+        id: 'genderDetails',
+        responses:
+            {
+              right: 'Female',
+              left: 'Male',
+              check: 'I don\'t know'
+            }
+      }
     }
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
@@ -58,6 +68,7 @@ class Details extends React.Component {
   }
 
   render () {
+    const { genderObj, details } = this.state
     return (
       <div className='details'>
         <h1>About You</h1>
@@ -66,7 +77,7 @@ class Details extends React.Component {
           <TextDetails detail='Last Name' name='lastName' onChange={this.updateDetails} />
           <TextDetails detail='Preferred Name' name='prefName' onChange={this.updateDetails} />
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
-          <RadioDetails detail='Gender' radioList={this.state.genderList} name='gender' detailState={this.state.details.gender} onChange={this.updateRadio} />
+          <Slider name='gender' question={genderObj} answer={details.gender} update={e => this.updateDetails(e)} />
           <label>Birthday:
             <input type='date' name='dob' onChange={e => this.updateDetails(e)} className='birthInput'/>
           </label><br />
