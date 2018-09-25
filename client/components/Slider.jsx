@@ -46,7 +46,7 @@ class Slider extends React.Component {
   }
 
   render () {
-    const { question } = this.props
+    const { question, answer, update } = this.props
     return (
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
