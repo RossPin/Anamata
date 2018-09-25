@@ -540,8 +540,8 @@
               "type": "TextForm",
               "conditions": {
                 "target": "5030",
-                "compare": "=",
-                "value": "To spend time with friends"
+                "compare": "=*",
+                "value": ["To spend time with friends", "Both"]
               }
             },
             {
@@ -550,8 +550,8 @@
                 "type": "TextForm",
                 "conditions": {
                   "target": "5030",
-                  "compare": "=",
-                  "value": "To spend time with friends"
+                  "compare": "=*",
+                  "value": ["To spend time with friends", "Both"]
                 }
             },
             {
