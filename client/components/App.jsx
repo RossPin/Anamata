@@ -17,19 +17,21 @@ class App extends React.Component {
     return (
       <HashRouter>
         <div>
-          <Nav />
-          <div className='container'>
-            <Route exact path='/' component={Home} />
-            <Route path='/login' component={Login} />
-            <Route exact path='/help' component={Help} />
-            <Route path='/Register' component={Register} />
-            <Route path='/current' component={Current} />
-            <Route path='/details' component={Details} />
-            <Route path='/consent' component={Consent} />
-            <Route path='/questions' component={Questions} />
-            <Route path='/complete' component={Complete} />
-            <Route path='/viewanswers' component={ViewAnswers} />
-          </div>
+          <section className='hero'>
+            <Nav />
+            <div className='container'>
+              <Route exact path='/' component={Home} />
+              <Route path='/login' component={Login} />
+              <Route exact path='/help' component={Help} />
+              <Route path='/Register' component={Register} />
+              <Route path='/current' component={Current} />
+              <Route path='/details' component={Details} />
+              <Route path='/consent' component={Consent} />
+              <Route path='/questions' component={Questions} />
+              <Route path='/complete' component={Complete} />
+              <Route path='/viewanswers' component={ViewAnswers} />
+            </div>
+          </section>
         </div>
       </HashRouter>
     )

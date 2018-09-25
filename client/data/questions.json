@@ -7,6 +7,11 @@
         [
             {
                 "question": "Are you registered with a dentist?",
+                "tooltip": {
+                  "questionArr": ["Are you", "with a", "?"],
+                  "wordArr": ["registered", "dentist"],
+                  "defArr": ["signed up with", "person that drills your teeth"]
+                },
                 "id": "1010",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -535,8 +540,8 @@
               "type": "TextForm",
               "conditions": {
                 "target": "5030",
-                "compare": "=",
-                "value": "To spend time with friends"
+                "compare": "=*",
+                "value": ["To spend time with friends", "Both"]
               }
             },
             {
@@ -545,8 +550,8 @@
                 "type": "TextForm",
                 "conditions": {
                   "target": "5030",
-                  "compare": "=",
-                  "value": "To spend time with friends"
+                  "compare": "=*",
+                  "value": ["To spend time with friends", "Both"]
                 }
             },
             {
@@ -900,6 +905,240 @@
   ],
   "footer" : "If today or recently, you have felt really low, suicidal or are self-harming, please see one of the following people today or as soon as possible: school nurse, school consellor or REAl or your school dean."
 },
+"sexualHealth": 
+    {
+        "title":"SEXUALITY AND SEXUAL HEALTH ",
+        "description" : [ "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful.", "This information will stay completely private. It does not get shared with anyone else other than the nurse." ],
+        "questions" : 
+        [
+            {
+                "question": "Is there anything in particular that you’d like to talk to the school health person about?",
+                "id": "9010",
+                "type": "TextForm"
+            },
+            {
+                "question": "Who are you attracted to?",
+                "id": "9020",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Female",
+                        "left": "Male",
+                        "check": "No one"
+                    }
+            },
+            {
+                "question": " Indicate where you think you see yourself on this sliding scale:",
+                "id": "9030",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Female",
+                        "left": "Male",
+                        "check": "I don't know"
+                    }
+            },
+            
+            {
+                "question": "I think I have a pretty good understanding about sex and what it's all about.",
+                "id": "9040",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Yes, I know I get it",
+                        "left": "No, don't understand much at all"
+                    }
+            },
+            {
+                "question": "I feel comfortable talking about sex and sexuality with people I trust",
+                "id": "9050",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Yes, I feel comfortable",
+                        "left": "No, I feel very uncomfortable"
+                    }
+            },
+            {
+                "question": "I know what the  term ‘safe sex’ means? ",
+                "id": "9060",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Yes, I know I get it",
+                        "left": "No, I don't understand much at all"
+                    }
+            },
+            {
+                "question": "Have you been in a relationship or regularly seen anyone?",
+                "id": "9070",
+                "type": "Radio",
+                "responses": [
+                  {
+                    "answer": "Yes"
+                  },
+                  {
+                    "answer": "No"
+                  }
+                ]
+            },
+            {
+                "question": "Have you ever had a sexual relationship with:",
+                "id": "9080",
+                "type": "Checkbox",
+                "responses": [
+                  {
+                    "answer": "Boy"
+                  },
+                  {
+                    "answer": "Girl"
+                  },
+                  {
+                    "answer": "Other"
+                  }
+                ]
+            },
+            {
+                "question": "Are you  in a sexual relationship  currently?",
+                "id": "9090",
+                "type": "Radio",
+                "conditions": 
+                {
+                    "target": "9080",
+                    "compare": "any",
+                    "value": null
+                  },
+                "responses": [
+                  {
+                    "answer": "Yes"
+                  },
+                  {
+                    "answer": "No"
+                  }
+                ]
+            },
+            {
+                "question": "Do you feel comfortable and safe being sexual active?",
+                "id": "9100",
+                "type": "Slider",
+                "conditions": 
+                {
+                    "target": "9090",
+                    "compare": "=",
+                    "value": "Yes"
+                },
+                "responses": 
+                    {
+                        "right": "Yes",
+                        "left": "No"
+                    }
+            },
+            {
+                "question": "If you’d like to ask us any questions or let us know anything, or add any comments please do this below",
+                "id": "9110",
+                "type": "TextForm"
+            },
+            {
+                "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
+                "id": "9120",
+                "type": "Radio",
+                "responses": [
+                ]
+            },
+            {
+                "question": "Have you ever been touched in a sexual way you did not like or agree to?",
+                "id": "9130",
+                "type": "Radio",
+                "responses": [
+                  {
+                    "answer": "Yes"
+                  },  
+                  {
+                    "answer": "No"
+                  },
+                  {
+                    "answer": "Maybe"
+                  },
+                  {
+                    "answer": "Unsure"
+                  }
+                ]
+            },
+            {
+                "question": "Do you feel safe at the moment? (This is something the health professional will talk with you more about when you see them for your 1:1 session)",
+                "id": "9140",
+                "type": "Radio",
+                "conditions": 
+                {
+                    "target": "9130",
+                    "compare": "=",
+                    "value": "Yes"
+                },
+                "responses": [
+                        {
+                            "answer": "Yes"
+                        },
+                        {
+                            "answer": "No"
+                        }
+                ]
+            },
+            {
+                "question": "Some young people are looking at porn on the internet. There can be a number of reasons someone may do this, and sometimes we’re not sure how we feel about what we do see. The reason we’re going to  ask you questions about porn is because we want to support you in being safe. It’s really good to be honest about this as the answers you put may help you understand where you’re at with this a lot better.",
+                "id": "9150",
+                "type": "Radio",
+                "responses": [
+                ]
+            },
+            {
+                "question": "Have you seen sexual images, ie porn (Please place curser to where you feel is right for you)",
+                "id": "9160",
+                "type": "Slider",
+                "responses": 
+                    {
+                        "right": "Yes",
+                        "left": "No"
+                    }
+            },
+            {
+                "question": "How did you feel about this?",
+                "id": "9170",
+                "type": "Slider",
+                "conditions": 
+                {
+                    "target": "9160",
+                    "compare": ">",
+                    "value": 1
+                },
+                "responses": 
+                    {
+                        "right": "Fine",
+                        "left": "Uncomfortable"
+                    }
+            },
+            {
+                "question": "How often would you look at/watch pornagraphic images/videos:",
+                "id": "9180",
+                "type": "Slider",
+                "conditions": 
+                {
+                    "target": "9160",
+                    "compare": ">",
+                    "value": 1
+                },
+                "responses": 
+                    {
+                        "right": "Every day",
+                        "left": "Hardly ever"
+                    }
+            },
+            {
+                "question": "If you’d like to ask us any questions or let us know anything, or add any comments please do this below",
+                "id": "9190",
+                "type": "TextForm"
+            }
+        ]
+    },
     "safety": 
     {
         "title":"Safety",

@@ -1,0 +1,29 @@
+.button {
+    background-color: $primary-purple;
+    border: $white solid 0.05em;
+    color: $white;
+    font-size: 1em;
+    margin: 0.4em;
+}
+
+.button:hover {
+    background-color: $white-20;
+    border: $white solid 0.05em;
+    color: $primary-purple;
+}
+  
+  .user {
+    font-size: 1.2em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; 
+  }
+  
+  .link {  
+    margin: 0 auto;
+    cursor: pointer;
+  }
