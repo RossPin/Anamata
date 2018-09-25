@@ -35,6 +35,7 @@ class Question extends React.Component {
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
+    console.log(this.state.answers[id])
   }
 
   updateSelectionArray (val, id, question) {
@@ -131,6 +132,10 @@ class Question extends React.Component {
           break
         case '<':
           if (this.state.answers[target].answer < value) return this.renderQuestion(question)
+          break
+        case 'any':
+          const values = Object.values(this.state.answers[target].answer)
+          if (values.includes(true)) return this.renderQuestion(question)
           break
         default:
           return null
