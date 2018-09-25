@@ -20,7 +20,6 @@ class Details extends React.Component {
         school: ''
       },
       ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'South African', 'Fillipino', 'Other'],
-      genderList: ['Male', 'Female', 'Other'],
       genderObj: {
         question: ' Indicate where you think you see yourself on this sliding scale:',
         id: 'genderDetails',
@@ -37,7 +36,6 @@ class Details extends React.Component {
     this.updateRadio = this.updateRadio.bind(this)
   }
   updateDetails (e) {
-    console.log(e.target)
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
