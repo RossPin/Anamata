@@ -6,24 +6,27 @@ class Slider extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange (e) {
-    let show
-    let hide
-    if (this.props.question.branching) {
-      if (e.target.value > this.props.question.branching.value) {
-        show = this.props.question.branching.above.show
-        hide = this.props.question.branching.above.hide
-      } else {
-        show = this.props.question.branching.below.show
-        hide = this.props.question.branching.below.hide
-      }
-    }
-    this.props.update(e, this.props.question.id, this.props.question.question, show, hide)
+  tooltip (question) {
+    const length = question.tooltip.wordArr.length
+    return (
+      <div className='tooltipQuestion'>{question.tooltip.wordArr.map((word, i) =>
+        <div key={i} className='tooltipSection'>
+          {question.tooltip.questionArr[i]} <div className='tooltip'>{word}<p className='tooltiptext'>{question.tooltip.defArr[i]}</p></div> {i === length - 1 && question.tooltip.questionArr[i + 1]}
+        </div>
+      )}
+      </div>
+    )
   }
+
+  handleChange (e) {
+    this.props.update(e, this.props.question.id, this.props.question.question)
+  }
+
   render () {
+    const { question } = this.props
     return (
       <div>
-        <h3>{this.props.question.question}</h3>
+        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         <div>
           <input type='range' min='1' max='100' value={this.props.answer} onChange={this.handleChange} className='slider' id='myRange' />
         </div>
