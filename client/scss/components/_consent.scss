@@ -7,7 +7,7 @@
   background: rgba(208, 205, 148, 0.473);
   box-shadow: 5px 8px 18px #888888;
   border-radius: 5px;
-  padding: 10 10 10 10;
+  // padding: 10 10 10 10;
 }
 
 .consent h1 {
@@ -23,7 +23,7 @@
 }
 
 .consent h3 {
-  padding: 10 10 10 10;
+  // padding: 10 10 10 10;
   margin: 10 10 10 10;
   font-weight: bold;
 }
@@ -38,3 +38,7 @@
   font-weight: bold;
 }
 
+.consent-form{
+  background-color: #EEEA29;
+  padding: 15;
+}
