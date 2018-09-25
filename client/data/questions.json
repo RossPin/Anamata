@@ -7,6 +7,11 @@
         [
             {
                 "question": "Are you registered with a dentist?",
+                "tooltip": {
+                  "questionArr": ["Are you", "with a", "?"],
+                  "wordArr": ["registered", "dentist"],
+                  "defArr": ["signed up with", "person that drills your teeth"]
+                },
                 "id": "1010",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -535,8 +540,8 @@
               "type": "TextForm",
               "conditions": {
                 "target": "5030",
-                "compare": "=",
-                "value": "To spend time with friends"
+                "compare": "=*",
+                "value": ["To spend time with friends", "Both"]
               }
             },
             {
@@ -545,8 +550,8 @@
                 "type": "TextForm",
                 "conditions": {
                   "target": "5030",
-                  "compare": "=",
-                  "value": "To spend time with friends"
+                  "compare": "=*",
+                  "value": ["To spend time with friends", "Both"]
                 }
             },
             {
