@@ -14,7 +14,7 @@ class Checkbox extends React.Component {
   render () {
     const { question, update, answer } = this.props
     return (
-      <div>
+      <div className='qDiv' data-aos='fade-up'>
         <div className='speech-bubble'>
           <h3>{question.question}</h3>
         </div>
