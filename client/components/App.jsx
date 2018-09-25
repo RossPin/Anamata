@@ -12,16 +12,17 @@ import Consent from './Consent'
 import Details from './Details'
 import Current from './Current'
 import ViewAnswers from './ViewAnswers'
+import { addAlert, resetAlerts } from '../actions/alerts'
 
 class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.joinSocket = this.joinSocket.bind(this)
+  }
   componentDidMount () {
     if (this.props.auth.isAuthenticated) {
       let username = this.props.auth.user.username
-      const { socket } = this.props
-      socket.emit('joinSession', 'school', username)
-      socket.on('alert', (alert) => {
-        console.log('alert recieved', alert)
-      })
+      this.joinSocket(username)
     }
   }
 
@@ -29,13 +30,17 @@ class App extends React.Component {
     if (nextProps.auth.isAuthenticated !== this.props.auth.isAuthenticated) {
       if (nextProps.auth.isAuthenticated) {
         let username = nextProps.auth.user.username
-        const { socket } = this.props
-        socket.emit('joinSession', 'school', username)
-        socket.on('alert', (alert) => {
-          console.log('alert recieved', alert)
-        })
-      }
+        this.joinSocket(username)
+      } else this.props.dispatch(resetAlerts)
     }
+  }
+
+  joinSocket (username) {
+    const { socket } = this.props
+    socket.emit('joinSession', 'school', username)
+    socket.on('alert', (alert) => {
+      this.props.dispatch(addAlert(alert))
+    })
   }
 
   submitAlert (e) {
@@ -70,8 +75,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth, socket }) => {
-  return { auth, socket }
+const mapStateToProps = ({ auth, socket, alerts }) => {
+  return { auth, socket, alerts }
 }
 
 export default connect(mapStateToProps)(App)
