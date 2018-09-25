@@ -37,7 +37,6 @@ class Question extends React.Component {
     const { answers } = this.state
     answers[id] = { id, question, answer: e.target.value }
     this.setState({ answers })
-    console.log(this.state.answers[id])
   }
 
   updateSelectionArray (val, id, question) {
