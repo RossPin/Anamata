@@ -39,7 +39,7 @@ export function loginUser (creds) {
         } else {
           const userInfo = saveUserToken(response.body.token)
           dispatch(receiveLogin(userInfo))
-          document.location = '/'
+          return { success: true }
         }
       }).catch(err => {
         console.log(err.message)
