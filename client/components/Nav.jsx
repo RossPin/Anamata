@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../actions/logout'
+import Alert from './Alert.jsx'
 
 function Nav (props) {
   return (
@@ -14,7 +15,7 @@ function Nav (props) {
             <Link className='button' to='/'>Home</Link>
             <Link className='button' to='/current'>Current</Link>
             <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
-            {props.alerts.length > 0 && <img className='button' src='/img/Bell.png' />}
+            {props.alerts.length > 0 && <Alert />}
           </div>
         </div>
         : <div className='navbar-start'>
