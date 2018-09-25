@@ -104,7 +104,7 @@ class Question extends React.Component {
           update={this.updateSelection} submit={this.submit} />
       case 'Slider':
         return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
-          update={this.updateSelection} submit={this.submit} />
+          update={this.updateSelection} />
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
@@ -134,6 +134,10 @@ class Question extends React.Component {
           break
         case '<':
           if (this.state.answers[target].answer < value) return this.renderQuestion(question)
+          break
+        case 'any':
+          const values = Object.values(this.state.answers[target].answer)
+          if (values.includes(true)) return this.renderQuestion(question)
           break
         case '=*':
           for (let i = 0; i < value.length; i++) {
