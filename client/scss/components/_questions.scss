@@ -1,30 +1,33 @@
 div {
 border: red 1px solid;
 }
-.speech-bubble  {
+.speech-bubble {
 	position: relative;
-	background: #00aabb;
+	background: #00bb4e;
   border-radius: 80px;
+  box-shadow: 2px 4px 10px black;
   width: 40%;
   height: 10%;
+
 
 }
 .speech-bubble :after {
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	left: 40px;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-top-color: #00aabb;
+	border-top-color: #00bb4e;
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -10px;
-	margin-bottom: -20px;
+  margin-bottom: -20px;
+  
 }
-h3 {
-  text-align: center;
-vertical-align: middle;
- 
+.radio {
+  float: right;
+  right: 5%;
+  top: 3vh;
 }
