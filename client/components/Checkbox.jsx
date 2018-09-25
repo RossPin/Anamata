@@ -15,10 +15,12 @@ class Checkbox extends React.Component {
     const { question, update, answer } = this.props
     return (
       <div>
-        <h3>{question.question}</h3>
+        <div className='speech-bubble'>
+          <h3>{question.question}</h3>
+        </div>
         <form>
           {question.responses.map((response, i) => (
-            <div key={i}>
+            <div className='checkbox' key={i}>
               <label>
                 <input type='checkbox' name='answer'
                   value={response.answer} checked={answer[response.answer] ? answer[response.answer] : false} onChange={e => update(e, question)} />

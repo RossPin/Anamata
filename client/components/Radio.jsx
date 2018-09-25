@@ -6,10 +6,12 @@ class Radio extends React.Component {
     const { question, update, answer } = this.props
     return (
       <div>
-        <h3> { question.question } </h3>
+        <div className='speech-bubble'>
+          <h3> { question.question } </h3>
+        </div>
         <form>
           { question.responses.map((response, i) => (
-            <div key={i}>
+            <div className='radio' key={i}>
               <input type='radio' name='answer' onChange={e => update(e, question.id, question.question, response.show, response.hide)}
                 value={response.answer} checked={answer === response.answer} />{response.answer}
             </div>
