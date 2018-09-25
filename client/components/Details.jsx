@@ -94,13 +94,13 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
       <div key={i}>
         {item === 'Other'
           ? <div className='otherSection'>
-            <input type='radio'className='otherRadio' name={name} onChange={e => onChange(e)}
+            <input type='radio' className='otherRadio' name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
             {item}
             <input id={'Other' + detail} style={{ margin: '0.5vw' }} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
-            <input type='radio' name={name} onChange={e => onChange(e)}
+            <input className='radioDetailsInput' type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
             {item}
           </div>
