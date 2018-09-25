@@ -6,7 +6,7 @@ class Alert extends React.Component {
     return (
       <div className='tooltip'>
         <img className='alertIcon alertGlow' src='/img/Bell.png' />
-        <div className='tooltiptext'>{this.props.alerts.map((alert, i) => <p key={i}>{alert.msg}</p>)}</div>
+        <div className='tooltiptext'>{this.props.alerts.map((alert, i) => <p key={i}>{`${alert.name} ${alert.msg}`}</p>)}</div>
       </div>
     )
   }

@@ -18,9 +18,9 @@ module.exports = http => {
       console.log('you have joined room' + id)
     })
 
-    socket.on('trigger-alert', (id, msg) => {
-      console.log({ msg })
-      io.to(id).emit('alert', msg)
+    socket.on('trigger-alert', (id, alert) => {
+      console.log({ alert })
+      io.to(id).emit('alert', alert)
     })
   })
 

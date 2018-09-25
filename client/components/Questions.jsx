@@ -159,10 +159,11 @@ class Questions extends React.Component {
   }
 
   sendAlert (msg) {
-    const { firstname, lastname } = this.props.youngPerson.details
-    const name = `${firstname} ${lastname}`
+    const { firstName, lastName } = this.props.youngPerson.details
+    const name = `${firstName} ${lastName}`
     const socket = Socket.connect()
-    socket.emit('trigger-alert', 'school', { name, msg })
+    const schoolId = 'testSchool'
+    socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
   render () {

@@ -38,7 +38,8 @@ class App extends React.Component {
 
   joinSocket (username) {
     const socket = Socket.connect()
-    socket.emit('joinSession', 'school', username)
+    const schoolId = 'testSchool'
+    socket.emit('joinSession', schoolId, username)
     socket.on('alert', (alert) => {
       this.props.dispatch(addAlert(alert))
     })
