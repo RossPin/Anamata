@@ -13,6 +13,7 @@ import Details from './Details'
 import Current from './Current'
 import ViewAnswers from './ViewAnswers'
 import { addAlert, resetAlerts } from '../actions/alerts'
+import Socket from '../utils/socket'
 
 class App extends React.Component {
   constructor (props) {
@@ -36,7 +37,7 @@ class App extends React.Component {
   }
 
   joinSocket (username) {
-    const { socket } = this.props
+    const socket = Socket.connect()
     socket.emit('joinSession', 'school', username)
     socket.on('alert', (alert) => {
       this.props.dispatch(addAlert(alert))
@@ -45,7 +46,7 @@ class App extends React.Component {
 
   submitAlert (e) {
     console.log('alert triggered')
-    const { socket } = this.props
+    const socket = Socket.connect()
     socket.emit('trigger-alert', 'school', { msg: 'alert' })
   }
 
@@ -75,8 +76,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth, socket, alerts }) => {
-  return { auth, socket, alerts }
+const mapStateToProps = ({ auth, alerts }) => {
+  return { auth, alerts }
 }
 
 export default connect(mapStateToProps)(App)
