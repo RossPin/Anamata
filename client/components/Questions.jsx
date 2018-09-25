@@ -10,8 +10,9 @@ import YNifSo from './YNifSo'
 import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
 import { addSection } from '../actions/youngPerson'
+import Socket from '../utils/socket'
 
-class Question extends React.Component {
+class Questions extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -31,6 +32,8 @@ class Question extends React.Component {
     this.updateIfSo = this.updateIfSo.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
     this.checkConditions = this.checkConditions.bind(this)
+    this.checkForAlert = this.checkForAlert.bind(this)
+    this.sendAlert = this.sendAlert.bind(this)
   }
 
   updateSelection (e, id, question) {
@@ -77,6 +80,7 @@ class Question extends React.Component {
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
+    this.checkForAlert(answers)
     if (currentCategory < categories.length - 1) {
       currentCategory++
       const { questions, title, description, footer } = questionData[categories[currentCategory]]
@@ -150,6 +154,17 @@ class Question extends React.Component {
     }
   }
 
+  checkForAlert (answers) {
+    if (answers['9140'] && answers['9140'].answer === 'No') this.sendAlert('not safe, sexual abuse')
+  }
+
+  sendAlert (msg) {
+    const { firstname, lastname } = this.props.youngPerson.details
+    const name = `${firstname} ${lastname}`
+    const socket = Socket.connect()
+    socket.emit('trigger-alert', 'school', { name, msg })
+  }
+
   render () {
     return (
       <div>
@@ -167,8 +182,8 @@ class Question extends React.Component {
   }
 }
 
-const mapStateToProps = ({ questions }) => {
-  return { questions }
+const mapStateToProps = ({ youngPerson }) => {
+  return { youngPerson }
 }
 
-export default connect(mapStateToProps)(Question)
+export default connect(mapStateToProps)(Questions)

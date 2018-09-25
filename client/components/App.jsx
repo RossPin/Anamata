@@ -44,19 +44,12 @@ class App extends React.Component {
     })
   }
 
-  submitAlert (e) {
-    console.log('alert triggered')
-    const socket = Socket.connect()
-    socket.emit('trigger-alert', 'school', { msg: 'alert' })
-  }
-
   render () {
     return (
       <HashRouter>
         <div>
           <section className='hero'>
             <Nav />
-            {!this.props.auth.isAuthenticated && <button className='button' onClick={e => this.submitAlert(e)}>Alert</button>}
             <div className='container'>
               <Route exact path='/' component={Home} />
               <Route path='/login' component={Login} />
