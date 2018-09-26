@@ -37,8 +37,9 @@ class Checkbox extends React.Component {
                     ? answer[response.answer] : false} onChange={e => update(e, question)} />
                 <svg width='20' height='20' viewBox='0 0 20 20'>
                   <rect width='20' height='20' />
-                  <path d='M2 2 H 18 V 18 H 2 L 2 2' class='inner' />
-                  <path d='M4 4 H 20 V 20 H 4 L 4 4' class='outer' />
+                  {/* <path d='M5 5 L5 15 L15 15 L15 5 Z' className='inner' /> */}
+                  <path d='M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z' class='inner' /> */}
+                  {/* <path d='M4 4 H 20 V 20 H 4 L 4 4' class='outer' /> */}
                 </svg>
                 {response.answer}
               </label>
