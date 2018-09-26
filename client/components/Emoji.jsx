@@ -3,6 +3,13 @@ import React from 'react'
 class Emoji extends React.Component {
   constructor (props) {
     super(props)
+    this.state = {
+      sad: false,
+      semiSad: false,
+      neutral: false,
+      semiHappy: false,
+      happy: false
+    }
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -19,20 +26,33 @@ class Emoji extends React.Component {
   }
 
   handleChange (e) {
-    this.props.update(e, this.props.question.id, this.props.question.question)
+    this.props.update(e, this.props.question.id, this.props.question)
+    let emoji = e.target.id
+    this.setState({
+      sad: false,
+      semiSad: false,
+      neutral: false,
+      semiHappy: false,
+      happy: false
+    })
+    this.setState(prevState => ({
+      [emoji]: !prevState[emoji]
+    }))
   }
 
   render () {
     const { question } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <div>
-          <span><button className='emoji' id='sad' value='sad' onClick={this.handleChange}> ☹️</button></span>
-          <span><button className='emoji' id='semiSad' value='semiSad' onClick={this.handleChange}> 🙁</button></span>
-          <span><button className='emoji' id='neutral' value='neutral' onClick={this.handleChange}> 😐</button></span>
-          <span><button className='emoji' id='semiHappy' value='semiHappy' onClick={this.handleChange}> 🙂</button></span>
-          <span><button className='emoji' id='happy' value='happy' onClick={this.handleChange}> 😁</button></span>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <div className='emojiButtons'>
+          <span><button className={this.state.sad ? 'ebtnPressed' : 'ebtn'} id='sad' value='1' onClick={e => this.handleChange(e)}><i className='far fa-frown emojiStyle' /></button></span>
+          <span><button className={this.state.semiSad ? 'ebtnPressed' : 'ebtn'} id='semiSad' value='2' onClick={this.handleChange}><i className='far fa-frown-open emojiStyle' /></button></span>
+          <span><button className={this.state.neutral ? 'ebtnPressed' : 'ebtn'} id='neutral' value='3' onClick={this.handleChange}> <i className='far fa-meh emojiStyle' /></button></span>
+          <span><button className={this.state.semiHappy ? 'ebtnPressed' : 'ebtn'} id='semiHappy' value='4' onClick={this.handleChange}> <i className='far fa-grin emojiStyle' /> </button></span>
+          <span><button className={this.state.happy ? 'ebtnPressed' : 'ebtn'} id='happy' value='5' onClick={this.handleChange}> <i className='far fa-laugh emojiStyle' /></button></span>
         </div>
       </div>
     )
