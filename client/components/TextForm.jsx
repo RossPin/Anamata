@@ -18,7 +18,7 @@ class TextForm extends React.Component {
     return (
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <form>
+        <form onSubmit={e => e.preventDefault()}>
           <input type='text' value={answer} onChange={e => update(e, question.id, question.question)} />
         </form>
       </div>
