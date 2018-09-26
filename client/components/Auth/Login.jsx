@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../actions/login'
+import { setStyle } from '../../actions/style'
 
 class Login extends React.Component {
   constructor (props) {
@@ -19,6 +20,9 @@ class Login extends React.Component {
     e.preventDefault()
     let { username, password } = this.state
     this.props.dispatch(loginUser({ username, password }))
+      .then(response => {
+        if (response.success) this.props.history.push('/current')
+      })
   }
   render () {
     return (
@@ -32,6 +36,9 @@ class Login extends React.Component {
         <input className='button' type='submit' />
       </form>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('login_background'))
   }
 }
 

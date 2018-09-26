@@ -1,0 +1,21 @@
+.alertIcon {
+  height: 2em;
+  width: 2em;
+  margin-left: 1em;
+}
+
+.alertGlow {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-animation: pulse 1.5s ease-in-out infinite alternate;
+  -moz-animation: pulse 1.5s ease-in-out infinite alternate;
+  animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes pulse {
+0% { box-shadow:0 0 1em 0em #FD0A00, inset 0 0 1em #FD0A00; }
+50% { box-shadow:0 0 3em 2em #FD0A00, inset 0 0 4em #FD0A00; }
+100% { box-shadow:0 0 1em 0em #FD0A00, inset 0 0 1em #FD0A00; }
+}
+
