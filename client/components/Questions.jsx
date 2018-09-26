@@ -9,9 +9,11 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
-import { addSection } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
+import { addSection, addAlert } from '../actions/youngPerson'
+import Socket from '../utils/socket'
 
-class Question extends React.Component {
+class Questions extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -31,6 +33,12 @@ class Question extends React.Component {
     this.updateIfSo = this.updateIfSo.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
     this.checkConditions = this.checkConditions.bind(this)
+    this.checkForAlert = this.checkForAlert.bind(this)
+    this.sendAlert = this.sendAlert.bind(this)
+  }
+
+  componentDidMount () {
+    this.props.dispatch(setStyle('questions_background'))
   }
 
   updateSelection (e, id, questionObj) {
@@ -114,7 +122,7 @@ class Question extends React.Component {
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
-    console.log(answers)
+    this.checkForAlert(answers)
     if (currentCategory < categories.length - 1) {
       currentCategory++
       const { questions, title, description, footer } = questionData[categories[currentCategory]]
@@ -193,13 +201,26 @@ class Question extends React.Component {
     }
   }
 
+  checkForAlert (answers) {
+    if (answers['9140'] && answers['9140'].answer === 'No') this.sendAlert('not safe, sexual abuse')
+  }
+
+  sendAlert (msg) {
+    const { firstName, lastName } = this.props.youngPerson.details
+    const name = `${firstName} ${lastName}`
+    const socket = Socket.connect()
+    const schoolId = 'testSchool'
+    this.props.dispatch(addAlert({ name, msg }))
+    socket.emit('trigger-alert', schoolId, { name, msg })
+  }
+
   render () {
     return (
-      <div>
+      <div className='questions'>
         <h1>{this.state.title}</h1>
         {this.state.description && <p>{this.state.description}</p>}
         {this.state.questions.map(question => (
-          <div key={question.id}>
+          <div className='questionContainer' key={question.id}>
             {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
           </div>
         ))}
@@ -210,8 +231,8 @@ class Question extends React.Component {
   }
 }
 
-const mapStateToProps = ({ questions }) => {
-  return { questions }
+const mapStateToProps = ({ youngPerson }) => {
+  return { youngPerson }
 }
 
-export default connect(mapStateToProps)(Question)
+export default connect(mapStateToProps)(Questions)

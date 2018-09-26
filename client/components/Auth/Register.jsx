@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { registerUserRequest } from '../../actions/register'
+import { setStyle } from '../../actions/style'
 
 class Register extends React.Component {
   constructor (props) {
@@ -37,6 +38,9 @@ class Register extends React.Component {
         <input className='button' type='submit' />
       </form>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('register_background'))
   }
 }
 

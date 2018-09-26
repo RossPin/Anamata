@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Nav from './Nav'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
@@ -11,13 +12,44 @@ import Consent from './Consent'
 import Details from './Details'
 import Current from './Current'
 import ViewAnswers from './ViewAnswers'
+import { addAlert, resetAlerts } from '../actions/alerts'
+import Socket from '../utils/socket'
 
 class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.joinSocket = this.joinSocket.bind(this)
+  }
+  componentDidMount () {
+    if (this.props.auth.isAuthenticated) {
+      let username = this.props.auth.user.username
+      this.joinSocket(username)
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.auth.isAuthenticated !== this.props.auth.isAuthenticated) {
+      if (nextProps.auth.isAuthenticated) {
+        let username = nextProps.auth.user.username
+        this.joinSocket(username)
+      } else this.props.dispatch(resetAlerts)
+    }
+  }
+
+  joinSocket (username) {
+    const socket = Socket.connect()
+    const schoolId = 'testSchool'
+    socket.emit('joinSession', schoolId, username)
+    socket.on('alert', (alert) => {
+      this.props.dispatch(addAlert(alert))
+    })
+  }
+
   render () {
     return (
       <HashRouter>
         <div>
-          <section className='hero'>
+          <section id='background' className={`hero ${this.props.style}`}>
             <Nav />
             <div className='container'>
               <Route exact path='/' component={Home} />
@@ -38,4 +70,8 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapStateToProps = ({ auth, alerts, style }) => {
+  return { auth, alerts, style }
+}
+
+export default connect(mapStateToProps)(App)

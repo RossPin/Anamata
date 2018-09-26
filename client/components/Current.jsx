@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setYp } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 import request from '../utils/api'
 
 class Current extends React.Component {
@@ -10,16 +11,21 @@ class Current extends React.Component {
       current: []
     }
     this.select = this.select.bind(this)
+    this.updateList = this.updateList.bind(this)
   }
 
   componentDidMount () {
-    if (this.props.auth.isAuthenticated) {
-      request('get', 'yp/view/current')
-        .then((response) => {
-          const current = response.body
-          this.setState({ current })
-        })
-    } else this.props.history.push('/')
+    if (this.props.auth.isAuthenticated) this.updateList()
+    else this.props.history.push('/')
+    this.props.dispatch(setStyle('current_background'))
+  }
+
+  updateList () {
+    request('get', 'yp/view/current')
+      .then((response) => {
+        const current = response.body
+        this.setState({ current })
+      })
   }
 
   select (yp) {
