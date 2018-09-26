@@ -11,6 +11,10 @@ export default function youngPerson (state = initialState, action) {
     case 'ADD_SECTION':
       state.answers[action.title] = action.answers
       return Object.assign({}, state)
+    case 'ADD_ALERT':
+      const alerts = state.alerts || []
+      alerts.push(action.alert)
+      return Object.assign(state, { alerts })
     case 'RESET_YP':
       return { answers: {} }
     default:

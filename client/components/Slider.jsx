@@ -3,30 +3,65 @@ import React from 'react'
 class Slider extends React.Component {
   constructor (props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      check: false
+    }
+    this.updateCheck = this.updateCheck.bind(this)
+  }
+
+  updateCheck (e, update, id, question) {
+    if (e.target.type === 'checkbox') {
+      this.setState(prevState => ({
+        check: !prevState.check
+      }))
+    } else {
+      this.setState({
+        check: false
+      })
+    }
+    console.log(id)
+    if (id === 'genderDetails') {
+      let gender = e
+      gender.target.name = 'gender'
+      update(gender)
+    } else {
+      update(e, id, question)
+    }
+  }
+
+  tooltip (question) {
+    const length = question.tooltip.wordArr.length
+    return (
+      <div className='tooltipQuestion'>{question.tooltip.wordArr.map((word, i) =>
+        <div key={i} className='tooltipSection'>
+          {question.tooltip.questionArr[i]} <div className='tooltip'>{word}<p className='tooltiptext'>{question.tooltip.defArr[i]}</p></div> {i === length - 1 && question.tooltip.questionArr[i + 1]}
+        </div>
+      )}
+      </div>
+    )
   }
 
   handleChange (e) {
-    let show
-    let hide
-    if (this.props.question.branching) {
-      if (e.target.value > this.props.question.branching.value) {
-        show = this.props.question.branching.above.show
-        hide = this.props.question.branching.above.hide
-      } else {
-        show = this.props.question.branching.below.show
-        hide = this.props.question.branching.below.hide
-      }
-    }
-    this.props.update(e, this.props.question.id, this.props.question.question, show, hide)
+    this.props.update(e, this.props.question.id, this.props.question.question)
   }
+
   render () {
+    const { question, answer, update } = this.props
     return (
       <div>
-        <h3>{this.props.question.question}</h3>
+        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         <div>
-          <input type='range' min='1' max='100' value={this.props.answer} onChange={this.handleChange} className='slider' id='myRange' />
+          {question.responses.left}
+          <input type='range' min='1' max='100' value={answer} onChange={e => this.updateCheck(e, update, question.id, question.question)} className='slider' />
+          {question.responses.right}
         </div>
+        {'check' in question.responses
+          ? <label>
+            <input type='checkbox' name='answer'
+              value={question.responses.check} checked={this.state.check} onChange={e => this.updateCheck(e, update, question.id, question.question)} />
+            {question.responses.check}
+          </label>
+          : null }
       </div>
     )
   }

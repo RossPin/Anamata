@@ -7,21 +7,24 @@ import Dropdown from './Dropdown'
 import Emoji from './Emoji'
 import Listing from './Listing'
 import YNifSo from './YNifSo'
-import questions from '../data/questions.json'
+import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
-import { addSection } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
+import { addSection, addAlert } from '../actions/youngPerson'
+import Socket from '../utils/socket'
 
-class Question extends React.Component {
+class Questions extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      categories: Object.keys(questions),
+      categories: Object.keys(questionData),
       currentCategory: 0,
       answers: {
       },
-      questions: questions.health.questions,
-      title: questions.health.title
+      questions: questionData.health.questions,
+      title: questionData.health.title,
+      description: questionData.health.description,
+      footer: questionData.health.footer
     }
     this.updateSelection = this.updateSelection.bind(this)
     this.updateSelectionArray = this.updateSelectionArray.bind(this)
@@ -30,6 +33,12 @@ class Question extends React.Component {
     this.updateIfSo = this.updateIfSo.bind(this)
     this.updateCheckbox = this.updateCheckbox.bind(this)
     this.checkConditions = this.checkConditions.bind(this)
+    this.checkForAlert = this.checkForAlert.bind(this)
+    this.sendAlert = this.sendAlert.bind(this)
+  }
+  
+  componentDidMount () {
+    this.props.dispatch(setStyle('stuf'))
   }
 
   updateSelection (e, id, question) {
@@ -76,14 +85,16 @@ class Question extends React.Component {
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
+    this.checkForAlert(answers)
     if (currentCategory < categories.length - 1) {
       currentCategory++
-      const nextQuestions = questions[categories[currentCategory]].questions
-      const nextTitle = questions[categories[currentCategory]].title
+      const { questions, title, description, footer } = questionData[categories[currentCategory]]
       this.setState({
         currentCategory,
-        questions: nextQuestions,
-        title: nextTitle,
+        questions,
+        title,
+        description,
+        footer,
         answers: {}
       })
     } else this.props.history.push('/complete')
@@ -102,7 +113,7 @@ class Question extends React.Component {
           update={this.updateSelection} submit={this.submit} />
       case 'Slider':
         return <Slider question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
-          update={this.updateSelection} submit={this.submit} />
+          update={this.updateSelection} />
       case 'Dropdown':
         return <Dropdown question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} submit={this.submit} />
@@ -133,32 +144,53 @@ class Question extends React.Component {
         case '<':
           if (this.state.answers[target].answer < value) return this.renderQuestion(question)
           break
+        case 'any':
+          const values = Object.values(this.state.answers[target].answer)
+          if (values.includes(true)) return this.renderQuestion(question)
+          break
+        case '=*':
+          for (let i = 0; i < value.length; i++) {
+            if (this.state.answers[target].answer === value[i]) return this.renderQuestion(question)
+          }
+          break
         default:
           return null
       }
     }
   }
 
+  checkForAlert (answers) {
+    if (answers['9140'] && answers['9140'].answer === 'No') this.sendAlert('not safe, sexual abuse')
+  }
+
+  sendAlert (msg) {
+    const { firstName, lastName } = this.props.youngPerson.details
+    const name = `${firstName} ${lastName}`
+    const socket = Socket.connect()
+    const schoolId = 'testSchool'
+    this.props.dispatch(addAlert({ name, msg }))
+    socket.emit('trigger-alert', schoolId, { name, msg })
+  }
+
   render () {
     return (
       <div>
         <h1>{this.state.title}</h1>
+        {this.state.description && <p>{this.state.description}</p>}
         {this.state.questions.map(question => (
           <div key={question.id}>
             {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
           </div>
         ))}
+        {this.state.footer && <p>{this.state.footer}</p>}
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
-  }
-  componentDidMount () {
-    this.props.dispatch(setStyle('stuf'))
-  }
+  }  
 }
 
-const mapStateToProps = ({ questions }) => {
-  return { questions }
+const mapStateToProps = ({ youngPerson }) => {
+  return { youngPerson }
 }
 
-export default connect(mapStateToProps)(Question)
+export default connect(mapStateToProps)(Questions)

@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
 
 import auth from './auth'
-import questions from './questions'
 import youngPerson from './youngPerson'
 import style from './style'
+import alerts from './alerts'
 
 export default combineReducers({
-  auth,
-  questions,
+  auth,  
   youngPerson,
-  style
+  style,
+  alerts
 })

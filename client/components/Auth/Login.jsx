@@ -20,6 +20,9 @@ class Login extends React.Component {
     e.preventDefault()
     let { username, password } = this.state
     this.props.dispatch(loginUser({ username, password }))
+      .then(response => {
+        if (response.success) this.props.history.push('/current')
+      })
   }
   render () {
     return (
