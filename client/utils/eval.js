@@ -1,9 +1,12 @@
+const riskThreshhold = 20
+
 function getRisks (yp) {
   if (yp.answers) {
     const keys = Object.keys(yp.answers)
     const risks = {}
     keys.map(key => { risks[key] = getRisk(yp.answers[key]) })
     risks.total = getRisk(risks)
+    risks.factor = risks.total.risk - risks.total.resiliency
     return risks
   }
 }
@@ -20,6 +23,22 @@ function getRisk (section) {
   return risk
 }
 
+function triage (current) {
+  const triage = {
+    alert: [],
+    high: [],
+    normal: []
+  }
+  current.map(yp => {    
+    if (yp.alerts) triage.alert.push(yp)
+    else if (yp.risk.factor > riskThreshhold) triage.high.push(yp)
+    else triage.normal.push(yp)
+  })
+  triage.high = triage.high.sort((a, b) => b.risk.factor - a.risk.factor)
+  return triage
+}
+
 module.exports = {
-  getRisks
+  getRisks,
+  triage
 }

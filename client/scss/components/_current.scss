@@ -1,15 +1,15 @@
 .currentContainer {
   display: inline-flex;
   width: 100%;
+  background: rgba(208, 205, 148, 0.473);
+  box-shadow: 5px 8px 18px #888888;
+  border-radius: 5px;
+  color: black;
 }
 
 .currentList {
   width: 30%;
-  margin: auto;  
-}
-
-.listBox {
-  background-color: rgba(200, 200, 0, 0.5);
+  margin: 0 auto;
 }
 
 .current h3 {
