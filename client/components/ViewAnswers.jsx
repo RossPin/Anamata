@@ -40,10 +40,10 @@ class ViewAnswers extends React.Component {
 
   render () {
     const answers = this.state.answers
-    const keys = Object.keys(answers)
+    const keys = answers ? Object.keys(answers) : false
     return (
       <div>
-        {keys.map(key => (
+        {keys && keys.map(key => (
           <div key={key}>
             <h1>{key}</h1>
             {Object.keys(answers[key]).map(id => (
