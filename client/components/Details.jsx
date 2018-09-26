@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 import Slider from './Slider'
 
 class Details extends React.Component {
@@ -35,11 +36,17 @@ class Details extends React.Component {
     this.submit = this.submit.bind(this)
     this.updateRadio = this.updateRadio.bind(this)
   }
+  
+  componentDidMount () {
+    this.props.dispatch(setStyle('details_stuf'))
+  }
+  
   updateDetails (e) {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
   }
+  
   submit (e) {
     e.preventDefault()
     e.target.reset()
@@ -70,7 +77,7 @@ class Details extends React.Component {
   render () {
     const { genderObj, details } = this.state
     return (
-      <div>
+      <div className='details'>
         <h1>About You</h1>
         <form onSubmit={this.submit}>
           <TextDetails detail='First Name' name='firstName' onChange={this.updateDetails} />
@@ -79,7 +86,7 @@ class Details extends React.Component {
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
           <Slider name='gender' question={genderObj} answer={details.gender} update={e => this.updateDetails(e)} />
           <label>Birthday:
-            <input type='date' name='dob' onChange={e => this.updateDetails(e)} />
+            <input type='date' name='dob' onChange={e => this.updateDetails(e)} className='birthInput'/>
           </label><br />
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
@@ -88,30 +95,30 @@ class Details extends React.Component {
         </form>
       </div>
     )
-  }
+  }  
 }
 
 const TextDetails = ({ detail, name, onChange }) =>
-  <div>
+  <div className='textDetails'>
     <label>{detail}:
       <input style={{ margin: '0.5vw' }} type='text' name={name} onChange={onChange} />
     </label><br />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
-  <div>
+  <div className='radioDetails'>
     {detail}:
     {radioList.map((item, i) => (
       <div key={i}>
         {item === 'Other'
-          ? <div>
-            <input type='radio' name={name} onChange={e => onChange(e)}
+          ? <div className='otherSection'>
+            <input type='radio' className='otherRadio' name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
             {item}
             <input id={'Other' + detail} style={{ margin: '0.5vw' }} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
-            <input type='radio' name={name} onChange={e => onChange(e)}
+            <input className='radioDetailsInput' type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
             {item}
           </div>

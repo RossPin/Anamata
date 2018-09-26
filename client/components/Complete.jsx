@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { resetYp, createYp } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 
 class Complete extends React.Component {
   constructor (props) {
@@ -10,6 +11,7 @@ class Complete extends React.Component {
 
   componentDidMount () {
     createYp(this.props.youngPerson)
+    this.props.dispatch(setStyle('complete_stuf'))
   }
 
   submit (e) {

@@ -4,12 +4,28 @@ body {
 
 h1 {
     font-family: $itim;
+    font-size: 5em;
 }
 
 h2, .button {
     font-family: $cabin;
+    // font-size: 2em;
 }
 
 p {
     font-family: $pt;
+    font-size: 2em;
+}
+
+.home {
+    color: $primary-purple;
+}
+
+.home h1 {
+    text-shadow: 1px 1px $white;
+}
+
+.home h1:hover {
+    text-shadow: 1.5px 1.5px $white;
+    -webkit-text-stroke: 1px $primary-purple;
 }

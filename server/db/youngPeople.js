@@ -1,10 +1,10 @@
 const mongoose = require('./conn')
 
-var ypSchema = new mongoose.Schema({ details: Object, consent: Boolean, timestamp: Number, answers: Object, resolved: Boolean })
+var ypSchema = new mongoose.Schema({ details: Object, consent: Boolean, timestamp: Number, alerts: Object, answers: Object, resolved: Boolean })
 var YP = mongoose.model('yp', ypSchema)
 
-function createYp (details, consent, timestamp, answers) {
-  var ypData = new YP({ details, consent, timestamp, answers, resolved: false })
+function createYp (details, consent, timestamp, answers, alerts) {
+  var ypData = new YP({ details, consent, timestamp, answers, alerts, resolved: false })
   return ypData.save()
 }
 
