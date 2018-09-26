@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  // border: 0.5px solid red;
+}
+
+
+.registerForm {
+  vertical-align: top;
+  width: 100%;
+  margin: 0 0 200 0;
+  background: rgba(208, 205, 148, 0.473);
+  box-shadow: 5px 8px 18px #888888;
+  border-radius: 5px;
+  }
+  
+.registerInput {
+  background: rgba(208, 205, 148, 0.473);
+  border-radius: 5px;
+}
+  
+.registerLabel {
+padding: 0 0 5 20;
+}
+  
+h2 {
+  font-size: 25px;
+  padding: 5 5 5 5;
+}
