@@ -6,15 +6,30 @@ class Emoji extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  tooltip (question) {
+    const length = question.tooltip.wordArr.length
+    return (
+      <div className='tooltipQuestion'>{question.tooltip.wordArr.map((word, i) =>
+        <div key={i} className='tooltipSection'>
+          {question.tooltip.questionArr[i]} <div className='tooltip'>{word}<p className='tooltiptext'>{question.tooltip.defArr[i]}</p></div> {i === length - 1 && question.tooltip.questionArr[i + 1]}
+        </div>
+      )}
+      </div>
+    )
+  }
+
   handleChange (e) {
     this.props.update(e, this.props.question.id, this.props.question.question)
   }
 
   render () {
+    const { question } = this.props
     return (
-      <div>
-        <div>{this.props.question.question}</div>
-        <div>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <div className='emojiButtons'>
           <span><button className='emoji' id='sad' value='sad' onClick={this.handleChange}> ☹️</button></span>
           <span><button className='emoji' id='semiSad' value='semiSad' onClick={this.handleChange}> 🙁</button></span>
           <span><button className='emoji' id='neutral' value='neutral' onClick={this.handleChange}> 😐</button></span>

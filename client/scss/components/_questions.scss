@@ -6,15 +6,16 @@ border: red 1px solid;
 	background: #00bb4e;
   border-radius: 80px;
   box-shadow: 2px 4px 10px black;
-  width: 40%;
-  height: 10%;
+  width: 60%;
+  height: 15%;
   top: 33%;
+
 }
 .speech-bubble :after {
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 40px;
+	left: 60px;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
@@ -26,22 +27,31 @@ border: red 1px solid;
 }
   .radio {
     right: 5%;
-    top: 3vh;
     float: right;
   }
-  form {
-    top: 66%;
+  .emojiButtons {
+    right: 5%;
+    float: right;
+    top: 60%;
     position: relative;
   }
-   
-  
-  
+  .textFormAnswer {
+    right: 5%;
+    float: right;
+    top: 60%;
+    position: relative;
+  }
+  form {
+    top: 60%;
+    position: relative;
+  } 
   .qDiv {
     position: relative;
-    height: 100vh;
-    
-    
+    height: 100vh; 
   }
+  
+  
+  
   //   cursor: pointer;
   //   display: inline-block;
   //   float: right;
