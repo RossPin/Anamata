@@ -39,18 +39,19 @@ class Listing extends React.Component {
         <div className='speech-bubble'>
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
-        <ul className='listing'>
+        <form data-aos='fade-left' onSubmit={this.submit}>
+          <input type='text' placeholder='type here' name='input'
+            onChange={this.updateDetails}
+            value={this.state.input} />
+          <i class="fas fa-plus fa-3x" onClick={this.submit}></i>
+          <input type='submit' class="is-hidden"/>
+          <ul className='listing'>
           { answer.map((val, i) => (
             <div key={i}>
               <li>{val}</li>
             </div>
           ))}
         </ul>
-        <form data-aos='fade-left' onSubmit={this.submit}>
-          <input type='text' placeholder='type here' name='input'
-            onChange={this.updateDetails}
-            value={this.state.input} />
-          <input type='Submit' />
         </form>
       </div>
     )
