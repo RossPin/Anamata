@@ -12,7 +12,7 @@ class Help extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('help_stuf'))
+    this.props.dispatch(setStyle('help_background'))
   }
 }
 

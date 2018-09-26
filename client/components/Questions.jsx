@@ -36,9 +36,9 @@ class Questions extends React.Component {
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
   }
-  
+
   componentDidMount () {
-    this.props.dispatch(setStyle('stuf'))
+    this.props.dispatch(setStyle('questions_background'))
   }
 
   updateSelection (e, id, question) {
@@ -186,7 +186,7 @@ class Questions extends React.Component {
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
-  }  
+  }
 }
 
 const mapStateToProps = ({ youngPerson }) => {

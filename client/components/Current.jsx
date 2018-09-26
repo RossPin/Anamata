@@ -21,7 +21,7 @@ class Current extends React.Component {
           this.setState({ current })
         })
     } else this.props.history.push('/')
-    this.props.dispatch(setStyle('current_stuf'))
+    this.props.dispatch(setStyle('current_background'))
   }
 
   select (yp) {

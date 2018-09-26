@@ -11,7 +11,7 @@ class Complete extends React.Component {
 
   componentDidMount () {
     createYp(this.props.youngPerson)
-    this.props.dispatch(setStyle('complete_stuf'))
+    this.props.dispatch(setStyle('help_background'))
   }
 
   submit (e) {

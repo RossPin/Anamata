@@ -38,7 +38,7 @@ class Login extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('login_stuf'))
+    this.props.dispatch(setStyle('login_background'))
   }
 }
 

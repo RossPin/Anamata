@@ -60,7 +60,7 @@ class ViewAnswers extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('answer_stuf'))
+    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 }
 
