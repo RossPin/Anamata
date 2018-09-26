@@ -33,14 +33,45 @@ class Question extends React.Component {
     this.checkConditions = this.checkConditions.bind(this)
   }
 
-  updateSelection (e, id, question) {
+  updateSelection (e, id, questionObj) {
+    let question = questionObj.question
+    let risk = 0
+    let resiliency = 0
+    // Risk
+    if (questionObj.type === 'Slider' && questionObj.risk) {
+      risk = e.target.value * questionObj.risk
+    } else if (questionObj.type === 'Radio') {
+      for (let i = 0; i < questionObj.responses.length; i++) {
+        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].risk) {
+          risk = questionObj.responses[i].risk
+        }
+      }
+    } else if (questionObj.risk) {
+      risk = questionObj.risk
+    }
+    // Resilency
+    if (questionObj.type === 'Slider' && questionObj.resiliency) {
+      resiliency = (10 - e.target.value) * questionObj.resiliency
+    } else if (questionObj.type === 'Radio') {
+      for (let i = 0; i < questionObj.responses.length; i++) {
+        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].resiliency) {
+          resiliency = questionObj.responses[i].resiliency
+        }
+      }
+    } else if (questionObj.resiliency) {
+      resiliency = questionObj.resiliency
+    }
     const { answers } = this.state
-    answers[id] = { id, question, answer: e.target.value }
+    // rounding
+    risk = Math.round(risk * 10) / 10
+    resiliency = Math.round(resiliency * 10) / 10
+    answers[id] = { id, question, answer: e.target.value, risk, resiliency }
     this.setState({ answers })
   }
 
-  updateSelectionArray (val, id, question) {
+  updateSelectionArray (val, id, questionObj) {
     const { answers } = this.state
+    let question = questionObj.question
     if (answers[id]) answers[id].answer.push(val)
     else answers[id] = { id, question, answer: [val] }
     this.setState({ answers })
@@ -59,6 +90,12 @@ class Question extends React.Component {
     const { answers } = this.state
     let answer = Object.assign({}, answers[id] ? answers[id].answer : this.createCheckboxArray(questionObj))
     answer[target.value] = target.checked
+    if (questionObj.risk) {
+      answer['risk'] = questionObj.risk
+    }
+    if (questionObj.resiliency) {
+      answer['resiliency'] = questionObj.resiliency
+    }
     answers[id] = { id, question, answer }
     this.setState({ answers })
   }
@@ -77,6 +114,7 @@ class Question extends React.Component {
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
+    console.log(answers)
     if (currentCategory < categories.length - 1) {
       currentCategory++
       const { questions, title, description, footer } = questionData[categories[currentCategory]]
@@ -124,7 +162,7 @@ class Question extends React.Component {
 
   checkConditions (question) {
     const { compare, target, value } = question.conditions
-    if (this.state.answers[target]) {
+    if (this.state.answers[target] || compare === '||>') {
       switch (compare) {
         case '=':
           if (this.state.answers[target].answer === value) return this.renderQuestion(question)
@@ -142,6 +180,11 @@ class Question extends React.Component {
         case '=*':
           for (let i = 0; i < value.length; i++) {
             if (this.state.answers[target].answer === value[i]) return this.renderQuestion(question)
+          }
+          break
+        case '||>':
+          for (let i = 0; i < target.length; i++) {
+            if (this.state.answers[target[i]] && (this.state.answers[target[i]].answer > value)) return this.renderQuestion(question)
           }
           break
         default:

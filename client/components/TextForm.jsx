@@ -19,7 +19,7 @@ class TextForm extends React.Component {
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         <form>
-          <input type='text' value={answer} onChange={e => update(e, question.id, question.question)} />
+          <input type='text' value={answer} onChange={e => update(e, question.id, question)} />
         </form>
       </div>
     )

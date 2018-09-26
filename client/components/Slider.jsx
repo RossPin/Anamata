@@ -19,7 +19,6 @@ class Slider extends React.Component {
         check: false
       })
     }
-    console.log(id)
     if (id === 'genderDetails') {
       let gender = e
       gender.target.name = 'gender'
@@ -46,19 +45,19 @@ class Slider extends React.Component {
   }
 
   render () {
-    const { question } = this.props
+    const { question, answer, update } = this.props
     return (
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         <div>
           {question.responses.left}
-          <input type='range' min='1' max='100' value={answer} onChange={e => this.updateCheck(e, update, question.id, question.question)} className='slider' />
+          <input type='range' min='0' max='10' value={answer} onChange={e => this.updateCheck(e, update, question.id, question)} className='slider' />
           {question.responses.right}
         </div>
         {'check' in question.responses
           ? <label>
             <input type='checkbox' name='answer'
-              value={question.responses.check} checked={this.state.check} onChange={e => this.updateCheck(e, update, question.id, question.question)} />
+              value={question.responses.check} checked={this.state.check} onChange={e => this.updateCheck(e, update, question.id, question)} />
             {question.responses.check}
           </label>
           : null }
