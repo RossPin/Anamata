@@ -25,9 +25,11 @@ class Emoji extends React.Component {
   render () {
     const { question } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <div>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <div className='emojiButtons'>
           <span><button className='emoji' id='sad' value='sad' onClick={this.handleChange}> ☹️</button></span>
           <span><button className='emoji' id='semiSad' value='semiSad' onClick={this.handleChange}> 🙁</button></span>
           <span><button className='emoji' id='neutral' value='neutral' onClick={this.handleChange}> 😐</button></span>

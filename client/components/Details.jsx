@@ -38,7 +38,7 @@ class Details extends React.Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(setStyle('details_stuf'))
+    this.props.dispatch(setStyle('details_background'))
   }
 
   updateDetails (e) {

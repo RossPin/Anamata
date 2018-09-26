@@ -36,7 +36,7 @@ class Consent extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('consent_stuf'))
+    this.props.dispatch(setStyle('consent_background'))
   }
 }
 

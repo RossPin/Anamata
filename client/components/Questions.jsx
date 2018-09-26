@@ -36,9 +36,9 @@ class Questions extends React.Component {
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
   }
-  
+
   componentDidMount () {
-    this.props.dispatch(setStyle('stuf'))
+    this.props.dispatch(setStyle('questions_background'))
   }
 
   updateSelection (e, id, question) {
@@ -174,11 +174,11 @@ class Questions extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='questions'>
         <h1>{this.state.title}</h1>
         {this.state.description && <p>{this.state.description}</p>}
         {this.state.questions.map(question => (
-          <div key={question.id}>
+          <div className='questionContainer' key={question.id}>
             {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
           </div>
         ))}
@@ -186,7 +186,7 @@ class Questions extends React.Component {
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
-  }  
+  }
 }
 
 const mapStateToProps = ({ youngPerson }) => {

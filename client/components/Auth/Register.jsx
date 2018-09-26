@@ -40,7 +40,7 @@ class Register extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('register_stuf'))
+    this.props.dispatch(setStyle('register_background'))
   }
 }
 
