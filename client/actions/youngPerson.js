@@ -58,7 +58,7 @@ export function removeYp (id) {
 }
 
 export function markReviewed (id) {
-  request('update', `yp/reviewed/${id}`)
+  request('put', `yp/reviewed/${id}`)
     .then(response => {
       return response.body
     })

@@ -26,7 +26,7 @@ router.delete('/del/:id', token.decode, (req, res) => {
     .catch(err => res.status(500).send({ message: err.message }))
 })
 
-router.update('/reviewed/:id', token.decode, (req, res) => {
+router.put('/reviewed/:id', token.decode, (req, res) => {
   const id = req.params.id
   markReviewed(id).then(() => {
     res.json({ message: `young person reviewed` })
