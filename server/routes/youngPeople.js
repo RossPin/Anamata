@@ -1,6 +1,6 @@
 const router = require('express').Router()
 var token = require('../auth/token')
-const { createYp, addResponse, getYp, getCurrent, removeYp, getReviewed } = require('../db/youngPeople')
+const { createYp, addResponse, getYp, getCurrent, removeYp, getReviewed, markReviewed } = require('../db/youngPeople')
 
 router.post('/create', (req, res) => {
   const { details, consent, timestamp, answers, alerts } = req.body
@@ -22,6 +22,14 @@ router.delete('/del/:id', token.decode, (req, res) => {
   const id = req.params.id
   removeYp(id).then(() => {
     res.json({ message: `young person removed` })
+  })
+    .catch(err => res.status(500).send({ message: err.message }))
+})
+
+router.delete('/reviewed/:id', token.decode, (req, res) => {
+  const id = req.params.id
+  markReviewed(id).then(() => {
+    res.json({ message: `young person reviewed` })
   })
     .catch(err => res.status(500).send({ message: err.message }))
 })
