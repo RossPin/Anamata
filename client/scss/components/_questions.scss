@@ -47,11 +47,9 @@
     width: auto;
   }
   .listing {
-    right: 5%;
-    float: right;
-    top: 60%;
-    position: relative;
-    width: auto;
+    text-align: left;
+    padding: 1em;
+    font-size: 1.2em;
   }
   form {
     top: 60%;
@@ -62,8 +60,6 @@
     position: relative;
     height: 100vh; 
   }
-  
-  
   
   //   cursor: pointer;
   //   display: inline-block;
