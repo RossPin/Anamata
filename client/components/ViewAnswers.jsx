@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeYp } from '../actions/youngPerson'
+import { removeYp, markReviewed } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
 
 class ViewAnswers extends React.Component {
@@ -19,6 +19,12 @@ class ViewAnswers extends React.Component {
   delete (e, id) {
     e.preventDefault()
     removeYp(id)
+    this.props.history.push('/current')
+  }
+
+  reviewed (e, id) {
+    e.preventDefault()
+    markReviewed(id)
     this.props.history.push('/current')
   }
 
@@ -55,6 +61,7 @@ class ViewAnswers extends React.Component {
           </div>
         ))}
         <Link className='button' to='/current'>Back</Link>
+        <button className='button' onClick={e => this.reviewed(e, this.props.youngPerson._id)} >Set as Reviewed</button>
         <button className='button' onClick={e => this.delete(e, this.props.youngPerson._id)} >Delete</button>
       </div>
     )

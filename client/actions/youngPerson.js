@@ -56,3 +56,10 @@ export function removeYp (id) {
       return response.body
     })
 }
+
+export function markReviewed (id) {
+  request('update', `yp/reviewed/${id}`)
+    .then(response => {
+      return response.body
+    })
+}
