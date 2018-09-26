@@ -36,17 +36,17 @@ class Details extends React.Component {
     this.submit = this.submit.bind(this)
     this.updateRadio = this.updateRadio.bind(this)
   }
-  
+
   componentDidMount () {
     this.props.dispatch(setStyle('details_stuf'))
   }
-  
+
   updateDetails (e) {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
   }
-  
+
   submit (e) {
     e.preventDefault()
     e.target.reset()
@@ -86,7 +86,7 @@ class Details extends React.Component {
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
           <Slider name='gender' question={genderObj} answer={details.gender} update={e => this.updateDetails(e)} />
           <label>Birthday:
-            <input type='date' name='dob' onChange={e => this.updateDetails(e)} className='birthInput'/>
+            <input type='date' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
           </label><br />
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
@@ -95,7 +95,7 @@ class Details extends React.Component {
         </form>
       </div>
     )
-  }  
+  }
 }
 
 const TextDetails = ({ detail, name, onChange }) =>
