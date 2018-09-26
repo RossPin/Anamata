@@ -21,9 +21,9 @@ class Reviewed extends React.Component {
   }
 
   updateList () {
-    request('get', 'yp/view/current')
+    request('get', 'yp/view/reviewed')
       .then((response) => {
-        const reviewed = response.body        
+        const reviewed = response.body
         this.setState({ reviewed })
       })
   }
@@ -36,10 +36,9 @@ class Reviewed extends React.Component {
   render () {
     return (
       <div className='current'>
-        <h1 style={{ margin: '0 auto' }}>Un-Reviewed surveys</h1>
+        <h1 style={{ margin: '0 auto' }}>Reviewed surveys</h1>
         <div className='currentContainer'>
           <div className='currentList'>
-            <h3>Alert Status</h3>
             <div className='listBox'>
               <ul>
                 {this.state.reviewed.map((yp, i) => (
