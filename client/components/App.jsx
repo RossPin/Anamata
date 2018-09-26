@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Nav from './Nav'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
@@ -14,10 +15,11 @@ import ViewAnswers from './ViewAnswers'
 
 class App extends React.Component {
   render () {
+    console.log(this.context)
     return (
       <HashRouter>
         <div>
-          <section className='hero'>
+          <section id='background' className={`hero ${this.props.style}`}>
             <Nav />
             <div className='container'>
               <Route exact path='/' component={Home} />
@@ -38,4 +40,8 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapStateToProps = ({ style }) => {
+  return { style }
+}
+
+export default connect(mapStateToProps)(App)

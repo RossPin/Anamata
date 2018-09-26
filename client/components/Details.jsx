@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 
 class Details extends React.Component {
   constructor (props) {
@@ -77,6 +78,9 @@ class Details extends React.Component {
         </form>
       </div>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('details_stuf'))
   }
 }
 

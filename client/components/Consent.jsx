@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addConsent } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 
 class Consent extends React.Component {
   constructor (props) {
@@ -24,6 +25,9 @@ class Consent extends React.Component {
         <button value='No' onClick={this.submit} className='button'>No</button>
       </div>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('consent_stuf'))
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../actions/login'
+import { setStyle } from '../../actions/style'
 
 class Login extends React.Component {
   constructor (props) {
@@ -32,6 +33,9 @@ class Login extends React.Component {
         <input className='button' type='submit' />
       </form>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('login_stuf'))
   }
 }
 

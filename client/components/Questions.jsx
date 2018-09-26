@@ -10,6 +10,7 @@ import YNifSo from './YNifSo'
 import questions from '../data/questions.json'
 import Checkbox from './Checkbox'
 import { addSection } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 
 class Question extends React.Component {
   constructor (props) {
@@ -150,6 +151,9 @@ class Question extends React.Component {
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('stuf'))
   }
 }
 
