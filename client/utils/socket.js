@@ -5,11 +5,11 @@ import io from 'socket.io-client'
 // On dev/etc, needs: const socket = io('http://localhost:8000')
 
 function connect () {
-  const url = process.env.ENVIRONMENT === 'production'
-    ? window.location.href
-    : 'http://localhost:8000'
+  // const url = process.env.ENVIRONMENT === 'production'
+  //   ? window.location.href
+  //   : 'http://localhost:8000'
 
-  const socket = io(url)
+  const socket = io(window.location.href)
   return socket
 }
 
