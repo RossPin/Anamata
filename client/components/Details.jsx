@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 import Slider from './Slider'
 
 class Details extends React.Component {
@@ -19,7 +20,7 @@ class Details extends React.Component {
         mobile: '',
         school: ''
       },
-      ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'South African', 'Fillipino', 'Other'],
+      ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'Other'],
       genderObj: {
         question: ' Indicate where you think you see yourself on this sliding scale:',
         id: 'genderDetails',
@@ -35,11 +36,17 @@ class Details extends React.Component {
     this.submit = this.submit.bind(this)
     this.updateRadio = this.updateRadio.bind(this)
   }
+  
+  componentDidMount () {
+    this.props.dispatch(setStyle('details_stuf'))
+  }
+  
   updateDetails (e) {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
   }
+  
   submit (e) {
     e.preventDefault()
     e.target.reset()
@@ -88,7 +95,7 @@ class Details extends React.Component {
         </form>
       </div>
     )
-  }
+  }  
 }
 
 const TextDetails = ({ detail, name, onChange }) =>

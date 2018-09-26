@@ -46,10 +46,11 @@ class App extends React.Component {
   }
 
   render () {
+    console.log(this.context)
     return (
       <HashRouter>
         <div>
-          <section className='hero'>
+          <section id='background' className={`hero ${this.props.style}`}>
             <Nav />
             <div className='container'>
               <Route exact path='/' component={Home} />
@@ -70,8 +71,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth, alerts }) => {
-  return { auth, alerts }
+const mapStateToProps = ({ auth, alerts, style }) => {
+  return { auth, alerts, style }
 }
 
 export default connect(mapStateToProps)(App)

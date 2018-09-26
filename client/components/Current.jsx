@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setYp } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 import request from '../utils/api'
 
 class Current extends React.Component {
@@ -20,6 +21,7 @@ class Current extends React.Component {
           this.setState({ current })
         })
     } else this.props.history.push('/')
+    this.props.dispatch(setStyle('current_stuf'))
   }
 
   select (yp) {

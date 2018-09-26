@@ -9,7 +9,8 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
-import { addSection } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
+import { addSection, addAlert } from '../actions/youngPerson'
 import Socket from '../utils/socket'
 
 class Questions extends React.Component {
@@ -34,6 +35,10 @@ class Questions extends React.Component {
     this.checkConditions = this.checkConditions.bind(this)
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
+  }
+  
+  componentDidMount () {
+    this.props.dispatch(setStyle('stuf'))
   }
 
   updateSelection (e, id, question) {
@@ -163,6 +168,7 @@ class Questions extends React.Component {
     const name = `${firstName} ${lastName}`
     const socket = Socket.connect()
     const schoolId = 'testSchool'
+    this.props.dispatch(addAlert({ name, msg }))
     socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
@@ -180,7 +186,7 @@ class Questions extends React.Component {
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
-  }
+  }  
 }
 
 const mapStateToProps = ({ youngPerson }) => {

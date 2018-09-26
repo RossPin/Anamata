@@ -3,8 +3,8 @@ var token = require('../auth/token')
 const { createYp, addResponse, getYp, getCurrent, removeYp } = require('../db/youngPeople')
 
 router.post('/create', (req, res) => {
-  const { details, consent, timestamp, answers } = req.body
-  createYp(details, consent, timestamp, answers).then(yp => {
+  const { details, consent, timestamp, answers, alerts } = req.body
+  createYp(details, consent, timestamp, answers, alerts).then(yp => {
     res.json(yp)
   })
     .catch(err => res.status(500).send({ message: err.message }))
