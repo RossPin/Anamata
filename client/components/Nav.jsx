@@ -24,7 +24,7 @@ function Nav (props) {
             <img className='logo' src='/img/anamata_logo.png' />
           </Link>
           <div className='navbar-end'>
-            <Link className='button help' to='/help'>Help</Link>
+            <Link className='button helpBtn' to='/help'>Help</Link>
           </div>
         </div>
       }

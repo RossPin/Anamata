@@ -2,7 +2,7 @@
  .ebtn {
     background-color: Transparent; /* Blue background */
     border: none; /* Remove borders */
-    color: white; /* White text */
+    color: $white; /* White text */
     padding: 20px 20px; /* Some padding */
     font-size: 64px; /* Set a font size */
     border-radius: 12px;
@@ -11,13 +11,13 @@
 
 /* Darker background on mouse-over */
 .ebtn:hover {
-    background-color: RoyalBlue;
+    background-color: $white-20;
 }
 
 .ebtnPressed {
-    background-color: RoyalBlue;/* Blue background */
+    background-color: $primary-purple;/* Purple background */
     border: none; /* Remove borders */
-    color: white; /* White text */
+    color: $white; /* White text */
     padding: 20px 20px; /* Some padding */
     font-size: 64px; /* Set a font size */
     border-radius: 12px;
