@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "postinstall": "webpack --mode development",
+    "postinstall": "webpack --mode production",
     "build": "webpack --mode production",
     "start": "node server/",
     "dev": "webpack --mode development --watch & nodemon server"
