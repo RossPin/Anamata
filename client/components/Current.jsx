@@ -35,13 +35,40 @@ class Current extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>Un-Reviewed surveys</h1>
-        <ul>
-          {this.state.current.map((yp, i) => (
-            <li key={i}><div className='link' onClick={() => this.select(yp)}> {`${yp.details.firstName} ${yp.details.lastName}`}</div></li>
-          ))}
-        </ul>
+      <div className='current'>
+        <h1 style={{ margin: '0 auto' }}>Un-Reviewed surveys</h1>
+        <div className='currentContainer'>
+          <div className='currentList'>
+            <h3>Alert Status</h3>
+            <div className='listBox'>
+              <ul>
+                {this.state.current.map((yp, i) => (
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {`${yp.details.firstName} ${yp.details.lastName}`}</div></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className='currentList'>
+            <h3>High Risk</h3>
+            <div className='listBox'>
+              <ul>
+                {this.state.current.map((yp, i) => (
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {`${yp.details.firstName} ${yp.details.lastName}`}</div></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className='currentList'>
+            <h3>Normal Risk</h3>
+            <div className='listBox'>
+              <ul>
+                {this.state.current.map((yp, i) => (
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {`${yp.details.firstName} ${yp.details.lastName}`}</div></li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
