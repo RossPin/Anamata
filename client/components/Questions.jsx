@@ -214,6 +214,14 @@ class Questions extends React.Component {
     socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
+  
+
+  nextQuestion (e) {
+    document.getElementById('questions').addEventListener('keyup', () => {
+      
+    })
+  }
+
   render () {
     return (
       <div className='questions'>
