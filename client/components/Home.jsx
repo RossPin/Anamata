@@ -30,7 +30,7 @@ class Home extends React.Component {
     )
   }
   componentDidMount () {
-    this.props.dispatch(setStyle('stuf'))
+    this.props.dispatch(setStyle('home_background'))
   }
 }
 
