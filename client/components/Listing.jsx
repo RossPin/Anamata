@@ -39,7 +39,7 @@ class Listing extends React.Component {
         <div className='speech-bubble'>
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
-        <form data-aos='fade-left' onSubmit={this.submit}>
+        <form data-aos='fade-left' onSubmit={this.submit} className='listingForm'>
           <input type='text' placeholder='type here' name='input'
             onChange={this.updateDetails}
             value={this.state.input} />
