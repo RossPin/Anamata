@@ -20,7 +20,7 @@ class Details extends React.Component {
         mobile: '',
         school: ''
       },
-      ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'South African', 'Fillipino', 'Other'],
+      ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'Other'],
       genderObj: {
         question: ' Indicate where you think you see yourself on this sliding scale:',
         id: 'genderDetails',
