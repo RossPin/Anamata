@@ -1,7 +1,8 @@
 
 .speech-bubble {
+  color: $white;
 	position: relative;
-	background: #00bb4e;
+	background: $primary-purple;
   border-radius: 80px;
   box-shadow: 2px 4px 10px black;
   width: 60%;
@@ -17,7 +18,7 @@
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-top-color: #00bb4e;
+	border-top-color: $primary-purple;
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -10px;

@@ -26,13 +26,14 @@
   width: 90%;
 }
 
-.help {
+.helpBtn {
+  display: inline-flex;
   background-color: $white-20;
   color: $white;
   border: $white solid 0.05em;
 }
 
-.help:hover {
+.helpBtn:hover {
   color: $primary-purple;
   border: $white solid 0.05em;
   box-shadow: 0 0 0 1px $primary-purple;

@@ -1,11 +1,19 @@
 body {
     font-family: $pt;
+    color: $white;
 }
 
 h1 {
     font-family: $itim;
     font-size: 5em;
     margin: 10% auto;
+    color: $primary-purple;
+    text-shadow: 1px 1px $white;
+}
+
+h1:hover {
+    text-shadow: 1.5px 1.5px $white;
+    -webkit-text-stroke: 1px $primary-purple;
 }
 
 h2, .button {
@@ -22,11 +30,6 @@ p {
     color: $primary-purple;
 }
 
-.home h1 {
-    text-shadow: 1px 1px $white;
-}
-
-.home h1:hover {
-    text-shadow: 1.5px 1.5px $white;
-    -webkit-text-stroke: 1px $primary-purple;
+.help p {
+    color: $primary-purple;
 }
