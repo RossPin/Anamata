@@ -19,7 +19,7 @@ class Dropdown extends React.Component {
     return (
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <select onChange={e => update(e, question.id, question.question)} >
+        <select onChange={e => update(e, question.id, question)} >
           {question.responses.map((response, i) => (
             <option key={i} value={response.answer}>{ response.answer }</option>
           ))}
