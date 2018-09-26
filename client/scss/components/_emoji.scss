@@ -1,0 +1,29 @@
+ /* Style buttons */
+ .ebtn {
+    background-color: Transparent; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 20px 20px; /* Some padding */
+    font-size: 64px; /* Set a font size */
+    border-radius: 12px;
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.ebtn:hover {
+    background-color: RoyalBlue;
+}
+
+.ebtnPressed {
+    background-color: RoyalBlue;/* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 20px 20px; /* Some padding */
+    font-size: 64px; /* Set a font size */
+    border-radius: 12px;
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+.emojiStyle {
+    color: $primary-purple;
+}
