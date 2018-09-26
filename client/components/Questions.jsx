@@ -174,11 +174,11 @@ class Questions extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='questions'>
         <h1>{this.state.title}</h1>
         {this.state.description && <p>{this.state.description}</p>}
         {this.state.questions.map(question => (
-          <div key={question.id}>
+          <div className='questionContainer' key={question.id}>
             {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
           </div>
         ))}

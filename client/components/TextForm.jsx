@@ -16,9 +16,11 @@ class TextForm extends React.Component {
   render () {
     const { question, update, answer } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <form>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <form className='textFormAnswer' data-aos='fade-left'>
           <input type='text' value={answer} onChange={e => update(e, question.id, question.question)} />
         </form>
       </div>

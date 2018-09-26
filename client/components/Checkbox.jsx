@@ -26,11 +26,13 @@ class Checkbox extends React.Component {
   render () {
     const { question, update, answer } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <form>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          <h3>{question.question}</h3>
+        </div>
+        <form data-aos='fade-left'>
           {question.responses.map((response, i) => (
-            <div key={i}>
+            <div className='checkbox' key={i}>
               <label>
                 <input type='checkbox' name='answer'
                   value={response.answer} checked={answer[response.answer] ? answer[response.answer] : false} onChange={e => update(e, question)} />

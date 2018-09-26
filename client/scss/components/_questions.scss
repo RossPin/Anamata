@@ -1,0 +1,114 @@
+div {
+border: red 1px solid;
+}
+.speech-bubble {
+	position: relative;
+	background: #00bb4e;
+  border-radius: 80px;
+  box-shadow: 2px 4px 10px black;
+  width: 60%;
+  height: 15%;
+  top: 33%;
+
+}
+.speech-bubble :after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 60px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #00bb4e;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+  margin-bottom: -20px;  
+}
+  .radio {
+    right: 5%;
+    float: right;
+  }
+  .emojiButtons {
+    right: 5%;
+    float: right;
+    top: 60%;
+    position: relative;
+  }
+  .textFormAnswer {
+    right: 5%;
+    float: right;
+    top: 60%;
+    position: relative;
+  }
+  .sliderAns {
+    right: 5%;
+    float: right;
+    top: 60%;
+    position: relative;
+    width: auto;
+  }
+  .listing {
+    right: 5%;
+    float: right;
+    top: 60%;
+    position: relative;
+    width: auto;
+  }
+  form {
+    top: 60%;
+    position: relative;
+    float: right;
+  } 
+  .qDiv {
+    position: relative;
+    height: 100vh; 
+  }
+  
+  
+  
+  //   cursor: pointer;
+  //   display: inline-block;
+  //   float: right;
+  //   -webkit-user-select: none;
+  //   user-select: none;
+  //   &:not(:first-child) {
+  //     margin-left: 20px;
+  //   }
+  //   svg {
+  //     fill: none;
+  //     vertical-align: middle;
+  //     circle {
+  //       stroke-width: 2;
+  //       stroke: #c8ccd4;
+  //     }
+  //     path {
+  //       stroke: #008fff;
+  //       &.inner {
+  //         stroke-width: 6;
+  //         stroke-dasharray: 19;
+  //         stroke-dashoffset: 19;
+  //       }
+  //       &.outer {
+  //         stroke-width: 2;
+  //         stroke-dasharray: 57;
+  //         stroke-dashoffset: 57;
+  //       }
+  //     }
+  //   }
+  //   input {
+  //     display: none;
+  //     &:checked + svg {
+  //       path {
+  //         transition: all 0.4s ease;
+  //         &.inner {
+  //           stroke-dashoffset: 38;
+  //           transition-delay: 0.3s;
+  //         }
+  //         &.outer {
+  //           stroke-dashoffset: 0;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }

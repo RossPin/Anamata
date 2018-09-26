@@ -48,9 +48,11 @@ class Slider extends React.Component {
   render () {
     const { question, answer, update } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <div>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <div className='sliderAns' data-aos='fade-right'>
           {question.responses.left}
           <input type='range' min='1' max='100' value={answer} onChange={e => this.updateCheck(e, update, question.id, question.question)} className='slider' />
           {question.responses.right}
