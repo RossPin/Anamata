@@ -119,6 +119,7 @@ class Questions extends React.Component {
 
   submit (e) {
     e.preventDefault()
+    window.scrollTo(0, 0)
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
     this.props.dispatch(addSection(categories[currentCategory], answers))
