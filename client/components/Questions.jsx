@@ -9,6 +9,7 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
+import { setStyle } from '../actions/style'
 import { addSection, addAlert } from '../actions/youngPerson'
 import Socket from '../utils/socket'
 
@@ -34,6 +35,10 @@ class Questions extends React.Component {
     this.checkConditions = this.checkConditions.bind(this)
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
+  }
+  
+  componentDidMount () {
+    this.props.dispatch(setStyle('stuf'))
   }
 
   updateSelection (e, id, question) {
@@ -181,7 +186,7 @@ class Questions extends React.Component {
         <button className='button' onClick={this.submit} >Submit</button>
       </div>
     )
-  }
+  }  
 }
 
 const mapStateToProps = ({ youngPerson }) => {
