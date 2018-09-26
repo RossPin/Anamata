@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setYp } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
 import request from '../utils/api'
+import { getRisks } from '../utils/eval'
 
 class Current extends React.Component {
   constructor (props) {
@@ -24,6 +25,8 @@ class Current extends React.Component {
     request('get', 'yp/view/current')
       .then((response) => {
         const current = response.body
+        console.log(current[current.length - 1])
+        console.log(getRisks(current[current.length - 1]))
         this.setState({ current })
       })
   }
