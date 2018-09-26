@@ -20,6 +20,10 @@ function getCurrent () {
   return YP.find({ resolved: false })
 }
 
+function getReviewed () {
+  return YP.find({ resolved: true })
+}
+
 function removeYp (id) {
   return YP.remove({ _id: id })
 }
@@ -29,5 +33,6 @@ module.exports = {
   addResponse,
   getYp,
   getCurrent,
-  removeYp
+  removeYp,
+  getReviewed
 }
