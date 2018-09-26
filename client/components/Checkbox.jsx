@@ -28,7 +28,7 @@ class Checkbox extends React.Component {
     return (
       <div className='qDiv' data-aos='fade-right'>
         <div className='speech-bubble'>
-          <h3>{question.question}</h3>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
         <form data-aos='fade-left'>
           {question.responses.map((response, i) => (

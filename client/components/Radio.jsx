@@ -19,13 +19,13 @@ class Radio extends React.Component {
     return (
       <div className='qDiv' data-aos='fade-right'>
         <div className='speech-bubble'>
-          <h3> { question.question } </h3>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
         <form data-aos='fade-left'>
           { question.responses.map((response, i) => (
             <div className='radio' key={i}>
               <label htmlFor='rdo-1' className='radio'>
-                <input type='radio' id='rdo-1' name='answer' onChange={e => update(e, question.id, question.question, response.show, response.hide)}
+                <input type='radio' id='rdo-1' name='answer' onChange={e => update(e, question.id, question)}
                   value={response.answer} checked={answer === response.answer} />
                 <svg width='20px' height='20px' viewBox='0 0 20 20'>
                   <circle cx='10' cy='10' r='9' />
