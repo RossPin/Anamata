@@ -30,6 +30,13 @@ export function addSection (title, answers) {
   }
 }
 
+export function addAlert (alert) {
+  return {
+    type: 'ADD_ALERT',
+    alert
+  }
+}
+
 export function resetYp () {
   return {
     type: 'RESET_YP'

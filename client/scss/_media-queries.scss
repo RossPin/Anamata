@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+    .hero {
+        background: url("/img/backgrounds/home_background_yellow.png") center / cover;
+        height: 100%;
+    }
+    .home {
+        font-size: 80%;
+    }
+    .column {
+        margin: 2em;
+    }
+    .hp .button {
+        width: 80%;
+    }
+}

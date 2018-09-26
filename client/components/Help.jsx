@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { setStyle } from '../actions/style'
 
 class Help extends React.Component {
   render () {
@@ -9,6 +11,9 @@ class Help extends React.Component {
       </div>
     )
   }
+  componentDidMount () {
+    this.props.dispatch(setStyle('help_background'))
+  }
 }
 
-export default Help
+export default connect()(Help)

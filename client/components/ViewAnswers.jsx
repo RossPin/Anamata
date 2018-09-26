@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeYp } from '../actions/youngPerson'
+import { setStyle } from '../actions/style'
 
 class ViewAnswers extends React.Component {
   constructor (props) {
@@ -57,6 +58,9 @@ class ViewAnswers extends React.Component {
         <button className='button' onClick={e => this.delete(e, this.props.youngPerson._id)} >Delete</button>
       </div>
     )
+  }
+  componentDidMount () {
+    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 }
 
