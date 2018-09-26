@@ -9,7 +9,7 @@ import Listing from './Listing'
 import YNifSo from './YNifSo'
 import questionData from '../data/questions.json'
 import Checkbox from './Checkbox'
-import { addSection } from '../actions/youngPerson'
+import { addSection, addAlert } from '../actions/youngPerson'
 import Socket from '../utils/socket'
 
 class Questions extends React.Component {
@@ -163,6 +163,7 @@ class Questions extends React.Component {
     const name = `${firstName} ${lastName}`
     const socket = Socket.connect()
     const schoolId = 'testSchool'
+    this.props.dispatch(addAlert({ name, msg }))
     socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
