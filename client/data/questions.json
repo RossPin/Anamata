@@ -1291,9 +1291,10 @@
           {
               "answer": "No"
           }
-        ]                   
+        ]
+      }
+    ]                   
     },
-    {
     "spirit": 
     {
         "title":"Spiritual Health / Wairuatanga",
@@ -1386,5 +1387,5 @@
             }
         ],
         "footer" : "If there are any areas of concern that come from this assessment, the nurse will see you. If you’d like to see the nurse then please feel free to drop into the clinic"
-    }
+    }  
 }
