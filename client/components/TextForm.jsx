@@ -20,7 +20,7 @@ class TextForm extends React.Component {
         <div className='speech-bubble'>
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
-        <form className='textFormAnswer' data-aos='fade-left'>
+        <form onSubmit={e => e.preventDefault()} className='textFormAnswer' data-aos='fade-left'>
           <input type='text' value={answer} onChange={e => update(e, question.id, question)} />
         </form>
       </div>
