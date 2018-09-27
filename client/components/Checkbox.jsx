@@ -28,7 +28,7 @@ class Checkbox extends React.Component {
     return (
       <div>
         {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <form className='control'>
+        <form>
           {question.responses.map((response, i) => (
             <div key={i}>
               <label className='checkbox'>
@@ -37,8 +37,7 @@ class Checkbox extends React.Component {
                     ? answer[response.answer] : false} onChange={e => update(e, question)} />
                 <svg width='20' height='20' viewBox='0 0 20 20'>
                   <rect width='20' height='20' />
-                  <path d='M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z' class='inner' /> */}
-                  <path d='M4 4 H 20 V 20 H 4 L 4 4' className='outer' />
+                  <path d='M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z' class='inner' />
                 </svg>
                 {response.answer}
               </label>
