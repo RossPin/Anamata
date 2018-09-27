@@ -1,39 +1,45 @@
-.checkbox {
-    svg {
-      fill: none;
-      vertical-align: middle;
-      rect {
-        border-radius: 10%; //Update this with variable?
-        stroke-width: 5;
-        stroke: $primary-purple;
-      }
-      path {
-        stroke: $primary-purple;
-        &.inner {
-          stroke-width: 6;
-          stroke-dasharray: 19;
-          stroke-dashoffset: 19;
-        }
-        &.outer {
-          stroke-width: 2;
-          stroke-dasharray: 57;
-          stroke-dashoffset: 57;
-        }
-      }
-    }
-    input {
-      display: none;
-      &:checked + svg {
-        path {
-          transition: all 0.4s ease;
-          &.inner {
-            stroke-dashoffset: 38;
-            transition-delay: 0.3s;
-          }
-          &.outer {
-            stroke-dashoffset: 0;
-          }
-        }
-      }
-    }
-  }
+
+svg { 
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: 0.5em; 
+  top: .3em;
+  border: 2px solid #eee;
+}
+
+label {
+  display: block;
+  padding: .25em .5em .25em 2em;
+  position: relative;
+  cursor: pointer;
+  
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: .75em;
+  top: .75em;
+}
+
+label svg path {
+  transition: stroke-dashoffset .4s linear;
+}
+
+input[type="checkbox"]:checked ~ label svg {
+  border-color: #111;
+}
+
+input[type="checkbox"]:checked ~ label svg path {
+  stroke-dashoffset: 0;
+  stroke: currentColor;
+}
+
+input[type="checkbox"] ~ label svg path {
+  stroke: #eee;
+}
+
+
+
+
