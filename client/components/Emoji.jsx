@@ -27,7 +27,7 @@ class Emoji extends React.Component {
 
   handleChange (e) {
     this.props.update(e, this.props.question.id, this.props.question)
-    let emoji = e.target.id
+    let emoji = e.currentTarget.id
     this.setState({
       sad: false,
       semiSad: false,

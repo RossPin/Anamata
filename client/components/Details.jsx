@@ -37,6 +37,7 @@ class Details extends React.Component {
   }
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     this.props.dispatch(setStyle('details_background'))
   }
 

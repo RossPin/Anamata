@@ -43,6 +43,7 @@ class Questions extends React.Component {
   }
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     this.props.dispatch(setStyle('questions_background'))
     this.listining()
   }
@@ -53,10 +54,10 @@ class Questions extends React.Component {
     let resiliency = 0
     // Risk
     if (questionObj.type === 'Slider' && questionObj.risk) {
-      risk = e.target.value * questionObj.risk
+      risk = e.currentTarget.value * questionObj.risk
     } else if (questionObj.type === 'Radio') {
       for (let i = 0; i < questionObj.responses.length; i++) {
-        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].risk) {
+        if (questionObj.responses[i].answer === e.currentTarget.value && questionObj.responses[i].risk) {
           risk = questionObj.responses[i].risk
         }
       }
@@ -65,10 +66,10 @@ class Questions extends React.Component {
     }
     // Resilency
     if (questionObj.type === 'Slider' && questionObj.resiliency) {
-      resiliency = (10 - e.target.value) * questionObj.resiliency
+      resiliency = (10 - e.currentTarget.value) * questionObj.resiliency
     } else if (questionObj.type === 'Radio') {
       for (let i = 0; i < questionObj.responses.length; i++) {
-        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].resiliency) {
+        if (questionObj.responses[i].answer === e.currentTarget.value && questionObj.responses[i].resiliency) {
           resiliency = questionObj.responses[i].resiliency
         }
       }
@@ -79,7 +80,7 @@ class Questions extends React.Component {
     // rounding
     risk = Math.round(risk * 10) / 10
     resiliency = Math.round(resiliency * 10) / 10
-    answers[id] = { id, question, answer: e.target.value, risk, resiliency }
+    answers[id] = { id, question, answer: e.currentTarget.value, risk, resiliency }
     this.setState({ answers })
   }
 
