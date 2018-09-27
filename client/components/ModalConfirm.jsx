@@ -2,7 +2,6 @@ import React from 'react'
 
 class ModalConfirm extends React.Component {
   render () {
-    console.log('Modal render')
     return (
       <div className='modal is-active'>
         <div className='modal-background' />
