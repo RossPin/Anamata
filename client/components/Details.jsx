@@ -94,7 +94,7 @@ class Details extends React.Component {
           <TextDetails detail='Preferred Name' name='prefName' onChange={this.updateDetails} />
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
           <SliderDetails detail='Gender' name='gender' question={genderObj} detailState={details.gender} onChange={e => this.updateDetails(e)} />
-          <div className='textDetails'>
+          <div className='detailsDiv textDetails'>
             <label htmlFor='dob'>Birthday</label>
             <input type='date' id='dob' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
           </div>
@@ -139,7 +139,7 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
   </div>
 
 const SliderDetails = ({ detail, question, answer, onChange }) =>
-  <div className='sliderDetails'>
+  <div className='detailsDiv sliderDetails'>
     <label>{detail}</label>
     <div>
       {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}

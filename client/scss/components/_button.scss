@@ -2,7 +2,7 @@
     background-color: $primary-purple;
     border: $white solid 0.05em;
     color: $white;
-    font-size: 2em;
+    font-size: 2vw;
     margin: 0.4em;
 }
 
@@ -27,6 +27,7 @@
 }
 
 .helpBtn {
+  margin: auto;
   display: inline-flex;
   background-color: $white-20;
   color: $primary-purple;

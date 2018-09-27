@@ -24,7 +24,7 @@ class Complete extends React.Component {
   render () {
     return (
       <div className='complete'>
-        <h1>You Are</h1>
+        <h1>Who You Are</h1>
         <img src='/img/outline.gif' />
         <h1>Useful Resourses</h1>
         <ul>
