@@ -9,6 +9,7 @@ function getRisks (yp) {
     risks.factor = risks.total.risk - risks.total.resiliency
     return risks
   }
+  return { factor: 0 }
 }
 
 function getRisk (section) {
