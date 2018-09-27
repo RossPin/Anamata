@@ -2,7 +2,8 @@
     "health": 
     {
         "title":"YOUR HEALTH HISTORY / TAHA TINANA",
-        "description" : "",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {
@@ -505,7 +506,8 @@
     "activities": 
     {
         "title":"Activities",
-        "description" : "",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {

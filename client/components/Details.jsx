@@ -84,7 +84,7 @@ class Details extends React.Component {
           <TextDetails detail='Preferred Name' name='prefName' onChange={this.updateDetails} />
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
           <SliderDetails name='gender' question={genderObj} detailState={details.gender} onChange={e => this.updateDetails(e)} />
-          <div className='textDetails'>
+          <div className='detailsDiv textDetails'>
             <label htmlFor='dob'>Birthday</label>
             <input type='date' id='dob' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
           </div>
@@ -99,13 +99,13 @@ class Details extends React.Component {
 }
 
 const TextDetails = ({ detail, name, onChange }) =>
-  <div className='textDetails'>
+  <div className='detailsDiv textDetails'>
     <label htmlFor={name}>{detail}</label>
     <input id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
-  <div className='radioDetails'>
+  <div className='detailsDiv radioDetails'>
     <label>{detail}</label>
     {radioList.map((item, i) => (
       <div key={i}>
@@ -113,7 +113,7 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
           ? <div className='otherSection'>
             <input type='radio' className='otherRadio' id={'radio' + item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
-            <label for={'radio' +item}>{item}</label>
+            <label for={'radio' + item}>{item}</label>
             <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
@@ -127,7 +127,7 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
   </div>
 
 const SliderDetails = ({ question, answer, onChange }) =>
-  <div className='sliderDetails'>
+  <div className='detailsDiv sliderDetails'>
     <div>
       {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
     </div>
