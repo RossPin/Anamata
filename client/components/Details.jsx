@@ -92,7 +92,7 @@ class Details extends React.Component {
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
           <TextDetails detail='Mobile' name='mobile' onChange={this.updateDetails} />
-          <input className='button' type='submit' />
+          <input className='button' type='submit' value="Next"/>
         </form>
       </div>
     )
@@ -107,20 +107,20 @@ const TextDetails = ({ detail, name, onChange }) =>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
   <div className='radioDetails'>
-    {detail}:
+    <label>{detail}</label>
     {radioList.map((item, i) => (
       <div key={i}>
         {item === 'Other'
           ? <div className='otherSection'>
-            <input type='radio' className='otherRadio' name={name} onChange={e => onChange(e)}
+            <input type='radio' className='otherRadio' id={'radio' +item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
-            {item}
+            <label for={'radio' +item}>{item}</label>
             <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
-            <input className='radioDetailsInput' type='radio' name={name} onChange={e => onChange(e)}
+            <input className='radioDetailsInput' id={'radio' +item} type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
-            {item}
+            <label for={'radio' +item}>{item}</label>
           </div>
         }
       </div>
