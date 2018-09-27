@@ -20,6 +20,7 @@
 
   .textDetails {
     text-align: left;
+    margin-bottom: 1em;
   }
 
   .radioDetails {
@@ -28,14 +29,27 @@
     text-align: left;
     margin: 5 0 10 0;
     padding: 0 0 0 5;
+    
+    label{
+      display: inline;
+    }
+
   }
 
   .radioOtherInput{
     display: block;
   }
 
+  .radioDetailsInput, .otherRadio{
+    width: 1em;
+    height: 1em;
+  }
+
   label {
+    vertical-align: text-bottom;
     display: block;
+    font-size: 1.1em;
+    margin-left: 0.5em;
   }
 
   form{
@@ -52,7 +66,6 @@
   .radioDetailsInput {
     padding: 0 5 0 10;
   }
-
 
 }
 
