@@ -29,7 +29,7 @@ function markReviewed (id) {
 }
 
 function removeYp (id) {
-  return YP.remove({ _id: id })
+  return YP.deleteOne({ _id: id })
 }
 
 module.exports = {

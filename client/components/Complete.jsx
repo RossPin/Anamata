@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { resetYp, createYp } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
+import Socket from '../utils/socket'
 
 class Complete extends React.Component {
   constructor (props) {
@@ -12,7 +13,17 @@ class Complete extends React.Component {
   componentDidMount () {
     window.scrollTo(0, 0)
     createYp(this.props.youngPerson)
+    this.sendSubmitted()
     this.props.dispatch(setStyle('help_background'))
+  }
+
+  sendSubmitted () {
+    const socket = Socket.connect()
+    const schoolId = 'testSchool'
+    socket.emit('submitted', schoolId)
+    setTimeout(() => {
+      socket.disconnect()
+    }, 10000)
   }
 
   submit (e) {
