@@ -84,9 +84,9 @@ class Details extends React.Component {
           <TextDetails detail='Last Name' name='lastName' onChange={this.updateDetails} />
           <TextDetails detail='Preferred Name' name='prefName' onChange={this.updateDetails} />
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
-          <Slider name='gender' question={genderObj} answer={details.gender} update={e => this.updateDetails(e)} />
-          <div class="textDetails">
-            <label for='dob'>Birthday</label>
+          <SliderDetails name='gender' question={genderObj} detailState={details.gender} onChange={e => this.updateDetails(e)} />
+          <div className='textDetails'>
+            <label htmlFor='dob'>Birthday</label>
             <input type='date' id='dob' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
           </div>
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
@@ -101,7 +101,7 @@ class Details extends React.Component {
 
 const TextDetails = ({ detail, name, onChange }) =>
   <div className='textDetails'>
-    <label for={name}>{detail}</label>
+    <label htmlFor={name}>{detail}</label>
     <input id={name} type='text' name={name} onChange={onChange}/>
   </div>
 
@@ -125,6 +125,18 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
         }
       </div>
     ))}
+  </div>
+
+const SliderDetails = ({ question, answer, onChange }) =>
+  <div className='sliderDetails'>
+    <div>
+      {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+    </div>
+    <div className='sliderLabels'>
+      <input className='slider' type='range' min='0' max='100' value={answer} onChange={e => onChange(e)} />
+      <b className='sliderLabelLeft'>{question.responses.left}</b>
+      <b className='sliderLabelRight'>{question.responses.right}</b>
+    </div>
   </div>
 
 export default connect()(Details)
