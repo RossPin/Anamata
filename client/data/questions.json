@@ -1038,7 +1038,12 @@
             {
                 "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
                 "id": "9120",
-                "type": "AddInfo"
+                "type": "AddInfo",
+                "tooltip": {
+                    "questionArr": ["We ask all young people we see about", ", we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality."],
+                    "wordArr": ["sexual harm"],
+                    "defArr": ["When someone has a sexual experience they don't want, or are forced into any kind of sexual act by another person"]
+                  }
             },
             {
                 "question": "Have you ever been touched in a sexual way you did not like or agree to?",
