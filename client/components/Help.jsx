@@ -22,20 +22,16 @@ class Help extends React.Component {
   render () {
     return (
       <div className='container help'>
-        <h1>What is HEADDSS?</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Morbi vulputate semper nulla. Nullam porttitor quam iaculis augue
-          dignissim imperdiet. Suspendisse tellus turpis, blandit non nisi in,
-          facilisis sodales ipsum. Fusce interdum sit amet nunc a eleifend.
-          Aenean dictum, ipsum quis vehicula ultricies, nunc magna sodales
-          purus, ac convallis enim augue hendrerit eros. Ut nibh est, ultrices
-          nec augue ullamcorper, pretium varius nisl. Nulla purus dolor,
-          venenatis eget metus et, dignissim rhoncus velit.
-          Vivamus tincidunt nunc ut magna laoreet bibendum.
-          Pellentesque lobortis maximus mauris, eget posuere ante luctus vel.
-          In hac habitasse platea dictumst. Morbi vitae nulla vitae nulla
-          molestie aliquet vel in erat. Nulla dignissim at ex pretium finibus.
-          Phasellus eu enim tempus, tristique justo fermentum, elementum nulla.
+        <h1>Youth Health Assessment:</h1>
+        <p>
+          We know its important to develop an understanding of health and learn ways to find help for our health needs. We also know that during the ages of 13-17 especially your health, including physical and emotional go through significant changes.
+          A number of factors influence our health so the HEADSS assessment covers some of the areas that can have a positive, as well as a negative impact on your health.
+          <br />
+          HEADSS is an assessment that covers Home, Education, Activities, drugs (substances), sex and sexuality, safety (including mental health).
+          <br />
+          What happens? We’ve developed this confidential screening tool, you’ll be asked a range of questions regarding the above topics. But most importantly we want you to share what areas of health are most important to you and if you’d like any support.
+          <br />
+          After you’ve completed the questions you’ll receive a summary and you’ll have the opportunity to catch up with the nurse, doctor or health professional who works at your school clinic.
         </p>
         <div className='helpfeedback'>
           <h1>Feedback</h1>
