@@ -10,6 +10,7 @@ class Complete extends React.Component {
   }
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     createYp(this.props.youngPerson)
     this.props.dispatch(setStyle('help_background'))
   }
