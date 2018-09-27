@@ -245,6 +245,7 @@ class Questions extends React.Component {
 
     })
   }
+
   listining () {
     window.addEventListener('keydown', (e) => {
       if (e.keyCode === 40 || e.keyCode === 9) {
@@ -255,7 +256,9 @@ class Questions extends React.Component {
         const element = document.getElementById(ids[index])
         this.setState({ currentId: ids[index] })
         this.scroller(element)
-      } else if (e.keyCode === 32) e.preventDefault()
+      } else if (e.keyCode === 32 || e.keyCode === 13) {
+        if (e.target.type !== 'text') e.preventDefault()
+      }
     })
   }
 

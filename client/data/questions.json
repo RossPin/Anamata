@@ -139,16 +139,12 @@
             {
                 "question": "Is there someone at home you can talk to if you feel upset or who you could go to if you needed help with a problem?",
                 "id": "2050",
-                "type": "Radio", 
-                "responses": 
-                [
-                    {
-                        "answer": "Yes"
-                    },
-                    {
-                        "answer": "No"
-                    }
-                ]
+                "type": "YNifSo",
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "Who?"
+                }
             },
             {
                 "question": "Have there been any big changes in your family or at home recently (e.g., moving, someone leaving, someone new)?",
