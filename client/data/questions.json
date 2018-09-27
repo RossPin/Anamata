@@ -1,7 +1,7 @@
 { 
     "health": 
     {
-        "title":"YOUR HEALTH HISTORY / TAHA TINANA",
+        "title":"Health History / Taha Tinana",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
 
         "questions" : 
@@ -113,7 +113,7 @@
     },
     "home": 
     {
-        "title":"HOME/WHANAU",
+        "title":"Home/Whanau",
         "questions" : 
         [
             {
@@ -371,7 +371,7 @@
         ]
     },
     "nutrition": {
-      "title": "NUTRITION  AND  EXERCISE",    
+      "title": "Nutrition and Exercise",    
       "questions": [
         {
           "question": "How much exercise do you do in an average week?",
@@ -635,7 +635,7 @@
     },
 
         "drugs": {
-            "title": "SUBSTANCE USE:",
+            "title": "Substance Use:",
             "description": "This information will not be passed on without your permission.",
             "questions": [
         {"question": "Do you smoke cigarettes / tobacco?",
@@ -909,7 +909,7 @@
 },
 "sexualHealth": 
     {
-        "title":"SEXUALITY AND SEXUAL HEALTH ",
+        "title":"Sexuality and Sexual Health",
         "description" : [ "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful.", "This information will stay completely private. It does not get shared with anyone else other than the nurse." ],
         "questions" : 
         [
@@ -1304,7 +1304,7 @@
     },
     "spirit": 
     {
-        "title":"SPIRITUAL HEALTH / WAIRUATANGA",
+        "title":"Spiritual Health / Wairuatanga",
         "description": "Spirituality means different things to different people. Spirituality is our sense of connection to something bigger than us. It may include a search for beliefs and values; a sense of meaning and a purpose in life; a sense of connectedness; identity and awareness; and for some people, religion.",
         "questions" : 
         [
