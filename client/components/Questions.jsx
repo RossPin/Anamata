@@ -258,7 +258,8 @@ class Questions extends React.Component {
         this.setState({ currentId: ids[index] })
         this.scroller(element)
       } else if (e.keyCode === 32 || e.keyCode === 13) {
-        if (e.target.type !== 'text') e.preventDefault()
+        console.log(e.target.type)
+        if (e.target.type !== 'text' && e.target.type !== 'textarea') e.preventDefault()
       }
     })
   }
