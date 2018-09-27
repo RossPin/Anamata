@@ -28,7 +28,6 @@ class Complete extends React.Component {
         <h1>Useful Resourses</h1>
         <ul>
           <li><a href='https://www.anamatacafe.org.nz/' target='_blank'>Anamata Cafe</a></li>
-          <li><a href='https://www.anamatacafe.org.nz/' target='_blank'>Anamata Cafe</a></li>
           <li><a href='https://kidshealth.org/en/teens/love.html'target='_blank'>teen love</a></li>
           <li><a href=' http://insideout.org.nz/'target='_blank'>insideout</a></li>
           <li><a href='https://teentalk.ca/learn-about/consent-2/'target='_blank'>consent</a></li>
