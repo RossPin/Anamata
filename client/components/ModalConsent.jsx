@@ -12,12 +12,12 @@ class ModalConsent extends React.Component {
           </header>
           <section className='modal-card-body modalBody'>
             <div className='modalBackground'>
-              <p>Sorry</p>
+              <p>Were sorry you dont feel like continuing with this. Would you like to speak to the nurse about how your feeling?</p>
             </div>
           </section>
           <footer className='modal-card-foot modalFoot'>
-            <button onClick={this.props.decline} className='button is-success'>Continue</button>
-            <button onClick={this.props.cancel} className='button'>Cancel</button>
+            <button onClick={this.props.decline} className='button'>Withdraw</button>
+            <button onClick={this.props.cancel} className='button is-success'>Go Back</button>
           </footer>
         </div>
       </div>
