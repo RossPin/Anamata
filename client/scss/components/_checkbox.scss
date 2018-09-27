@@ -28,7 +28,7 @@ label svg path {
 }
 
 input[type="checkbox"]:checked ~ label svg {
-  border-color: #111;
+  border-color: $primary-purple;
 }
 
 input[type="checkbox"]:checked ~ label svg path {
