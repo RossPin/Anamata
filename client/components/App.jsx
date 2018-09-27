@@ -15,6 +15,7 @@ import ViewAnswers from './ViewAnswers'
 import { addAlert, resetAlerts } from '../actions/alerts'
 import Socket from '../utils/socket'
 import Reviewed from './Reviewed'
+import { newSubmit } from '../actions/newSubmission';
 
 class App extends React.Component {
   constructor (props) {
@@ -43,6 +44,9 @@ class App extends React.Component {
     socket.emit('joinSession', schoolId, username)
     socket.on('alert', (alert) => {
       this.props.dispatch(addAlert(alert))
+    })
+    socket.on('new-submit', () => {
+      this.props.dispatch(newSubmit())
     })
   }
 

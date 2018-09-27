@@ -224,6 +224,9 @@ class Questions extends React.Component {
     const schoolId = 'testSchool'
     this.props.dispatch(addAlert({ name, msg }))
     socket.emit('trigger-alert', schoolId, { name, msg })
+    setTimeout(() => {
+      socket.disconnect()
+    }, 10000)
   }
 
   getIds (questions) {
