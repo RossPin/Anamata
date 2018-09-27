@@ -82,7 +82,7 @@ class Questions extends React.Component {
     risk = Math.round(risk * 10) / 10
     resiliency = Math.round(resiliency * 10) / 10
     answers[id] = { id, question, answer: e.currentTarget.value, risk, resiliency }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateSelectionArray (val, id, questionObj) {
@@ -90,14 +90,14 @@ class Questions extends React.Component {
     let question = questionObj.question
     if (answers[id]) answers[id].answer.push(val)
     else answers[id] = { id, question, answer: [val] }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateIfSo (e, id, question) {
     e.preventDefault()
     const { answers } = this.state
     Object.assign(answers[id], { ifSoQuestion: question, ifSoAnswer: e.target.value })
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateCheckbox (e, questionObj) {
@@ -114,7 +114,7 @@ class Questions extends React.Component {
       answer['resiliency'] = questionObj.resiliency
     }
     answers[id] = { id, question, answer }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   createCheckboxArray (question) {
