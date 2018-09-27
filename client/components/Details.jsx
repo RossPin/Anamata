@@ -99,13 +99,13 @@ class Details extends React.Component {
 }
 
 const TextDetails = ({ detail, name, onChange }) =>
-  <div className='textDetails'>
+  <div className='detailsDiv textDetails'>
     <label htmlFor={name}>{detail}</label>
     <input id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
-  <div className='radioDetails'>
+  <div className='detailsDiv radioDetails'>
     <label>{detail}</label>
     {radioList.map((item, i) => (
       <div key={i}>

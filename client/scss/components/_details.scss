@@ -4,7 +4,7 @@
 }
 
 .details {
-  background: rgba(208, 205, 148, 0.473);
+  background: $white-20;
   box-shadow: 5px 8px 18px #888888;
   border-radius: 5px;
   padding: 20px;
@@ -17,6 +17,9 @@
     padding: 5 2 5 2;
   }
 
+  h3 {
+    color: $primary-purple;
+  }
 
   .textDetails {
     text-align: left;
@@ -36,7 +39,12 @@
 
   }
 
+  form .detailsDiv {
+    margin-bottom: 10%;
+  }
+
   .sliderLabels {
+    color: $primary-purple;
     padding-bottom: 30px;
   }
 

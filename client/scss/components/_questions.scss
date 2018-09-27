@@ -1,4 +1,31 @@
+.questions {
+  width: 90%;
+}
 
+.questionContainer {
+  margin-top: 20%;
+}
+
+.qDiv form {
+  font-size: 250%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ynifso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.ifso {
+  margin-top: 4%;
+}
+
+// .questionContainer {
+//   border: 2px solid red,
+// }
 .speech-bubble {
   color: $white;
 	position: relative;
@@ -6,14 +33,15 @@
   border-radius: 80px;
   box-shadow: 2px 4px 10px black;
   width: 60%;
-  height: 15%;
-  top: 33%;
+  height: 25%;
+  top: 0;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-  font-size: 150%;
-  padding: 4%;
+  font-size: 200%;
+  padding: 2%;
+  margin-bottom: 10%;
 }
 
 .speech-bubble :after {
@@ -32,24 +60,24 @@
 }
   .radio {
     right: 5%;
-    float: right;
+    top: 80%;
   }
   .emojiButtons {
     right: 5%;
     float: right;
-    top: 60%;
+    top: 20%;
     position: relative;
   }
   .textFormAnswer {
     right: 5%;
     float: right;
-    top: 60%;
+    top: 20%;
     position: relative;
   }
   .sliderAns {
     right: 5%;
     float: right;
-    top: 60%;
+    top: 20%;
     position: relative;
     width: auto;
   }
@@ -59,13 +87,14 @@
     font-size: 1.2em;
   }
   .listingForm {
-    top: 60%;
+    top: 20%;
     position: relative;
     float: right;
   } 
   .qDiv {
+    // margin-top: 20%;
     position: relative;
-    height: 100vh; 
+    height: 90vh; 
   }
   
   //   cursor: pointer;
