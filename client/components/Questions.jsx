@@ -17,6 +17,8 @@ class Questions extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      ids: [],
+      currentId: '',
       categories: Object.keys(questionData),
       currentCategory: 0,
       answers: {
@@ -35,10 +37,14 @@ class Questions extends React.Component {
     this.checkConditions = this.checkConditions.bind(this)
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
+    this.scroller = this.scroller.bind(this)
+    this.listining = this.listining.bind(this)
+    this.getIds = this.getIds.bind(this)
   }
 
   componentDidMount () {
     this.props.dispatch(setStyle('questions_background'))
+    this.listining()
   }
 
   updateSelection (e, id, questionObj) {
@@ -133,7 +139,8 @@ class Questions extends React.Component {
         title,
         description,
         footer,
-        answers: {}
+        answers: {},
+        currentId: ''
       })
     } else this.props.history.push('/complete')
   }
@@ -169,31 +176,31 @@ class Questions extends React.Component {
     }
   }
 
-  checkConditions (question) {
+  checkConditions (question, callback) {
     const { compare, target, value } = question.conditions
     if (this.state.answers[target] || compare === '||>') {
       switch (compare) {
         case '=':
-          if (this.state.answers[target].answer === value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer === value) return callback(question)
           break
         case '>':
-          if (this.state.answers[target].answer > value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer > value) return callback(question)
           break
         case '<':
-          if (this.state.answers[target].answer < value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer < value) return callback(question)
           break
         case 'any':
           const values = Object.values(this.state.answers[target].answer)
-          if (values.includes(true)) return this.renderQuestion(question)
+          if (values.includes(true)) return callback(question)
           break
         case '=*':
           for (let i = 0; i < value.length; i++) {
-            if (this.state.answers[target].answer === value[i]) return this.renderQuestion(question)
+            if (this.state.answers[target].answer === value[i]) return callback(question)
           }
           break
         case '||>':
           for (let i = 0; i < target.length; i++) {
-            if (this.state.answers[target[i]] && (this.state.answers[target[i]].answer > value)) return this.renderQuestion(question)
+            if (this.state.answers[target[i]] && (this.state.answers[target[i]].answer > value)) return callback(question)
           }
           break
         default:
@@ -215,22 +222,52 @@ class Questions extends React.Component {
     socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
-  
+  getIds (questions) {
+    const id = []
+    questions.map(question => {
+      question.conditions ? this.checkConditions(question, question => { question && id.push(question.id) }) : id.push(question.id)
+    })
+    return id
+  }
 
-  nextQuestion (e) {
-    document.getElementById('questions').addEventListener('keyup', () => {
-      
+  scroller (e) {
+    console.log(e)
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight)) + (Number(document.getElementById('description').offsetHeight))
+
     })
   }
+  listining () {
+    window.addEventListener('keyup', (e) => {
+      console.log(e)
+      if (e.keyCode === 13) {
+        console.log('enter')
+        const ids = this.getIds(this.state.questions)
+        const index = ids.findIndex(id => id === this.state.currentId) + 1
+        const element = document.getElementById(ids[index])
+        this.scroller(element)
+        this.setState({ currentId: ids[index] })
+      }
+    })
+  }
+  // nextQuestion () {
+  //   document.getElementById('questions').addEventListener('keyup', (e) => {
+  //     if (e.keycode === 13) {
+  //       window.scrollTo('questionContainer')
+  //     }
+  //   })
+  // }
 
   render () {
     return (
       <div className='questions'>
         <h1>{this.state.title}</h1>
-        {this.state.description && <p>{this.state.description}</p>}
+        {this.state.description && <p id='description'>{this.state.description}</p>}
         {this.state.questions.map(question => (
-          <div className='questionContainer' key={question.id}>
-            {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
+          <div className='questionContainer' id={question.id} key={question.id}>
+            {question.conditions ? this.checkConditions(question, this.renderQuestion) : this.renderQuestion(question)}
           </div>
         ))}
         {this.state.footer && <p>{this.state.footer}</p>}
