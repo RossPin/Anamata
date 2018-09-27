@@ -92,7 +92,7 @@ class Details extends React.Component {
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
           <TextDetails detail='Mobile' name='mobile' onChange={this.updateDetails} />
-          <input className='button' type='submit' />
+          <input className='button' type='submit' value="Next"/>
         </form>
       </div>
     )
