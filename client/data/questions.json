@@ -3,6 +3,7 @@
     {
         "title":"YOUR HEALTH HISTORY / TAHA TINANA",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {
@@ -506,6 +507,7 @@
     {
         "title":"Activities",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {
@@ -927,18 +929,6 @@
                         "check": "No one"
                     }
             },
-            {
-                "question": " Indicate where you think you see yourself on this sliding scale:",
-                "id": "9030",
-                "type": "Slider",
-                "responses": 
-                    {
-                        "right": "Female",
-                        "left": "Male",
-                        "check": "I don't know"
-                    }
-            },
-            
             {
                 "question": "I think I have a good understanding about sex",
                 "id": "9040",

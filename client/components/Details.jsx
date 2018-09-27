@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
-// import Slider from './Slider'
 
 class Details extends React.Component {
   constructor (props) {
@@ -120,7 +119,7 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
           : <div>
             <input className='radioDetailsInput' id={'radio' + item} type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
-            <label for={'radio' + item}>{item}</label>
+            <label htmlFor={'radio' + item}>{item}</label>
           </div>
         }
       </div>
