@@ -12,6 +12,7 @@ import Checkbox from './Checkbox'
 import { setStyle } from '../actions/style'
 import { addSection, addAlert } from '../actions/youngPerson'
 import Socket from '../utils/socket'
+import AddInfo from './AddInfo'
 
 class Questions extends React.Component {
   constructor (props) {
@@ -172,6 +173,8 @@ class Questions extends React.Component {
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
+      case 'AddInfo':
+        return <AddInfo question={question} />
       default:
         return null
     }

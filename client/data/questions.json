@@ -1043,14 +1043,12 @@
             {
                 "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
                 "id": "9120",
-                "type": "Radio",
+                "type": "AddInfo",
                 "tooltip": {
                     "questionArr": ["We ask all young people we see about", ", we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality."],
                     "wordArr": ["sexual harm"],
                     "defArr": ["When someone has a sexual experience they don't want, or are forced into any kind of sexual act by another person"]
-                  },
-                "responses": [
-                ]
+                  }
             },
             {
                 "question": "Have you ever been touched in a sexual way you did not like or agree to?",
@@ -1098,9 +1096,7 @@
             {
                 "question": "Some young people are looking at porn on the internet. There can be a number of reasons someone may do this, and sometimes we’re not sure how we feel about what we do see. The reason we’re going to  ask you questions about porn is because we want to support you in being safe. It’s really good to be honest about this as the answers you put may help you understand where you’re at with this a lot better.",
                 "id": "9150",
-                "type": "Radio",
-                "responses": [
-                ]
+                "type": "AddInfo"                
             },
             {
                 "question": "Have you seen sexual images, (ie. porn) that you chose to view",
