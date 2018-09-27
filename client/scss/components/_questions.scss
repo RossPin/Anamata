@@ -8,8 +8,14 @@
   width: 60%;
   height: 15%;
   top: 33%;
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 150%;
+  padding: 4%;
 }
+
 .speech-bubble :after {
 	content: '';
 	position: absolute;

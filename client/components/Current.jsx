@@ -29,7 +29,7 @@ class Current extends React.Component {
       .then((response) => {
         const current = response.body
         current.map(yp => { yp.risk = getRisks(yp) })
-        const { alert, high, normal } = triage(current)        
+        const { alert, high, normal } = triage(current)
         this.setState({ current, alert, high, normal })
       })
   }
@@ -42,7 +42,7 @@ class Current extends React.Component {
   render () {
     return (
       <div className='current'>
-        <h1 style={{ margin: '0 auto' }}>Un-Reviewed surveys</h1>
+        <h1>Un-Reviewed surveys</h1>
         <div className='currentContainer'>
           <div className='currentList'>
             <h3>Alert Status</h3>
