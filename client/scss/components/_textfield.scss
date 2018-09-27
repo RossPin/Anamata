@@ -4,13 +4,13 @@ input {
     padding: 10px;
     background-color:$white-80;
     margin: 10px auto 2px auto;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .fa-plus{
     vertical-align: bottom;
     margin-left: 10px;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .fa-plus:hover {
@@ -23,7 +23,8 @@ input {
     border-radius: 20px;
     border: transparent solid 1px;
     background-color:$white-80;
-    font-size: 1.3em;
+    font-size: 1em;
+    padding: 4%;
   }
   
   .textinput:focus {
