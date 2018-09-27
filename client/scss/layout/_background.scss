@@ -1,8 +1,9 @@
 .hero {
-    background: url("/img/backgrounds/home_background_no_whare.png") center / cover;
+    // background: url("/img/backgrounds/home_background_no_whare.png") center / cover;
     background-attachment: fixed;
     max-width: 100%;
     min-height: 100vh;
+    justify-content: flex-start;
 }
 
 .container {

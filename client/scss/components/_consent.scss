@@ -4,39 +4,39 @@
 }
 
 .consent {
-  background: rgba(208, 205, 148, 0.473);
+  background: $white-20;
   box-shadow: 5px 8px 18px #888888;
-  border-radius: 5px;
-}
-
-.consent h1 {
-  color:#32292F;
-  font-family: $itim;
-  font-size: 5vw;
-  padding: 5 2 10 2;
+  border-radius: 2%;
 }
 
 .consent p {
-  padding: 20 10 10 10;
-  font-family: $pt;
+  color: $primary-purple;
+  margin: 6% auto;
+  // font-size: 2em;
+
+}
+
+.consent p div{
+  margin-top: 4%;
+  font-weight: 800;
+}
+
+.consent img {
+  margin-top: 6%;
 }
 
 .consent h3 {
-  margin: 10 10 10 10;
-  font-weight: bold;
+  margin-bottom: 4%;
+  font-size: 2.5em;
+
 }
 
 .consent .button {
-  background-color: #6A5BA3;
-  border: none;
-  text-align: center;
   width: 120px;
-  padding: 5 5 5 5;
-  border-radius: 2px;
-  font-weight: bold;
+  margin: 0 6%;
 }
 
 .consent-form{
-  background-color: #EEEA29;
-  padding: 15;
+  background-color: $primary-blue;
+  padding: 4%;
 }

@@ -14,6 +14,7 @@ import Current from './Current'
 import ViewAnswers from './ViewAnswers'
 import { addAlert, resetAlerts } from '../actions/alerts'
 import Socket from '../utils/socket'
+import Reviewed from './Reviewed'
 
 class App extends React.Component {
   constructor (props) {
@@ -46,7 +47,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.context)
     return (
       <HashRouter>
         <div>
@@ -58,6 +58,7 @@ class App extends React.Component {
               <Route exact path='/help' component={Help} />
               <Route path='/Register' component={Register} />
               <Route path='/current' component={Current} />
+              <Route path='/reviewed' component={Reviewed} />
               <Route path='/details' component={Details} />
               <Route path='/consent' component={Consent} />
               <Route path='/questions' component={Questions} />

@@ -31,9 +31,14 @@ class Checkbox extends React.Component {
         <form>
           {question.responses.map((response, i) => (
             <div key={i}>
-              <label>
-                <input type='checkbox' name='answer'
-                  value={response.answer} checked={answer[response.answer] ? answer[response.answer] : false} onChange={e => update(e, question)} />
+              <label className='checkbox'>
+                <input type='checkbox' id='answer' name='answer'
+                  value={response.answer} checked={answer[response.answer]
+                    ? answer[response.answer] : false} onChange={e => update(e, question)} />
+                <svg width='20' height='20' viewBox='0 0 20 20'>
+                  <rect width='20' height='20' />
+                  <path d='M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z' class='inner' />
+                </svg>
                 {response.answer}
               </label>
             </div>

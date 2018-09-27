@@ -2,7 +2,8 @@
     "health": 
     {
         "title":"YOUR HEALTH HISTORY / TAHA TINANA",
-        "description" : "Be healthy please blah blah blah blah blah",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {
@@ -505,7 +506,8 @@
     "activities": 
     {
         "title":"Activities",
-        "description" : "Be healthy please blah blah blah blah blah",
+        "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
+
         "questions" : 
         [
             {
@@ -928,45 +930,44 @@
                     }
             },
             {
-                "question": " Indicate where you think you see yourself on this sliding scale:",
-                "id": "9030",
-                "type": "Slider",
-                "responses": 
-                    {
-                        "right": "Female",
-                        "left": "Male",
-                        "check": "I don't know"
-                    }
-            },
-            
-            {
-                "question": "I think I have a pretty good understanding about sex and what it's all about.",
+                "question": "I think I have a good understanding about sex",
                 "id": "9040",
                 "type": "Slider",
+                "risk": 0.2,
+                "resiliency": 0.4,
                 "responses": 
                     {
-                        "right": "Yes, I know I get it",
-                        "left": "No, don't understand much at all"
+                        "right": "No, don't understand much at all",
+                        "left": "Yes, I know I get it"
                     }
             },
             {
                 "question": "I feel comfortable talking about sex and sexuality with people I trust",
                 "id": "9050",
                 "type": "Slider",
+                "risk": 0.4,
+                "resiliency": 0.6,
+                "tooltip": {
+                    "questionArr": ["I feel comfortable talking about sex and", " with people I trust"],
+                    "wordArr": ["sexuality"],
+                    "defArr": ["one of those things you’re born with, you do not choose it, it’s just part of who you are, whether you be physically, emotionally and sexually attracted to males, female or both."]
+                  },
                 "responses": 
                     {
-                        "right": "Yes, I feel comfortable",
-                        "left": "No, I feel very uncomfortable"
+                        "right": "No, I feel very uncomfortable",
+                        "left": "Yes, I feel comfortable"
                     }
             },
             {
                 "question": "I know what the  term ‘safe sex’ means? ",
                 "id": "9060",
                 "type": "Slider",
+                "risk": 0.5,
+                "resiliency": 0.5,
                 "responses": 
                     {
-                        "right": "Yes, I know I get it",
-                        "left": "No, I don't understand much at all"
+                        "right": "No, I don't understand much at all",
+                        "left": "Yes, I know I get it"
                     }
             },
             {
@@ -986,6 +987,7 @@
                 "question": "Have you ever had a sexual relationship with:",
                 "id": "9080",
                 "type": "Checkbox",
+                "risk": 8,
                 "responses": [
                   {
                     "answer": "Boy"
@@ -999,7 +1001,7 @@
                 ]
             },
             {
-                "question": "Are you  in a sexual relationship  currently?",
+                "question": "Are you in a sexual relationship currently?",
                 "id": "9090",
                 "type": "Radio",
                 "conditions": 
@@ -1010,7 +1012,8 @@
                   },
                 "responses": [
                   {
-                    "answer": "Yes"
+                    "answer": "Yes",
+                    "risk": 8
                   },
                   {
                     "answer": "No"
@@ -1021,6 +1024,8 @@
                 "question": "Do you feel comfortable and safe being sexual active?",
                 "id": "9100",
                 "type": "Slider",
+                "risk": 1,
+                "resiliency": 1,
                 "conditions": 
                 {
                     "target": "9090",
@@ -1029,8 +1034,8 @@
                 },
                 "responses": 
                     {
-                        "right": "Yes",
-                        "left": "No"
+                        "right": "No",
+                        "left": "Yes"
                     }
             },
             {
@@ -1042,25 +1047,34 @@
                 "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
                 "id": "9120",
                 "type": "Radio",
+                "tooltip": {
+                    "questionArr": ["We ask all young people we see about", ", we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality."],
+                    "wordArr": ["sexual harm"],
+                    "defArr": ["When someone has a sexual experience they don't want, or are forced into any kind of sexual act by another person"]
+                  },
                 "responses": [
                 ]
             },
             {
                 "question": "Have you ever been touched in a sexual way you did not like or agree to?",
+                
                 "id": "9130",
                 "type": "Radio",
                 "responses": [
                   {
-                    "answer": "Yes"
+                    "answer": "Yes",
+                    "risk": 10
                   },  
                   {
                     "answer": "No"
                   },
                   {
-                    "answer": "Maybe"
+                    "answer": "Maybe",
+                    "risk": 8
                   },
                   {
-                    "answer": "Unsure"
+                    "answer": "Unsure",
+                    "risk": 8
                   }
                 ]
             },
@@ -1079,7 +1093,8 @@
                             "answer": "Yes"
                         },
                         {
-                            "answer": "No"
+                            "answer": "No",
+                            "risk": 10
                         }
                 ]
             },
@@ -1091,9 +1106,11 @@
                 ]
             },
             {
-                "question": "Have you seen sexual images, ie porn (Please place curser to where you feel is right for you)",
+                "question": "Have you seen sexual images, (ie. porn) that you chose to view",
                 "id": "9160",
                 "type": "Slider",
+                "risk": 0.6,
+                "resiliency": 0.6,
                 "responses": 
                     {
                         "right": "Yes",
@@ -1108,23 +1125,52 @@
                 {
                     "target": "9160",
                     "compare": ">",
-                    "value": 1
+                    "value": 0
                 },
                 "responses": 
                     {
-                        "right": "Fine",
-                        "left": "Uncomfortable"
+                        "right": "Uncomfortable",
+                        "left": "Fine"
                     }
             },
             {
-                "question": "How often would you look at/watch pornagraphic images/videos:",
-                "id": "9180",
+                "question": "Have you seen sexual images, (ie. porn) that you DIDN't choose to view",
+                "id": "9171",
+                "type": "Slider",
+                "risk": 0.4,
+                "responses": 
+                    {
+                        "right": "Yes",
+                        "left": "No"
+                    }
+            },
+            {
+                "question": "How did you feel about this?",
+                "id": "9172",
                 "type": "Slider",
                 "conditions": 
                 {
-                    "target": "9160",
+                    "target": "9171",
                     "compare": ">",
-                    "value": 1
+                    "value": 0
+                },
+                "responses": 
+                    {
+                        "right": "Uncomfortable",
+                        "left": "Fine"
+                    }
+            },
+            {
+                "question": "How often do you view pornography?",
+                "id": "9180",
+                "type": "Slider",
+                "risk": 0.7,
+                "resiliency": 0.5,
+                "conditions": 
+                {
+                    "target": ["9160","9171"],
+                    "compare": "||>",
+                    "value": "1"
                 },
                 "responses": 
                     {

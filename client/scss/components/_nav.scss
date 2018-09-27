@@ -5,11 +5,16 @@
     padding: 1em;
 }
 
+.navbar-end {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nav .button {
-    margin: auto;
+    margin: auto 10px;
 }
 
 .logo {
-    max-height: 8em;
+    max-height: 6em;
     max-width: auto;
 }

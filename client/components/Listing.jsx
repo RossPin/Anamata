@@ -35,22 +35,23 @@ class Listing extends React.Component {
     // eslint-disable-next-line
     const { question, update, answer } = this.props
     return (
-      <div>
-        {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
-        <ul>
-          { answer.map((val, i) => (
-            <div key={i}>
-              <li>{val}</li>
-            </div>
-          ))}
-        </ul>
-        <form onSubmit={this.submit}>
+      <div className='qDiv' data-aos='fade-right'>
+        <div className='speech-bubble'>
+          {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+        </div>
+        <form data-aos='fade-left' onSubmit={this.submit} className='listingForm'>
           <input type='text' placeholder='type here' name='input'
             onChange={this.updateDetails}
             value={this.state.input} />
-          <div>
-            <input type='Submit' />
-          </div>
+          <i className='fas fa-plus fa-3x' onClick={this.submit} />
+          <input type='submit' className='is-hidden'/>
+          <ul className='listing'>
+            { answer.map((val, i) => (
+              <div key={i}>
+                <li>{val}</li>
+              </div>
+            ))}
+          </ul>
         </form>
       </div>
     )

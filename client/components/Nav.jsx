@@ -15,6 +15,7 @@ function Nav (props) {
           <div className='navbar-end'>
             <span className='user'>{props.auth.user.username.toUpperCase()} </span>
             <Link className='button' to='/current'>Current</Link>
+            <Link className='button' to='/reviewed'>Reviewed</Link>
             <button className='button' onClick={() => props.dispatch(logoutUser())}>Logout</button>
             {props.alerts.length > 0 && <Alert />}
           </div>
@@ -24,7 +25,7 @@ function Nav (props) {
             <img className='logo' src='/img/anamata_logo.png' />
           </Link>
           <div className='navbar-end'>
-            <Link className='button help' to='/help'>Help</Link>
+            <Link className='button helpBtn' to='/help'>Help</Link>
           </div>
         </div>
       }
