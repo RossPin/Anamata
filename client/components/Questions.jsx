@@ -246,15 +246,16 @@ class Questions extends React.Component {
     })
   }
   listining () {
-    window.addEventListener('keyup', (e) => {
-      if (e.keyCode === 40) {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 40 || e.keyCode === 9) {
+        e.preventDefault()
         const ids = this.getIds(this.state.questions)
         const index = ids.findIndex(id => id === this.state.currentId) + 1
         if (index >= ids.length) return this.scroller(document.getElementById('submit'))
         const element = document.getElementById(ids[index])
         this.setState({ currentId: ids[index] })
         this.scroller(element)
-      }
+      } else if (e.keyCode === 32) e.preventDefault()
     })
   }
 
