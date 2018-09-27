@@ -22,6 +22,11 @@ module.exports = http => {
       console.log({ alert })
       io.to(id).emit('alert', alert)
     })
+
+    socket.on('submitted', (id) => {
+      console.log('Result Submitted')
+      io.to(id).emit('new-submit')
+    })
   })
 
   return io

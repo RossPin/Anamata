@@ -4,6 +4,7 @@ import { setYp } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
 import request from '../utils/api'
 import { getRisks, triage } from '../utils/eval'
+import { resetSubmit } from '../actions/newSubmission'
 
 class Current extends React.Component {
   constructor (props) {
@@ -24,6 +25,10 @@ class Current extends React.Component {
     this.props.dispatch(setStyle('current_background'))
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.newSubmission) this.updateList()
+  }
+
   updateList () {
     request('get', 'yp/view/current')
       .then((response) => {
@@ -31,6 +36,7 @@ class Current extends React.Component {
         current.map(yp => { yp.risk = getRisks(yp) })
         const { alert, high, normal } = triage(current)
         this.setState({ current, alert, high, normal })
+        this.props.dispatch(resetSubmit())
       })
   }
 
@@ -80,8 +86,8 @@ class Current extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  return { auth }
+const mapStateToProps = ({ auth, newSubmission }) => {
+  return { auth, newSubmission }
 }
 
 export default connect(mapStateToProps)(Current)
