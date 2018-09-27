@@ -55,7 +55,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.alert.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `-${yp.details.firstName} ${yp.details.lastName}-` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
@@ -65,7 +65,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.high.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `-${yp.details.firstName} ${yp.details.lastName}-` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
@@ -75,7 +75,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.normal.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `-${yp.details.firstName} ${yp.details.lastName}-` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
