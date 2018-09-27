@@ -235,20 +235,19 @@ class Questions extends React.Component {
     window.scrollTo({
       'behavior': 'smooth',
       'left': 0,
-      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight)) + (Number(document.getElementById('description').offsetHeight))
+      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight)) + (Number(document.getElementById('description').offsetHeight) || 0)
 
     })
   }
   listining () {
     window.addEventListener('keyup', (e) => {
-      console.log(e)
-      if (e.keyCode === 13) {
-        console.log('enter')
+      if (e.keyCode === 39) {
         const ids = this.getIds(this.state.questions)
         const index = ids.findIndex(id => id === this.state.currentId) + 1
+        if (index >= ids.length) return this.scroller(document.getElementById('submit'))
         const element = document.getElementById(ids[index])
-        this.scroller(element)
         this.setState({ currentId: ids[index] })
+        this.scroller(element)
       }
     })
   }
@@ -264,14 +263,14 @@ class Questions extends React.Component {
     return (
       <div className='questions'>
         <h1>{this.state.title}</h1>
-        {this.state.description && <p id='description'>{this.state.description}</p>}
+        <p id='description'>{this.state.description && this.state.description}</p>
         {this.state.questions.map(question => (
           <div className='questionContainer' id={question.id} key={question.id}>
             {question.conditions ? this.checkConditions(question, this.renderQuestion) : this.renderQuestion(question)}
           </div>
         ))}
         {this.state.footer && <p>{this.state.footer}</p>}
-        <button className='button' onClick={this.submit} >Submit</button>
+        <button className='button' id='submit' onClick={this.submit} >Submit</button>
       </div>
     )
   }
