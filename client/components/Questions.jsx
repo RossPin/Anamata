@@ -231,11 +231,10 @@ class Questions extends React.Component {
   }
 
   scroller (e) {
-    console.log(e)
     window.scrollTo({
       'behavior': 'smooth',
       'left': 0,
-      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight)) + (Number(document.getElementById('description').offsetHeight) || 0)
+      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight))
 
     })
   }
@@ -251,13 +250,6 @@ class Questions extends React.Component {
       }
     })
   }
-  // nextQuestion () {
-  //   document.getElementById('questions').addEventListener('keyup', (e) => {
-  //     if (e.keycode === 13) {
-  //       window.scrollTo('questionContainer')
-  //     }
-  //   })
-  // }
 
   render () {
     return (
