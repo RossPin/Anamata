@@ -18,3 +18,14 @@ input {
     transition: color 0.4s ease-in-out;
     cursor: pointer;
 }
+
+.textinput {
+    border-radius: 20px;
+    border: transparent solid 1px;
+    background-color:$white-80;
+    font-size: 1.3em;
+  }
+  
+  .textinput:focus {
+    outline: none;
+  }

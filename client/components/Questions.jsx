@@ -126,6 +126,7 @@ class Questions extends React.Component {
 
   submit (e) {
     e.preventDefault()
+    console.log(this.state.answers)
     window.scrollTo(0, 0)
     const { categories, answers } = this.state
     let currentCategory = this.state.currentCategory
