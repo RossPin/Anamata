@@ -94,6 +94,7 @@ class Questions extends React.Component {
   }
 
   updateIfSo (e, id, question) {
+    e.preventDefault()
     const { answers } = this.state
     Object.assign(answers[id], { ifSoQuestion: question, ifSoAnswer: e.target.value })
     this.setState({ answers })

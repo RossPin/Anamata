@@ -22,6 +22,13 @@ server.get('/reviewed', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 
+server.get('/questions', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})
+server.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})
+
 server.get('/viewanswers', (req, res) => {
   res.redirect('/current')
 })
