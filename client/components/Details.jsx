@@ -19,7 +19,7 @@ class Details extends React.Component {
         mobile: '',
         school: ''
       },
-      ethnicityList: ['European/Pakeha', 'New Zealand Maori', 'Asian', 'Pacific Islander', 'Other'],
+      ethnicityList: ['European/Pakeha', 'Maori', 'Asian', 'Pacific Islander', 'Other'],
       genderObj: {
         question: ' Indicate where you think you see yourself on this sliding scale:',
         id: 'genderDetails',
@@ -45,11 +45,11 @@ class Details extends React.Component {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
+
   }
 
   submit (e) {
     e.preventDefault()
-    e.target.reset()
     let details = this.state.details
     this.props.dispatch(setDetails(details))
     this.props.history.push('/consent')
@@ -60,11 +60,20 @@ class Details extends React.Component {
       this.setState({
         details: { ...this.state.details, [e.target.name]: 'Other - ' + e.target.value }
       })
+    } else if (e.target.id === 'MaoriEthnicity') {
+      this.setState({
+        details: { ...this.state.details, [e.target.name]: 'Maori - ' + e.target.value }
+      })
+    } else if (e.target.id === 'Pacific IslanderEthnicity') {
+      this.setState({
+        details: { ...this.state.details, [e.target.name]: 'Pacific Islander - ' + e.target.value }
+      })
     } else {
       this.setState({
         details: { ...this.state.details, [e.target.name]: e.target.value }
       })
     }
+    console.log(this.state.details)
   }
 
   updateDOB (e) {
@@ -92,8 +101,8 @@ class Details extends React.Component {
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
           <TextDetails detail='Mobile' name='mobile' onChange={this.updateDetails} />
-          <input className='button' type='submit' value='Next' />
         </form>
+        <input className='button' type='submit' value='Next' onClick={this.submit} />
       </div>
     )
   }
@@ -102,7 +111,7 @@ class Details extends React.Component {
 const TextDetails = ({ detail, name, onChange }) =>
   <div className='detailsDiv textDetails'>
     <label htmlFor={name}>{detail}</label>
-    <input id={name} type='text' name={name} onChange={onChange} />
+    <input className='textDetailsInput' id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
@@ -110,12 +119,14 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
     <label>{detail}</label>
     {radioList.map((item, i) => (
       <div key={i}>
-        {item === 'Other'
+        {item === 'Other' || item === 'Maori' || item === 'Pacific Islander'
           ? <div className='otherSection'>
             <input type='radio' className='otherRadio' id={'radio' + item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
-            <label for={'radio' + item}>{item}</label>
-            <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
+            <label htmlFor={'radio' + item}>{item}</label>
+            { detailState.includes(item)
+              ? <input className='radioOtherInput' id={item + detail} type='text' placeholder={item === 'Maori' ? 'Iwi' : 'Country'} name={name} onChange={e => onChange(e)} />
+              : <div />}
           </div>
           : <div>
             <input className='radioDetailsInput' id={'radio' + item} type='radio' name={name} onChange={e => onChange(e)}

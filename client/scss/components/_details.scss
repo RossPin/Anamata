@@ -24,6 +24,9 @@
     text-align: left;
     margin-bottom: 1em;
   }
+  .textDetailsInput:focus {
+    outline: none;
+  }
 
   .radioDetails, .sliderDetails {
     position: relative;
@@ -53,6 +56,10 @@
 
   .radioOtherInput{
     display: block;
+  }
+
+  .radioOtherInput:focus{
+    outline: none;
   }
 
   .radioDetailsInput, .otherRadio{

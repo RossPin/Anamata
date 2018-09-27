@@ -415,7 +415,7 @@
           ]
         },
         {
-          "question": "How many times a week  would someone in your home cook you dinner?",
+          "question": "How many times a week would someone in your home cook you dinner?",
           "id": "4200",
           "type": "Radio", 
           "responses": 
@@ -516,7 +516,7 @@
                 "type": "Listing"
             },
             {
-              "question": "How do you spend your time when your not at school?",
+              "question": "How do you spend your time when you're not at school?",
               "id": "5020",
               "type": "Listing"
             },
@@ -608,28 +608,25 @@
             {
               "question": "Have you sent messages or images to other people that you later regretted?",
               "id": "6020",
-              "type": "TextForm"
+              "type": "Radio", 
+              "responses": [
+                  {
+                      "answer": "Yes"
+                  },
+                  {
+                      "answer": "No"
+                  }
+              ]
             },
             {
               "question": "What do you mainly use the internet for?",
               "id": "6030",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "To spend time with friends"
-                },
-                {
-                  "answer": "Prefer to be by yourself"
-                },
-                {
-                  "answer": "Both"
-                }
-              ]
+              "type": "TextForm"
             },
             {
               "question": "In what ways can you keep yourself safe when using social media (e.g., 'I don't share my address with someone I don't know')? What are your ideas?",
               "id":"6040",
-              "type": "TextForm"
+              "type": "Listing"
             }
         ]
     },
@@ -817,11 +814,11 @@
     {"question": "Are you getting any help from anyone for problems you've had (e.g., counselor)?",
       "id": "8200",
       "type": "YNifSo", 
-        "ifSo": 
-            {
-                "val": "Yes",
-                "question": "If so, who?"
-            }
+      "ifSo": 
+          {
+              "val": "Yes",
+              "question": "If so, who?"
+          }
 
     },
     {"question": "Do you ever think life is not worth living?",
@@ -1046,14 +1043,12 @@
             {
                 "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
                 "id": "9120",
-                "type": "Radio",
+                "type": "AddInfo",
                 "tooltip": {
                     "questionArr": ["We ask all young people we see about", ", we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality."],
                     "wordArr": ["sexual harm"],
                     "defArr": ["When someone has a sexual experience they don't want, or are forced into any kind of sexual act by another person"]
-                  },
-                "responses": [
-                ]
+                  }
             },
             {
                 "question": "Have you ever been touched in a sexual way you did not like or agree to?",
@@ -1101,9 +1096,7 @@
             {
                 "question": "Some young people are looking at porn on the internet. There can be a number of reasons someone may do this, and sometimes we’re not sure how we feel about what we do see. The reason we’re going to  ask you questions about porn is because we want to support you in being safe. It’s really good to be honest about this as the answers you put may help you understand where you’re at with this a lot better.",
                 "id": "9150",
-                "type": "Radio",
-                "responses": [
-                ]
+                "type": "AddInfo"                
             },
             {
                 "question": "Have you seen sexual images, (ie. porn) that you chose to view",
@@ -1185,122 +1178,120 @@
             }
         ]
     },
-    "safety": 
-    {
-        "title":"Safety",
-        "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
-        "questions" : 
-        [
-            {
-                "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
-                "id": "10000",
-                "type": "Radio",
-                "responses": [
-                    {
-                        "answers": "Yes"
-                    },
-                    {
-                        "answers": "No"
-                    }
-                ]
-            },
-            {
-              "question": "Are you afraid of violence in your school/neighbourhood?",
-              "id": "10010",
-              "type": "YNifSo",
-              "ifSo": 
+      "title":"Safety",
+      "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
+      "questions" : 
+      [
+          {
+            "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
+            "id": "10000",
+            "type": "Radio",
+            "responses": [
                 {
-                    "val": "Yes",
-                    "question": "If yes, then where?"
-                }
-            },
-            {
-              "question": "Do you ever get into fights?",
-              "id": "10030",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
+                    "answer": "Yes"
                 },
                 {
-                  "answer": "No"
+                    "answer": "No"
                 }
-              ]
-            },
-            {
-              "question": "Do you ever find it hard to keep your anger under control?",
-              "id": "10040",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-              "question": "What do you do when you're angry (e.g., go to your room/shout/punch something)?",
-              "id": "10050",
-              "type": "TextForm"
-            },
-            {
-              "question": "Have you ever been physically assaulted (hit/punched/bashed)?",
-              "id": "10060",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-              "question": "Have you ever been physically assaulted (hit/punched/bashed)?",
-              "id": "10070",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-                "question": "How often would you wear a seatbelt in a car?",
-                "id": "10080",
-                "type": "Radio",
-                "responses": [
-                  {
-                    "answer": "All the time"
-                  },  
-                  {
-                    "answer": "Sometimes"
-                  },
-                  {
-                    "answer": "Never"
-                  },
-                {
-                "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
-                "id": "10090",
-                "type": "Radio",
-                "responses": [
-                    {
-                        "answer": "Yes"
-                    },
-                    {
-                        "answer": "No"
-                    }
-                    ]
-                  }
-                ]
+            ]
+          },
+          {
+            "question": "Are you afraid of violence in your school/neighbourhood?",
+            "id": "10010",
+            "type": "YNifSo",
+            "ifSo": 
+              {
+                  "val": "Yes",
+                  "question": "If yes, then where?"
               }
-        ]
+          },
+          {
+            "question": "Do you ever get in to fights?",
+            "id": "10030",
+            "type": "Radio",
+            "responses": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "question": "Do you ever find it hard to keep your anger under control?",
+            "id": "10040",
+            "type": "Radio",
+            "responses": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+            "id": "10050",
+            "type": "TextForm"
+          },
+          {
+            "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+            "id": "10060",
+            "type": "Radio",
+            "responses": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+            "id": "10070",
+            "type": "Radio",
+            "responses": [
+              {
+                "answer": "Yes"
+              },
+              {
+                "answer": "No"
+              }
+            ]
+          },
+          {
+            "question": "How often would you wear a seatbelt in a car?",
+            "id": "10080",
+            "type": "Radio",
+            "responses": [
+              {
+                "answer": "All the time"
+              },  
+              {
+                "answer": "Sometimes"
+              },
+              {
+                "answer": "Never"
+              }
+            ]
+          },
+          {
+          "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
+          "id": "10090",
+          "type": "Radio",
+          "responses": [
+            {
+                "answer": "Yes"
+            },
+            {
+                "answer": "No"
+            }
+          ]
+        }
+      ]              
     },
     "spirit": 
     {
