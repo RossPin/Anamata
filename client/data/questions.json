@@ -7,12 +7,7 @@
         "questions" : 
         [
             {
-                "question": "Are you registered with a dentist?",
-                "tooltip": {
-                  "questionArr": ["Are you", "with a", "?"],
-                  "wordArr": ["registered", "dentist"],
-                  "defArr": ["signed up with", "person that drills your teeth"]
-                },
+                "question": "Are you registered with a dentist?",                
                 "id": "1010",
                 "type": "YNifSo", 
                 "ifSo": 
