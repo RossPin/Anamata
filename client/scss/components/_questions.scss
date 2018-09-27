@@ -65,7 +65,7 @@ color: #532c6e;
   margin-bottom: 10%;
 }
 
-.speech-bubble :after {
+.speech-bubble::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -79,10 +79,10 @@ color: #532c6e;
 	margin-left: -10px;
   margin-bottom: -20px;  
 }
-  .radio {
-    right: 5%;
-    top: 80%;
-  }
+  // .radio {
+  //   right: 5%;
+  //   top: 80%;
+  // }
   .emojiButtons {
     right: 5%;
     float: right;
@@ -111,6 +111,7 @@ color: #532c6e;
     top: 20%;
     position: relative;
     float: right;
+    font-size: 1em;
   } 
   .qDiv {
     // margin-top: 20%;
