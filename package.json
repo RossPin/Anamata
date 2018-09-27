@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "postinstall": "webpack --mode development",
+    "postinstall": "webpack --mode production",
     "build": "webpack --mode production",
     "start": "node server/",
     "dev": "webpack --mode development --watch & nodemon server"
@@ -32,7 +32,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.1",
+    "bcrypt": "^1.0.3",
     "css-loader": "^1.0.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
