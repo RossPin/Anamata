@@ -585,7 +585,7 @@
                   "type": "YNifSo", 
                   "ifSo": {
                       "val": "Yes",
-                      "question": "What is presenting you from doing this?"
+                      "question": "What is stopping you from doing this?"
                   }
             }
         ]
@@ -1096,14 +1096,17 @@
             {
                 "question": "Have you seen sexual images, (ie. porn) that you chose to view",
                 "id": "9160",
-                "type": "Slider",
-                "risk": 0.6,
-                "resiliency": 0.6,
-                "responses": 
+                "type": "Radio",
+                "responses": [
                     {
-                        "right": "Yes",
-                        "left": "No"
-                    }
+                        "answer": "Yes",
+                        "risk": 2
+                    },
+                    {
+                        "answer": "No",
+                        "resilency": 3
+                   }
+                ] 
             },
             {
                 "question": "How did you feel about this?",
@@ -1112,8 +1115,8 @@
                 "conditions": 
                 {
                     "target": "9160",
-                    "compare": ">",
-                    "value": 0
+                    "compare": "=",
+                    "value": "Yes"
                 },
                 "responses": 
                     {
@@ -1124,13 +1127,16 @@
             {
                 "question": "Have you seen sexual images, (ie. porn) that you DIDN'T choose to view",
                 "id": "9171",
-                "type": "Slider",
-                "risk": 0.4,
-                "responses": 
+                "type": "Radio",
+                "responses": [
                     {
-                        "right": "Yes",
-                        "left": "No"
-                    }
+                        "answer": "Yes",
+                        "risk": 8
+                    },
+                    {
+                        "answer": "No"
+                   }
+                ] 
             },
             {
                 "question": "How did you feel about this?",
@@ -1139,8 +1145,8 @@
                 "conditions": 
                 {
                     "target": "9171",
-                    "compare": ">",
-                    "value": 0
+                    "compare": "=",
+                    "value": "Yes"
                 },
                 "responses": 
                     {
@@ -1229,22 +1235,9 @@
           ]
         },
         {
-          "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+          "question": "What do you do when you're angry? (E.g. Go to your room / shout / punch something)",
           "id": "10050",
           "type": "TextForm"
-        },
-        {
-          "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
-          "id": "10060",
-          "type": "Radio",
-          "responses": [
-            {
-              "answer": "Yes"
-            },
-            {
-              "answer": "No"
-            }
-          ]
         },
         {
           "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
