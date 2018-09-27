@@ -10,7 +10,7 @@ class Complete extends React.Component {
   }
 
   componentDidMount () {
-    // createYp(this.props.youngPerson)
+    createYp(this.props.youngPerson)
     this.props.dispatch(setStyle('help_background'))
   }
 
