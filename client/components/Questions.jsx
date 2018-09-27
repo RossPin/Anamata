@@ -241,7 +241,7 @@ class Questions extends React.Component {
   }
   listining () {
     window.addEventListener('keyup', (e) => {
-      if (e.keyCode === 39) {
+      if (e.keyCode === 40) {
         const ids = this.getIds(this.state.questions)
         const index = ids.findIndex(id => id === this.state.currentId) + 1
         if (index >= ids.length) return this.scroller(document.getElementById('submit'))
