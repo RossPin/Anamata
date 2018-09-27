@@ -24,7 +24,7 @@ class Radio extends React.Component {
         <form data-aos='fade-left'>
           { question.responses.map((response, i) => (
             <div className='radio' key={i}>
-              <label htmlFor='rdo-1' className='radio'>
+              <label htmlFor='rdo-1'>
                 <input type='radio' id='rdo-1' name='answer' onChange={e => update(e, question.id, question)}
                   value={response.answer} checked={answer === response.answer} />
                 <svg width='20px' height='20px' viewBox='0 0 20 20'>
