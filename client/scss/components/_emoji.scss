@@ -5,7 +5,7 @@
     color: $white; /* White text */
     padding: 20px 20px; /* Some padding */
     font-size: 64px; /* Set a font size */
-    border-radius: 12px;
+    border-radius: $border-radius;
     cursor: pointer; /* Mouse pointer on hover */
 }
 
@@ -15,12 +15,12 @@
 }
 
 .ebtnPressed {
-    background-color: $primary-purple;/* Purple background */
+    background-color: $white-80;/* Purple background */
     border: none; /* Remove borders */
-    color: $white; /* White text */
+    color: $primary-purple; /* White text */
     padding: 20px 20px; /* Some padding */
     font-size: 64px; /* Set a font size */
-    border-radius: 12px;
+    border-radius: $border-radius;
     cursor: pointer; /* Mouse pointer on hover */
 }
 

@@ -1,5 +1,6 @@
 .questions {
   width: 90%;
+  margin: auto;
 }
 
 .questionContainer {
@@ -7,9 +8,13 @@
 }
 
 .qDiv form {
-  font-size: 250%;
+  font-size: 200%;
   display: flex;
   justify-content: flex-end;
+}
+
+.qDiv form.listingForm {
+  display: inline-block;
 }
 
 .ynifso {
@@ -48,7 +53,7 @@
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 60px;
+	left: 40%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
