@@ -44,7 +44,7 @@ export function resetYp () {
 }
 
 export function createYp (data) {
-  request('post', 'yp/create', data)
+  return request('post', 'yp/create', data)
     .then((response) => {
       return response.body
     })

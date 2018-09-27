@@ -226,7 +226,7 @@ class Questions extends React.Component {
     socket.emit('trigger-alert', schoolId, { name, msg })
     setTimeout(() => {
       socket.disconnect()
-    }, 10000)
+    }, 30000)
   }
 
   getIds (questions) {

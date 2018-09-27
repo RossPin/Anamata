@@ -12,8 +12,9 @@ class Complete extends React.Component {
 
   componentDidMount () {
     window.scrollTo(0, 0)
-    createYp(this.props.youngPerson)
-    this.sendSubmitted()
+    createYp(this.props.youngPerson).then(() => {
+      this.sendSubmitted()
+    })
     this.props.dispatch(setStyle('help_background'))
   }
 
@@ -23,7 +24,7 @@ class Complete extends React.Component {
     socket.emit('submitted', schoolId)
     setTimeout(() => {
       socket.disconnect()
-    }, 10000)
+    }, 15000)
   }
 
   submit (e) {
