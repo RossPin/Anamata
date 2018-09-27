@@ -23,7 +23,7 @@ class Radio extends React.Component {
         <form data-aos='fade-left'>
           <div className='radio'>
             <label className='radio yn'>
-              <input type='radio' name='answer' onChange={e => update(e, question.id, question.question)}
+              <input type='radio' name='answer' onChange={e => update(e, question.id, question)}
                 value='Yes' checked={answer === 'Yes'} />
               <svg width='20px' height='20px' viewBox='0 0 20 20'>
                 <circle cx='10' cy='10' r='9' />
@@ -33,7 +33,7 @@ class Radio extends React.Component {
               <span>Yes</span>
             </label>
             <label className='radio yn'>
-              <input type='radio' id='No' name='No' onChange={e => update(e, question.id, question.question)}
+              <input type='radio' id='No' name='No' onChange={e => update(e, question.id, question)}
                 value='No' checked={answer === 'No'} />
               <svg width='20px' height='20px' viewBox='0 0 20 20'>
                 <circle cx='10' cy='10' r='9' />
