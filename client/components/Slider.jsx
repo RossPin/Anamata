@@ -53,8 +53,8 @@ class Slider extends React.Component {
         </div>
         <div className='sliderAns' data-aos='fade-right'>
           <input className='slider' type='range' min='0' max='10' value={answer} onChange={e => this.updateCheck(e, update, question.id, question)} />
-          <b className='sliderLabelLeft'>{question.responses.left}</b>
-          <b className='sliderLabelRight'>{question.responses.right}</b>
+          <span className='sliderLabelLeft'>{question.responses.left}</span>
+          <span className='sliderLabelRight'>{question.responses.right}</span>
         </div>
         {'check' in question.responses
           ? <label>

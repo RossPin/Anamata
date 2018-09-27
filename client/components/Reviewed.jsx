@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setYp } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
 import request from '../utils/api'
+import { getRisks } from '../utils/eval'
 
 class Reviewed extends React.Component {
   constructor (props) {
@@ -24,6 +25,7 @@ class Reviewed extends React.Component {
     request('get', 'yp/view/reviewed')
       .then((response) => {
         const reviewed = response.body
+        reviewed.map(yp => { yp.risk = getRisks(yp) })
         this.setState({ reviewed })
       })
   }

@@ -8,6 +8,7 @@
   box-shadow: 5px 8px 18px #888888;
   border-radius: 5px;
   padding: 20px;
+  font-size: 1.5em
 
   h1 {
     color: $primary-purple;
@@ -18,11 +19,10 @@
 
 
   .textDetails {
-    position: relative;
-    height: 45px;
+    text-align: left;
   }
 
-  .radioDetails {
+  .radioDetails, .sliderDetails {
     position: relative;
     width: 100%;
     text-align: left;
@@ -30,14 +30,28 @@
     padding: 0 0 0 5;
   }
 
-  label {
-  position: relative;
-  float: left;
-  text-align: left;
-  width: 100%;
-  padding: 10px 5px 10px 5px;
+  .sliderLabels {
+    padding-bottom: 30px;
   }
 
+  .radioOtherInput{
+    display: block;
+  }
+
+  label {
+    display: block;
+  }
+
+  form{
+    padding: 2em;
+    max-width: 80%;
+    margin: auto;
+    font-size: 1.5em;
+
+    input{
+      margin-left: 1em;
+    }
+  }
 
   .radioDetailsInput {
     padding: 0 5 0 10;
