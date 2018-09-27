@@ -9,6 +9,11 @@ class Consent extends React.Component {
     this.submit = this.submit.bind(this)
   }
 
+  componentDidMount () {
+    this.props.dispatch(setStyle('consent_background'))
+    window.scrollTo(0, 0)
+  }
+
   submit (e) {
     e.preventDefault()
     const consent = (e.target.value === 'Yes')
@@ -38,9 +43,6 @@ class Consent extends React.Component {
         </div>
       </div>
     )
-  }
-  componentDidMount () {
-    this.props.dispatch(setStyle('consent_background'))
   }
 }
 

@@ -17,6 +17,8 @@ class Questions extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      ids: [],
+      currentId: '',
       categories: Object.keys(questionData),
       currentCategory: 0,
       answers: {
@@ -35,10 +37,15 @@ class Questions extends React.Component {
     this.checkConditions = this.checkConditions.bind(this)
     this.checkForAlert = this.checkForAlert.bind(this)
     this.sendAlert = this.sendAlert.bind(this)
+    this.scroller = this.scroller.bind(this)
+    this.listining = this.listining.bind(this)
+    this.getIds = this.getIds.bind(this)
   }
 
   componentDidMount () {
+    window.scrollTo(0, 0)
     this.props.dispatch(setStyle('questions_background'))
+    this.listining()
   }
 
   updateSelection (e, id, questionObj) {
@@ -47,10 +54,10 @@ class Questions extends React.Component {
     let resiliency = 0
     // Risk
     if (questionObj.type === 'Slider' && questionObj.risk) {
-      risk = e.target.value * questionObj.risk
+      risk = e.currentTarget.value * questionObj.risk
     } else if (questionObj.type === 'Radio') {
       for (let i = 0; i < questionObj.responses.length; i++) {
-        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].risk) {
+        if (questionObj.responses[i].answer === e.currentTarget.value && questionObj.responses[i].risk) {
           risk = questionObj.responses[i].risk
         }
       }
@@ -59,10 +66,10 @@ class Questions extends React.Component {
     }
     // Resilency
     if (questionObj.type === 'Slider' && questionObj.resiliency) {
-      resiliency = (10 - e.target.value) * questionObj.resiliency
+      resiliency = (10 - e.currentTarget.value) * questionObj.resiliency
     } else if (questionObj.type === 'Radio') {
       for (let i = 0; i < questionObj.responses.length; i++) {
-        if (questionObj.responses[i].answer === e.target.value && questionObj.responses[i].resiliency) {
+        if (questionObj.responses[i].answer === e.currentTarget.value && questionObj.responses[i].resiliency) {
           resiliency = questionObj.responses[i].resiliency
         }
       }
@@ -73,7 +80,7 @@ class Questions extends React.Component {
     // rounding
     risk = Math.round(risk * 10) / 10
     resiliency = Math.round(resiliency * 10) / 10
-    answers[id] = { id, question, answer: e.target.value, risk, resiliency }
+    answers[id] = { id, question, answer: e.currentTarget.value, risk, resiliency }
     this.setState({ answers })
   }
 
@@ -133,7 +140,8 @@ class Questions extends React.Component {
         title,
         description,
         footer,
-        answers: {}
+        answers: {},
+        currentId: ''
       })
     } else this.props.history.push('/complete')
   }
@@ -169,31 +177,31 @@ class Questions extends React.Component {
     }
   }
 
-  checkConditions (question) {
+  checkConditions (question, callback) {
     const { compare, target, value } = question.conditions
     if (this.state.answers[target] || compare === '||>') {
       switch (compare) {
         case '=':
-          if (this.state.answers[target].answer === value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer === value) return callback(question)
           break
         case '>':
-          if (this.state.answers[target].answer > value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer > value) return callback(question)
           break
         case '<':
-          if (this.state.answers[target].answer < value) return this.renderQuestion(question)
+          if (this.state.answers[target].answer < value) return callback(question)
           break
         case 'any':
           const values = Object.values(this.state.answers[target].answer)
-          if (values.includes(true)) return this.renderQuestion(question)
+          if (values.includes(true)) return callback(question)
           break
         case '=*':
           for (let i = 0; i < value.length; i++) {
-            if (this.state.answers[target].answer === value[i]) return this.renderQuestion(question)
+            if (this.state.answers[target].answer === value[i]) return callback(question)
           }
           break
         case '||>':
           for (let i = 0; i < target.length; i++) {
-            if (this.state.answers[target[i]] && (this.state.answers[target[i]].answer > value)) return this.renderQuestion(question)
+            if (this.state.answers[target[i]] && (this.state.answers[target[i]].answer > value)) return callback(question)
           }
           break
         default:
@@ -215,18 +223,47 @@ class Questions extends React.Component {
     socket.emit('trigger-alert', schoolId, { name, msg })
   }
 
+  getIds (questions) {
+    const id = []
+    questions.map(question => {
+      question.conditions ? this.checkConditions(question, question => { question && id.push(question.id) }) : id.push(question.id)
+    })
+    return id
+  }
+
+  scroller (e) {
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': e.offsetTop + (Number(document.getElementById('nav').offsetHeight))
+
+    })
+  }
+  listining () {
+    window.addEventListener('keyup', (e) => {
+      if (e.keyCode === 39) {
+        const ids = this.getIds(this.state.questions)
+        const index = ids.findIndex(id => id === this.state.currentId) + 1
+        if (index >= ids.length) return this.scroller(document.getElementById('submit'))
+        const element = document.getElementById(ids[index])
+        this.setState({ currentId: ids[index] })
+        this.scroller(element)
+      }
+    })
+  }
+
   render () {
     return (
       <div className='questions'>
         <h1>{this.state.title}</h1>
-        {this.state.description && <p>{this.state.description}</p>}
+        <p id='description'>{this.state.description && this.state.description}</p>
         {this.state.questions.map(question => (
-          <div className='questionContainer' key={question.id}>
-            {question.conditions ? this.checkConditions(question) : this.renderQuestion(question)}
+          <div className='questionContainer' id={question.id} key={question.id}>
+            {question.conditions ? this.checkConditions(question, this.renderQuestion) : this.renderQuestion(question)}
           </div>
         ))}
         {this.state.footer && <p>{this.state.footer}</p>}
-        <button className='button' onClick={this.submit} >Submit</button>
+        <button className='button' id='submit' onClick={this.submit} >Submit</button>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 // webpack v4
+const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
@@ -7,6 +8,13 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        ENVIRONMENT: JSON.stringify(process.env.ENVIRONMENT)
+      }
+    })
+  ],
   module: {
     rules: [
       {

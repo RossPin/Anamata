@@ -28,6 +28,9 @@
   margin-top: 4%;
 }
 
+// .questionContainer {
+//   border: 2px solid red,
+// }
 .speech-bubble {
   color: $white;
 	position: relative;
@@ -99,6 +102,10 @@
     height: 90vh; 
   }
   
+  #description, #footer{
+    color: #532c6e;
+  }
+
   //   cursor: pointer;
   //   display: inline-block;
   //   float: right;
