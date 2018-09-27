@@ -21,7 +21,7 @@ class TextForm extends React.Component {
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
         <form onSubmit={e => e.preventDefault()} className='textFormAnswer' data-aos='fade-left'>
-          <input type='text' placeholder='type here' value={answer} onChange={e => update(e, question.id, question)} />
+          <textarea className='textinput' name="Text1" cols="40" rows="5" placeholder='type here' value={answer} onChange={e => update(e, question.id, question)}></textarea>
         </form>
       </div>
     )

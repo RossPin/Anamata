@@ -38,7 +38,7 @@ class Help extends React.Component {
           <form onSubmit={this.submit}>
             <TextDetails detail='Name' name='name' onChange={this.updateDetails} />
             <TextDetails detail='Email' name='email' onChange={this.updateDetails} />
-            <TextDetails detail='Feedback' name='feedback' onChange={this.updateDetails} className='feedback' />
+            <Feedback detail='Feedback' name='feedback' onChange={this.updateDetails} className='feedback' />
             <input className='button' type='submit' value='Submit' />
           </form>
         </div>
@@ -54,6 +54,12 @@ const TextDetails = ({ detail, name, onChange, className }) =>
   <div className='textDetails'>
     <label className='label' htmlFor={name}>{detail}</label>
     <input className={className} id={name} type='text' name={name} onChange={onChange} />
+  </div>
+
+const Feedback = ({ detail, name, onChange, className }) =>
+  <div className='textDetails'>
+    <label className='label' htmlFor={name}>{detail}</label>
+    <textarea className='textinput' cols="40" rows="5"  id={name} type='text' name={name} onChange={onChange}></textarea>
   </div>
 
 export default connect()(Help)

@@ -14,6 +14,10 @@
     background-color: $white-20;
 }
 
+.ebtn:focus {
+    outline: none;
+  }
+
 .ebtnPressed {
     background-color: $white-80;/* Purple background */
     border: none; /* Remove borders */
@@ -23,6 +27,9 @@
     border-radius: $border-radius;
     cursor: pointer; /* Mouse pointer on hover */
 }
+.ebtnPressed:focus {
+    outline: none;
+  }
 
 .emojiStyle {
     color: $primary-purple;
