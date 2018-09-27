@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
-import Slider from './Slider'
 
 class Details extends React.Component {
   constructor (props) {
@@ -92,7 +91,7 @@ class Details extends React.Component {
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
           <TextDetails detail='Mobile' name='mobile' onChange={this.updateDetails} />
-          <input className='button' type='submit' value="Next"/>
+          <input className='button' type='submit' value='Next' />
         </form>
       </div>
     )
@@ -102,7 +101,7 @@ class Details extends React.Component {
 const TextDetails = ({ detail, name, onChange }) =>
   <div className='textDetails'>
     <label htmlFor={name}>{detail}</label>
-    <input id={name} type='text' name={name} onChange={onChange}/>
+    <input id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
@@ -112,15 +111,15 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
       <div key={i}>
         {item === 'Other'
           ? <div className='otherSection'>
-            <input type='radio' className='otherRadio' id={'radio' +item} name={name} onChange={e => onChange(e)}
+            <input type='radio' className='otherRadio' id={'radio' + item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
             <label for={'radio' +item}>{item}</label>
             <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
-            <input className='radioDetailsInput' id={'radio' +item} type='radio' name={name} onChange={e => onChange(e)}
+            <input className='radioDetailsInput' id={'radio' + item} type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
-            <label for={'radio' +item}>{item}</label>
+            <label htmlFor={'radio' + item}>{item}</label>
           </div>
         }
       </div>
