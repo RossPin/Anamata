@@ -39,7 +39,7 @@
             }
         },
         {
-            "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
+            "question": "Do you have any allergies to anything (e.g., penicillin/bees)?",
             "id": "1004",
             "type": "YNifSo", 
             "ifSo": {
@@ -48,7 +48,7 @@
             }
         },
         {
-            "question": "Did you have your year 8 vaccinations (immunisation injection)?",
+            "question": "Did you have your Year 8 vaccinations (immunisation injection)?",
             "id": "1005",
             "type": "Radio", 
             "responses": [
