@@ -47,7 +47,7 @@ class Listing extends React.Component {
           <input type='submit' className='is-hidden' />
           <ul className='listing'>
             { answer.map((val, i) => (
-              <div key={i}>
+              <div className='listingText' key={i}>
                 <li>{val}</li>
               </div>
             ))}

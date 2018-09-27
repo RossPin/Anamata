@@ -45,7 +45,6 @@ class Details extends React.Component {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
-
   }
 
   submit (e) {

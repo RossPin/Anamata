@@ -15,12 +15,16 @@
 }
 
 .qDiv .info {
-  font-size: 200%;
+  font-size: 2.5vw;
   color: $primary-purple; 
 }
 
 .qDiv form.listingForm {
   display: inline-block;
+}
+
+.qDiv .listing {
+color: #532c6e;
 }
 
 .ynifso {
@@ -33,6 +37,11 @@
 .ifso {
   margin-top: 4%;
   text-align: left;
+}
+
+.tooltipSection {
+  font-size: 2.5vw;
+
 }
 
 // .questionContainer {
