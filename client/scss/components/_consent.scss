@@ -54,7 +54,9 @@
 }
 
 .modalFoot {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $primary-blue;
 }
 
