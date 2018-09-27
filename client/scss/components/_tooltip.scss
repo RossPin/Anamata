@@ -10,7 +10,7 @@
   background-color: $white-80;
   color: $primary-purple;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 20px;
   padding: 5px 0;
   
   /* Position the tooltip */
@@ -23,6 +23,7 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  font-size: 0.5em;
 }
 
 .tooltipQuestion {

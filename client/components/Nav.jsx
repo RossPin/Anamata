@@ -6,7 +6,7 @@ import Alert from './Alert.jsx'
 
 function Nav (props) {
   return (
-    <div className='nav'>
+    <div className='nav' id='nav'>
       {props.auth.isAuthenticated
         ? <div className='navbar-start'>
           <Link to='/'>

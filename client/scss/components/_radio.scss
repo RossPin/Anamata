@@ -1,10 +1,12 @@
 .radio {
+  display: inline-block;
+  width: auto;
   svg {
     fill: none;
     vertical-align: middle;
     circle {
       stroke-width: 2;
-      stroke: #c8ccd4;
+      stroke: $white-80;
     }
     path {
       stroke: $primary-purple;
@@ -36,7 +38,7 @@
     }
   }
 }
-.radio .yn {
-  display: inline-block;
-  width: auto;
-}
+// .radio .yn {
+//   display: inline-block;
+//   width: auto;
+// }

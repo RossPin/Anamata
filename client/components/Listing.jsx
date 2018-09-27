@@ -44,7 +44,7 @@ class Listing extends React.Component {
             onChange={this.updateDetails}
             value={this.state.input} />
           <i className='fas fa-plus fa-3x' onClick={this.submit} />
-          <input type='submit' className='is-hidden'/>
+          <input type='submit' className='is-hidden' />
           <ul className='listing'>
             { answer.map((val, i) => (
               <div key={i}>

@@ -6,7 +6,7 @@
 .consent {
   background: $white-20;
   box-shadow: 5px 8px 18px #888888;
-  border-radius: 2%;
+  border-radius: $border-radius;
 }
 
 .consent p {
@@ -37,6 +37,8 @@
 }
 
 .consent-form{
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   background-color: $primary-blue;
   padding: 4%;
 }
