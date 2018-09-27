@@ -49,6 +49,7 @@ class ViewAnswers extends React.Component {
     const keys = answers ? Object.keys(answers) : false
     return (
       <div>
+        <h1>Assessment Risk and Resiliency</h1>
         <img src='./img/GraphRisk.png'alt='graph' />
         {keys && keys.map(key => (
           <div key={key}>
