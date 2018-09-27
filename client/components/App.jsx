@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
 import Login from './Auth/Login'
@@ -48,7 +48,7 @@ class App extends React.Component {
 
   render () {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div>
           <section id='background' className={`hero ${this.props.style}`}>
             <Nav />
@@ -67,7 +67,7 @@ class App extends React.Component {
             </div>
           </section>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     )
   }
 }

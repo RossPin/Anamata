@@ -44,7 +44,7 @@ class Radio extends React.Component {
             </label>
           </div>
           {(answer === question.ifSo.val) && <label className='ifso'>{question.ifSo.question}<br />
-            <input type='text' onChange={e => updateIfSo(e, question.id, question.ifSo.question)} />
+            <input type='text' onSubmit={e => e.preventDefault()} onChange={e => updateIfSo(e, question.id, question.ifSo.question)} />
           </label>}
         </form>
       </div>

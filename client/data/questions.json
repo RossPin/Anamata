@@ -1,7 +1,7 @@
 { 
     "health": 
     {
-        "title":"YOUR HEALTH HISTORY / TAHA TINANA",
+        "title":"Health History / Taha Tinana",
         "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non nisl a metus finibus viverra blandit in augue.",
 
         "questions" : 
@@ -52,7 +52,7 @@
                 }
             },
             {
-                "question": "Do you have any allergies to anything? (e.g Penicillin/Bees)",
+                "question": "Do you have any allergies to anything (e.g., penicillin/bees)?",
                 "id": "1050",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -113,11 +113,11 @@
     },
     "home": 
     {
-        "title":"HOME/WHANAU",
+        "title":"Home/Whanau",
         "questions" : 
         [
             {
-                "question": "Who do you live with? (E.g mum, step–dad, nana, cousin, uncle, caregiver, sister, brother etc.)",
+                "question": "Who do you live with (e.g., mum, stepdad, nana, cousin, uncle, caregiver, sister, brother, etc.)?",
                 "id": "2010",
                 "type": "Listing"
             },
@@ -156,7 +156,7 @@
                 ]
             },
             {
-                "question": "Have there been any big changes in your family or at home recently? (Eg: Moving, someone leaving, someone new)",
+                "question": "Have there been any big changes in your family or at home recently (e.g., moving, someone leaving, someone new)?",
                 "id": "2060",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -166,7 +166,7 @@
                 }
             },
             {
-                "question": "Do you or your caregivers worry about not having enough money for essential things ? (e.g food, clothes, school equipment, petrol for the car)",
+                "question": "Do you or your caregivers worry about not having enough money for essential things (e.g., food, clothes, school equipment, petrol for the car)?",
                 "id": "2070",
                 "type": "Radio", 
                 "responses": 
@@ -180,7 +180,7 @@
                 ]
             },
             {
-                "question": "What jobs or responsibilities do you have at home? (E.g chores like dishes, looking after siblings)",
+                "question": "What jobs or responsibilities do you have at home (e.g., chores like dishes, looking after siblings)?",
                 "id": "2080",
                 "type": "TextForm"
             },
@@ -199,7 +199,7 @@
                 ]
             },
             {
-                "question": "Do you have rules you need to stick to at home? (eg: always tidy up after yourself, no smoking, curfew)",
+                "question": "Do you have rules you need to stick to at home (e.g., always tidy up after yourself, no smoking, curfew)?",
                 "id": "2100",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -209,12 +209,12 @@
                 }
             },
             {
-                "question": "Who makes the rules in your house? (eg: Dad, Mum, both, older brother or sister)",
+                "question": "Who makes the rules in your house (e.g., dad, mum, both, older brother, or sister)?",
                 "id": "2110",
                 "type": "TextForm"
             },
             {
-                "question": "What are the consequences for breaking the rules? (e.g: grounded, phone confiscated, hiding)",
+                "question": "What are the consequences for breaking the rules (e.g., grounded, phone confiscated, hiding)?",
                 "id": "2120",
                 "type": "TextForm"
             },
@@ -233,7 +233,7 @@
                 ]
             },
             {
-                "question": "What do you like to do with your family for fun? (e.g: go swimming together, camping, hunting, games, road trips)",
+                "question": "What do you like to do with your family for fun (e.g., go swimming together, camping, hunting, games, road trips)?",
                 "id": "21400",
                 "type": "TextForm"
             }
@@ -354,7 +354,7 @@
                 }
             },
             {
-                "question": "Are you doing any work outside of school? (e.g: a job)",
+                "question": "Are you doing any work outside of school (e.g., a job)?",
                 "id": "3150",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -371,7 +371,7 @@
         ]
     },
     "nutrition": {
-      "title": "NUTRITION  AND  EXERCISE",    
+      "title": "Nutrition and Exercise",    
       "questions": [
         {
           "question": "How much exercise do you do in an average week?",
@@ -386,10 +386,10 @@
                 "answer": "At least twice a week"
             },
             {
-              "answer": "Most Days"
+              "answer": "Most days"
             },
             {
-                "answer": "Everyday"
+                "answer": "Every day"
             }
           ]
         },
@@ -415,13 +415,13 @@
           ]
         },
         {
-          "question": "How many times a week  would someone in your home cook you dinner?",
+          "question": "How many times a week would someone in your home cook you dinner?",
           "id": "4200",
           "type": "Radio", 
           "responses": 
           [
             {
-                "answer": "Everyday"
+                "answer": "Every day"
             },
             {
                 "answer": "Most days"
@@ -438,7 +438,7 @@
           ]
         },
         {
-          "question": "How often would you have a sugary drink? (eg:  Fizzy, energy drinks, cordial, Raro)",
+          "question": "How often would you have a sugary drink (e.g.,  fizzy, energy drinks, cordial, Raro)?",
           "id":"4300",
           "type": "TextForm"        
         },
@@ -474,7 +474,7 @@
           ]
         },
         {
-          "question": "Have there been any big changes in your weight or in your dietary habit? (What you eat and how often)",
+          "question": "Have there been any big changes in your weight or in your dietary habits (what you eat and how often)?",
           "id": "4600",
           "type": "Radio", 
           "responses": 
@@ -516,7 +516,7 @@
                 "type": "Listing"
             },
             {
-              "question": "How do you spend your time when your not at school?",
+              "question": "How do you spend your time when you're not at school?",
               "id": "5020",
               "type": "Listing"
             },
@@ -608,34 +608,31 @@
             {
               "question": "Have you sent messages or images to other people that you later regretted?",
               "id": "6020",
-              "type": "TextForm"
+              "type": "Radio", 
+              "responses": [
+                  {
+                      "answer": "Yes"
+                  },
+                  {
+                      "answer": "No"
+                  }
+              ]
             },
             {
               "question": "What do you mainly use the internet for?",
               "id": "6030",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "To spend time with friends"
-                },
-                {
-                  "answer": "Prefer to be by yourself"
-                },
-                {
-                  "answer": "Both"
-                }
-              ]
+              "type": "TextForm"
             },
             {
-              "question": "In what ways can you keep yourself sage when using social media? (E.g. I don't share my address with someone I don't know). What are your ideas?",
+              "question": "In what ways can you keep yourself safe when using social media (e.g., 'I don't share my address with someone I don't know')? What are your ideas?",
               "id":"6040",
-              "type": "TextForm"
+              "type": "Listing"
             }
         ]
     },
 
         "drugs": {
-            "title": "SUBSTANCE USE:",
+            "title": "Substance Use",
             "description": "This information will not be passed on without your permission.",
             "questions": [
         {"question": "Do you smoke cigarettes / tobacco?",
@@ -652,10 +649,10 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
@@ -673,14 +670,14 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
-        {"question": "Have you ever used weed(Cannabis)?",
+        {"question": "Have you ever used weed (cannabis)?",
           "id": "7200",
           "type": "Radio", 
           "responses": [
@@ -694,14 +691,14 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
-        {"question": "Have you ever used P(Meth)?",
+        {"question": "Have you ever used P (meth)?",
           "id": "7300",
           "type": "Radio", 
           "responses": [
@@ -715,10 +712,10 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
@@ -736,10 +733,10 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
@@ -757,10 +754,10 @@
                 "answer": "Now and again"
               },
               {
-                "answer": "weekly"
+                "answer": "Weekly"
               },
               {
-                "answer": "daily"
+                "answer": "Daily"
               }
           ]
         },
@@ -814,14 +811,14 @@
           }
       ]
     },
-    {"question": "Are you getting any help from anyone for problems you've had? (E.g. Counselor)",
+    {"question": "Are you getting any help from anyone for problems you've had (e.g., counselor)?",
       "id": "8200",
       "type": "YNifSo", 
-        "ifSo": 
-            {
-                "val": "Yes",
-                "question": "If so, who?"
-            }
+      "ifSo": 
+          {
+              "val": "Yes",
+              "question": "If so, who?"
+          }
 
     },
     {"question": "Do you ever think life is not worth living?",
@@ -909,8 +906,8 @@
 },
 "sexualHealth": 
     {
-        "title":"SEXUALITY AND SEXUAL HEALTH ",
-        "description" : [ "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful.", "This information will stay completely private. It does not get shared with anyone else other than the nurse." ],
+        "title":"Sexuality and Sexual Health",
+        "description" : [ "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful. ", "This information will stay completely private. It does not get shared with anyone else other than the nurse." ],
         "questions" : 
         [
             {
@@ -930,7 +927,7 @@
                     }
             },
             {
-                "question": "I think I have a good understanding about sex",
+                "question": "I think I have a good understanding about sex.",
                 "id": "9040",
                 "type": "Slider",
                 "risk": 0.2,
@@ -942,7 +939,7 @@
                     }
             },
             {
-                "question": "I feel comfortable talking about sex and sexuality with people I trust",
+                "question": "I feel comfortable talking about sex and sexuality with people I trust.",
                 "id": "9050",
                 "type": "Slider",
                 "risk": 0.4,
@@ -959,7 +956,7 @@
                     }
             },
             {
-                "question": "I know what the  term ‘safe sex’ means? ",
+                "question": "I know what the  term ‘safe sex’ means. ",
                 "id": "9060",
                 "type": "Slider",
                 "risk": 0.5,
@@ -1039,21 +1036,19 @@
                     }
             },
             {
-                "question": "If you’d like to ask us any questions or let us know anything, or add any comments please do this below",
+                "question": "If you’d like to ask us any questions or let us know anything, or add any comments please do this below.",
                 "id": "9110",
                 "type": "TextForm"
             },
             {
                 "question": "We ask all young people we see about sexual harm, we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality.",
                 "id": "9120",
-                "type": "Radio",
+                "type": "AddInfo",
                 "tooltip": {
                     "questionArr": ["We ask all young people we see about", ", we do this because we want to support you to be safe. If you’re uncomfortable you can chat with the health professional afterwards. Please remember this will be treated within the boundaries of confidentiality."],
                     "wordArr": ["sexual harm"],
                     "defArr": ["When someone has a sexual experience they don't want, or are forced into any kind of sexual act by another person"]
-                  },
-                "responses": [
-                ]
+                  }
             },
             {
                 "question": "Have you ever been touched in a sexual way you did not like or agree to?",
@@ -1079,7 +1074,7 @@
                 ]
             },
             {
-                "question": "Do you feel safe at the moment? (This is something the health professional will talk with you more about when you see them for your 1:1 session)",
+                "question": "Do you feel safe at the moment? (This is something the health professional will talk with you more about when you see them for your 1:1 session.)",
                 "id": "9140",
                 "type": "Radio",
                 "conditions": 
@@ -1101,9 +1096,7 @@
             {
                 "question": "Some young people are looking at porn on the internet. There can be a number of reasons someone may do this, and sometimes we’re not sure how we feel about what we do see. The reason we’re going to  ask you questions about porn is because we want to support you in being safe. It’s really good to be honest about this as the answers you put may help you understand where you’re at with this a lot better.",
                 "id": "9150",
-                "type": "Radio",
-                "responses": [
-                ]
+                "type": "AddInfo"                
             },
             {
                 "question": "Have you seen sexual images, (ie. porn) that you chose to view",
@@ -1134,7 +1127,7 @@
                     }
             },
             {
-                "question": "Have you seen sexual images, (ie. porn) that you DIDN't choose to view",
+                "question": "Have you seen sexual images, (ie. porn) that you DIDN'T choose to view",
                 "id": "9171",
                 "type": "Slider",
                 "risk": 0.4,
@@ -1187,129 +1180,129 @@
     },
     "safety": 
     {
-        "title":"Safety",
-        "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
-        "questions" : 
-        [
-            {
-                "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
-                "id": "10000",
-                "type": "Radio",
-                "responses": [
-                    {
-                        "answers": "Yes"
-                    },
-                    {
-                        "answers": "No"
-                    }
-                ]
-            },
-            {
-              "question": "Are you afraid of violence in your school/neighbourhood?",
-              "id": "10010",
-              "type": "YNifSo",
-              "ifSo": 
-                {
-                    "val": "Yes",
-                    "question": "If yes, then where?"
-                }
-            },
-            {
-              "question": "Do you ever get in to fights?",
-              "id": "10030",
-              "type": "Radio",
-              "responses": [
-                {
+      "title":"Safety",
+      "description" : "If any of the answers to the following questions change for you, or you feel you need further support please see the: school nurse, school counsellor or REAL or your school dean",
+      "questions" : 
+      [
+        {
+          "question": "Is there anyone in your life you are afraid of or who hurts you in any way?",
+          "id": "10000",
+          "type": "Radio",
+          "responses": [
+              {
                   "answer": "Yes"
-                },
-                {
+              },
+              {
                   "answer": "No"
-                }
-              ]
-            },
-            {
-              "question": "Do you ever find it hard to keep your anger under control?",
-              "id": "10040",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-              "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
-              "id": "10050",
-              "type": "TextForm"
-            },
-            {
-              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
-              "id": "10060",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-              "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
-              "id": "10070",
-              "type": "Radio",
-              "responses": [
-                {
-                  "answer": "Yes"
-                },
-                {
-                  "answer": "No"
-                }
-              ]
-            },
-            {
-                "question": "How often would you wear a seatbelt in a car?",
-                "id": "10080",
-                "type": "Radio",
-                "responses": [
-                  {
-                    "answer": "All the time"
-                  },  
-                  {
-                    "answer": "Sometimes"
-                  },
-                  {
-                    "answer": "Never"
-                  },
-                {
-                "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
-                "id": "10090",
-                "type": "Radio",
-                "responses": [
-                    {
-                        "answer": "Yes"
-                    },
-                    {
-                        "answer": "No"
-                    }
-                    ]
-                  }
-                ]
               }
+          ]
+        },
+        {
+          "question": "Are you afraid of violence in your school/neighbourhood?",
+          "id": "10010",
+          "type": "YNifSo",
+          "ifSo": 
+            {
+                "val": "Yes",
+                "question": "If yes, then where?"
+            }
+        },
+        {
+          "question": "Do you ever get in to fights?",
+          "id": "10030",
+          "type": "Radio",
+          "responses": [
+            {
+              "answer": "Yes"
+            },
+            {
+              "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Do you ever find it hard to keep your anger under control?",
+          "id": "10040",
+          "type": "Radio",
+          "responses": [
+            {
+              "answer": "Yes"
+            },
+            {
+              "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+          "id": "10050",
+          "type": "TextForm"
+        },
+        {
+          "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+          "id": "10060",
+          "type": "Radio",
+          "responses": [
+            {
+              "answer": "Yes"
+            },
+            {
+              "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
+          "id": "10070",
+          "type": "Radio",
+          "responses": [
+            {
+              "answer": "Yes"
+            },
+            {
+              "answer": "No"
+            }
+          ]
+        },
+        {
+          "question": "How often would you wear a seatbelt in a car?",
+          "id": "10080",
+          "type": "Radio",
+          "responses": [
+            {
+              "answer": "All the time"
+            },  
+            {
+              "answer": "Sometimes"
+            },
+            {
+              "answer": "Never"
+            }
+          ]
+        },
+        {
+        "question": "Have you ever met in person (or planned to meet) with anyone you have met online?",
+        "id": "10090",
+        "type": "Radio",
+        "responses": [
+          {
+              "answer": "Yes"
+          },
+          {
+              "answer": "No"
+          }
         ]
+      }
+    ]                   
     },
     "spirit": 
     {
-        "title":"SPIRITUAL HEALTH / WAIRUATANGA",
+        "title":"Spiritual Health / Wairuatanga",
         "description": "Spirituality means different things to different people. Spirituality is our sense of connection to something bigger than us. It may include a search for beliefs and values; a sense of meaning and a purpose in life; a sense of connectedness; identity and awareness; and for some people, religion.",
         "questions" : 
         [
             {
-                "question": "Are you connected to a certain religion/faith/culture or spiritual belief? (e.g Ratana/Christian/Buddhist/Muslim)",
+                "question": "Are you connected to a certain religion/faith/culture or spiritual belief (e.g., Ratana/Christian/Buddhist/Muslim)?",
                 "id": "11000",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -1394,5 +1387,5 @@
             }
         ],
         "footer" : "If there are any areas of concern that come from this assessment, the nurse will see you. If you’d like to see the nurse then please feel free to drop into the clinic"
-    }
+    }  
 }

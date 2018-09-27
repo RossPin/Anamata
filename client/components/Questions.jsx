@@ -12,6 +12,7 @@ import Checkbox from './Checkbox'
 import { setStyle } from '../actions/style'
 import { addSection, addAlert } from '../actions/youngPerson'
 import Socket from '../utils/socket'
+import AddInfo from './AddInfo'
 
 class Questions extends React.Component {
   constructor (props) {
@@ -172,6 +173,8 @@ class Questions extends React.Component {
       case 'YNifSo':
         return <YNifSo question={question} answer={this.state.answers[question.id] ? this.state.answers[question.id].answer : ''}
           update={this.updateSelection} updateIfSo={this.updateIfSo} submit={this.submit} />
+      case 'AddInfo':
+        return <AddInfo question={question} />
       default:
         return null
     }
@@ -241,7 +244,7 @@ class Questions extends React.Component {
   }
   listining () {
     window.addEventListener('keyup', (e) => {
-      if (e.keyCode === 39) {
+      if (e.keyCode === 40) {
         const ids = this.getIds(this.state.questions)
         const index = ids.findIndex(id => id === this.state.currentId) + 1
         if (index >= ids.length) return this.scroller(document.getElementById('submit'))

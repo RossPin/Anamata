@@ -42,7 +42,7 @@ class Current extends React.Component {
   render () {
     return (
       <div className='current'>
-        <h1>Un-Reviewed surveys</h1>
+        <h1>Unreviewed Surveys</h1>
         <div className='currentContainer'>
           <div className='currentList'>
             <h3>Alert Status</h3>

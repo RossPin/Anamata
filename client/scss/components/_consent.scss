@@ -12,8 +12,7 @@
 .consent p {
   color: $primary-purple;
   margin: 6% auto;
-  // font-size: 2em;
-
+  padding: 0 8%;
 }
 
 .consent p div{
@@ -23,16 +22,22 @@
 
 .consent img {
   margin-top: 6%;
+  width: 70%;
+  height: auto;
+}
+
+.consent h1 {
+  padding-top: $title-padding-top;
+  padding-bottom: 0;
 }
 
 .consent h3 {
   margin-bottom: 4%;
   font-size: 2.5em;
-
 }
 
 .consent .button {
-  width: 120px;
+  width: 10vw;
   margin: 0 6%;
 }
 
@@ -41,4 +46,36 @@
   border-bottom-right-radius: $border-radius;
   background-color: $primary-blue;
   padding: 4%;
+}
+
+.modalHead {
+  background-color: $primary-blue;
+  height: 6em; 
+}
+
+.modalFoot {
+  text-align: center;
+  background-color: $primary-blue;
+}
+
+#consentModalTitle {
+  font-size: 4em;
+  color: $white;
+}
+
+.modalBody {
+  background-color: $primary-yellow; 
+  min-height: 15em;
+  padding: 0;
+}
+
+.modalBackground {
+  margin: 0;
+  width: 100%;
+  min-height: 15em;
+  background-color: $white-20;
+}
+
+.modal p {
+  margin: 0;
 }
