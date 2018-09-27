@@ -114,7 +114,7 @@ const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
           ? <div className='otherSection'>
             <input type='radio' className='otherRadio' id={'radio' + item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
-            <label for={'radio' + item}>{item}</label>
+            <label htmlFor={'radio' + item}>{item}</label>
             <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
