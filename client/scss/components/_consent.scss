@@ -42,3 +42,35 @@
   background-color: $primary-blue;
   padding: 4%;
 }
+
+.modalHead {
+  background-color: $primary-blue;
+  height: 6em; 
+}
+
+.modalFoot {
+  text-align: center;
+  background-color: $primary-blue;
+}
+
+#consentModalTitle {
+  font-size: 4em;
+  color: $white;
+}
+
+.modalBody {
+  background-color: $primary-yellow; 
+  min-height: 15em;
+  padding: 0;
+}
+
+.modalBackground {
+  margin: 0;
+  width: 100%;
+  min-height: 15em;
+  background-color: $white-20;
+}
+
+.modal p {
+  margin: 0;
+}

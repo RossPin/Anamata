@@ -14,6 +14,11 @@
   justify-content: flex-end;
 }
 
+.qDiv .info {
+  font-size: 200%;
+  color: $primary-purple; 
+}
+
 .qDiv form.listingForm {
   display: inline-block;
 }
