@@ -5,8 +5,13 @@
     padding: 1em;
 }
 
+.navbar-end {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nav .button {
-    margin: auto;
+    margin: auto 10px;
 }
 
 .logo {

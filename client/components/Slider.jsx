@@ -52,9 +52,9 @@ class Slider extends React.Component {
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
         <div className='sliderAns' data-aos='fade-right'>
-          {question.responses.left}
-          <input type='range' min='0' max='10' value={answer} onChange={e => this.updateCheck(e, update, question.id, question)} className='slider' />
-          {question.responses.right}
+          <input className='slider' type='range' min='0' max='10' value={answer} onChange={e => this.updateCheck(e, update, question.id, question)} />
+          <span className='sliderLabelLeft'>{question.responses.left}</span>
+          <span className='sliderLabelRight'>{question.responses.right}</span>
         </div>
         {'check' in question.responses
           ? <label>

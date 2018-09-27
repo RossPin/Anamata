@@ -29,18 +29,20 @@
 .helpBtn {
   display: inline-flex;
   background-color: $white-20;
-  color: $white;
-  border: $white solid 0.05em;
+  color: $primary-purple;
+  border: $primary-purple solid 0.05em;
 }
 
 .helpBtn:hover {
-  color: $primary-purple;
+  color: $white;
   border: $white solid 0.05em;
-  box-shadow: 0 0 0 1px $primary-purple;
+  box-shadow: 0 0 0 1px $white;
 }
 
 // Fix this stuff!
   .user {
+    color: $primary-purple;
+    align-self: center;
     font-size: 1.2em;
   }
   

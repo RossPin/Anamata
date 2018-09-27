@@ -1,0 +1,48 @@
+.helpfeedback {
+    background: rgba(208, 205, 148, 0.473);
+    box-shadow: 5px 8px 18px #888888;
+    border-radius: 5px;
+    padding: 0px;
+    font-size: 1.5em
+  
+    h1 {
+      color: $primary-purple;
+      font-family: $itim;
+      font-size: 5vw;
+    }
+  
+    .textDetails {
+      text-align: left;
+      margin-bottom: 1em;
+    }
+
+    label {
+      vertical-align: text-bottom;
+      display: block;
+      font-size: 1.1em;
+      margin-left: 0.5em;
+    }
+  
+    form{
+      padding: 0em;
+      max-width: 80%;
+      margin: auto;
+      font-size: 1.5em;
+  
+      input{
+        margin-left: 1em;
+      }
+    }
+  
+    .radioDetailsInput {
+      padding: 0 5 0 10;
+    }
+  
+  }
+  
+  .feedback {
+    width: 100%;
+    padding: 50px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }

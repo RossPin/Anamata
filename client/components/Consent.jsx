@@ -23,10 +23,14 @@ class Consent extends React.Component {
   render () {
     return (
       <div className='consent'>
-        <h1>Know your rights!</h1>
+        <h1>Know Your Rights!</h1>
         <img src='img/video.png' alt='vidimg' width='500' />
-        <p>The information you provide here will remain completely private between yourself and the school nurse.  Any other information that needs to be followed up will be discussed with you first.
-          <br />HOWEVER IF THERE ARE ANY IMMEDIATE CONCERNS FOR YOUR SAFETY WE WILL NEED TO SEE YOU AS SOON AS POSSIBLE AND OTHER ADULTS MAY BE ASKED BY US TO BE INVOLVED TO PROVIDE FURTHER  SUPPORT. </p>
+        <p>The information you provide here will remain completely private
+          between yourself and the school nurse. Any other information that
+          needs to be followed up will be discussed with you first.<br /><div>
+            However, if there are any immediate concerns for your safety
+          we will need to see you as soon as possible, and other adults may be
+          asked by us to be involved to provide further support.</div></p>
         <div className='consent-form'>
           <h3>Do you consent to this?</h3>
           <button value='Yes' onClick={this.submit} className='button'>Yes</button>

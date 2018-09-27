@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setDetails } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
-import Slider from './Slider'
 
 class Details extends React.Component {
   constructor (props) {
@@ -84,14 +83,15 @@ class Details extends React.Component {
           <TextDetails detail='Last Name' name='lastName' onChange={this.updateDetails} />
           <TextDetails detail='Preferred Name' name='prefName' onChange={this.updateDetails} />
           <RadioDetails detail='Ethnicity' radioList={this.state.ethnicityList} name='ethnicity' detailState={this.state.details.ethnicity} onChange={this.updateRadio} />
-          <Slider name='gender' question={genderObj} answer={details.gender} update={e => this.updateDetails(e)} />
-          <label>Birthday:
-            <input type='date' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
-          </label><br />
+          <SliderDetails name='gender' question={genderObj} detailState={details.gender} onChange={e => this.updateDetails(e)} />
+          <div className='detailsDiv textDetails'>
+            <label htmlFor='dob'>Birthday</label>
+            <input type='date' id='dob' name='dob' onChange={e => this.updateDetails(e)} className='birthInput' />
+          </div>
           <TextDetails detail='Address' name='address' onChange={this.updateDetails} />
           <TextDetails detail='School' name='school' onChange={this.updateDetails} />
           <TextDetails detail='Mobile' name='mobile' onChange={this.updateDetails} />
-          <input className='button' type='submit' />
+          <input className='button' type='submit' value='Next' />
         </form>
       </div>
     )
@@ -99,32 +99,43 @@ class Details extends React.Component {
 }
 
 const TextDetails = ({ detail, name, onChange }) =>
-  <div className='textDetails'>
-    <label>{detail}:
-      <input style={{ margin: '0.5vw' }} type='text' name={name} onChange={onChange} />
-    </label><br />
+  <div className='detailsDiv textDetails'>
+    <label htmlFor={name}>{detail}</label>
+    <input id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
-  <div className='radioDetails'>
-    {detail}:
+  <div className='detailsDiv radioDetails'>
+    <label>{detail}</label>
     {radioList.map((item, i) => (
       <div key={i}>
         {item === 'Other'
           ? <div className='otherSection'>
-            <input type='radio' className='otherRadio' name={name} onChange={e => onChange(e)}
+            <input type='radio' className='otherRadio' id={'radio' + item} name={name} onChange={e => onChange(e)}
               value={item} checked={detailState.includes(item)} />
-            {item}
-            <input id={'Other' + detail} style={{ margin: '0.5vw' }} type='text' name={name} onChange={e => onChange(e)} />
+            <label for={'radio' + item}>{item}</label>
+            <input className='radioOtherInput' id={'Other' + detail} type='text' name={name} onChange={e => onChange(e)} />
           </div>
           : <div>
-            <input className='radioDetailsInput' type='radio' name={name} onChange={e => onChange(e)}
+            <input className='radioDetailsInput' id={'radio' + item} type='radio' name={name} onChange={e => onChange(e)}
               value={item} checked={item === detailState} />
-            {item}
+            <label htmlFor={'radio' + item}>{item}</label>
           </div>
         }
       </div>
     ))}
+  </div>
+
+const SliderDetails = ({ question, answer, onChange }) =>
+  <div className='detailsDiv sliderDetails'>
+    <div>
+      {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
+    </div>
+    <div className='sliderLabels'>
+      <input className='slider' type='range' min='0' max='100' value={answer} onChange={e => onChange(e)} />
+      <b className='sliderLabelLeft'>{question.responses.left}</b>
+      <b className='sliderLabelRight'>{question.responses.right}</b>
+    </div>
   </div>
 
 export default connect()(Details)

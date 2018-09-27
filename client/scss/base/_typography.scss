@@ -6,9 +6,11 @@ body {
 h1 {
     font-family: $itim;
     font-size: 5em;
-    margin: 10% auto;
+    margin: 4% auto;
     color: $primary-purple;
     text-shadow: 1px 1px $white;
+    padding: 3%;
+    align-self: flex-start;
 }
 
 h1:hover {
@@ -21,15 +23,35 @@ h2, .button {
     // font-size: 2em;
 }
 
+h2 {
+    color: $primary-purple;
+    font-size: 4em;
+    margin: 2% auto;
+}
+
+h3 {
+    font-family: $cabin;
+    // font-size: 2.5em;
+}
+
 p {
     font-family: $pt;
     font-size: 2em;
+    padding: 4%;
 }
 
 .home {
     color: $primary-purple;
 }
 
+.home h1 {
+    margin: 6%;
+}
+
 .help p {
+    color: $primary-purple;
+}
+
+label {
     color: $primary-purple;
 }
