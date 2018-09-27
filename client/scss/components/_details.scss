@@ -51,7 +51,18 @@
 
   .sliderLabels {
     color: $primary-purple;
-    padding-bottom: 30px;
+    padding-top: 30px;
+
+      .slider{
+        margin-left: 0px;
+      }
+
+      .sliderlabel{
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
   }
 
   .radioOtherInput{
