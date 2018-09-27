@@ -23,7 +23,7 @@ class Radio extends React.Component {
         </div>
         <form className='radioQuestion' data-aos='fade-left'>
           { question.responses.map((response, i) => (
-            <div>
+            <div key={i}>
               <label className='radio yn' key={i}>
                 <input type='radio' name='answer' onChange={e => update(e, question.id, question)}
                   value={response.answer} checked={answer === response.answer} />
