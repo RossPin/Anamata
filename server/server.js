@@ -10,4 +10,12 @@ server.use('/api/users', users)
 server.use('/api/yp', yp)
 server.use(express.static(path.join(__dirname, '../public')))
 
+server.get('/*', (req, res) => {
+  res.redirect('/')
+})
+
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})
+
 module.exports = server
