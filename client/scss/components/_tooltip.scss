@@ -21,6 +21,10 @@
   margin-left: -100%;
 }
 
+.tooltiptext::after {
+  content: '';
+}
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
   font-size: 0.5em;

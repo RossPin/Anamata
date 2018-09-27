@@ -940,7 +940,7 @@
                 "risk": 0.4,
                 "resiliency": 0.6,
                 "tooltip": {
-                    "questionArr": ["I feel comfortable talking about sex and", " with people I trust"],
+                    "questionArr": ["I feel comfortable talking about sex and", " with people I trust."],
                     "wordArr": ["sexuality"],
                     "defArr": ["one of those things you’re born with, you do not choose it, it’s just part of who you are, whether you be physically, emotionally and sexually attracted to males, female or both."]
                   },
@@ -1094,7 +1094,7 @@
                 "type": "AddInfo"                
             },
             {
-                "question": "Have you seen sexual images, (ie. porn) that you chose to view",
+                "question": "Have you seen sexual images (i.e., porn) that you chose to view?",
                 "id": "9160",
                 "type": "Slider",
                 "risk": 0.6,
@@ -1122,7 +1122,7 @@
                     }
             },
             {
-                "question": "Have you seen sexual images, (ie. porn) that you DIDN'T choose to view",
+                "question": "Have you seen sexual images (i.e., porn) that you DIDN'T choose to view?",
                 "id": "9171",
                 "type": "Slider",
                 "risk": 0.4,

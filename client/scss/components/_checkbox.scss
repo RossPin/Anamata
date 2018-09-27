@@ -1,5 +1,5 @@
 
-svg { 
+.checkbox svg { 
   width: 1em;
   height: 1em;
   position: absolute;
@@ -8,12 +8,11 @@ svg {
   border: 2px solid #eee;
 }
 
-label {
-  display: block;
+.checkbox label {
+  display: inline-block;
   padding: .25em .5em .25em 2em;
   position: relative;
   cursor: pointer;
-  
 }
 
 input[type="checkbox"] {
@@ -23,7 +22,7 @@ input[type="checkbox"] {
   top: .75em;
 }
 
-label svg path {
+.checkbox label svg path {
   transition: stroke-dashoffset .4s linear;
 }
 

@@ -30,9 +30,9 @@ class Checkbox extends React.Component {
         <div className='speech-bubble'>
           {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
         </div>
-        <form data-aos='fade-left'>
+        <form className='radioQuestion' data-aos='fade-left'>
           {question.responses.map((response, i) => (
-            <div className='checkbox'key={i}>
+            <div className='checkbox' key={i}>
               <input type='checkbox' id={`${question.id}${i}`} name='answer'
                 value={response.answer} checked={answer[response.answer]
                   ? answer[response.answer] : false} onChange={e => update(e, question)} />
