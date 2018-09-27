@@ -111,7 +111,7 @@ class Details extends React.Component {
 const TextDetails = ({ detail, name, onChange }) =>
   <div className='detailsDiv textDetails'>
     <label htmlFor={name}>{detail}</label>
-    <input id={name} type='text' name={name} onChange={onChange} />
+    <input className='textDetailsInput' id={name} type='text' name={name} onChange={onChange} />
   </div>
 
 const RadioDetails = ({ detail, radioList, name, detailState, onChange }) =>
