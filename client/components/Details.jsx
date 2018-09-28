@@ -45,7 +45,6 @@ class Details extends React.Component {
     this.setState({
       details: { ...this.state.details, [e.target.name]: e.target.value }
     })
-
   }
 
   submit (e) {
@@ -144,10 +143,10 @@ const SliderDetails = ({ detail, question, answer, onChange }) =>
     <div>
       {question.tooltip ? this.tooltip(question) : <h3>{question.question}</h3>}
     </div>
-    <div className='sliderLabels'>
+    <div className='sliderLabels columns'>
+      <label className='sliderlabel'>{question.responses.left}</label>
       <input className='slider' type='range' min='0' max='100' value={answer} onChange={e => onChange(e)} />
-      <b className='sliderLabelLeft'>{question.responses.left}</b>
-      <b className='sliderLabelRight'>{question.responses.right}</b>
+      <label className='sliderlabel'>{question.responses.right}</label>
     </div>
   </div>
 

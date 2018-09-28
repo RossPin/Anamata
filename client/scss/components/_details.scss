@@ -7,7 +7,8 @@
   background: $white-20;
   box-shadow: 5px 8px 18px #888888;
   border-radius: $border-radius;
-  font-size: 1.5em;
+  padding-bottom: 4%;
+  // font-size: 1.5em;
 
   h1 {
     padding-top: $title-padding-top;
@@ -51,7 +52,18 @@
 
   .sliderLabels {
     color: $primary-purple;
-    padding-bottom: 30px;
+    padding-top: 30px;
+
+      .slider{
+        margin-left: 0px;
+      }
+
+      .sliderlabel{
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
   }
 
   .radioOtherInput{

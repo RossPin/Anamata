@@ -3,23 +3,26 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeYp, markReviewed } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
+import ModalConfirm from './ModalConfirm'
 
 class ViewAnswers extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      answers: props.youngPerson.answers || {}
+      answers: props.youngPerson.answers || {},
+      showModal: false
     }
+    this.confirm = this.confirm.bind(this)
+    this.cancel = this.cancel.bind(this)
   }
 
   componentWillReceiveProps (nextProps) {
     this.setState({ answers: nextProps.youngPerson.answers })
   }
 
-  delete (e, id) {
+  delete (e) {
     e.preventDefault()
-    removeYp(id)
-    this.props.history.push('/current')
+    this.setState({ showModal: true })
   }
 
   reviewed (e, id) {
@@ -44,6 +47,18 @@ class ViewAnswers extends React.Component {
     )
   }
 
+  confirm (e) {
+    e.preventDefault()
+    this.setState({ showModal: false })
+    removeYp(this.props.youngPerson._id)
+    this.props.history.push('/current')
+  }
+
+  cancel (e) {
+    e.preventDefault()
+    this.setState({ showModal: false })
+  }
+
   render () {
     const answers = this.state.answers
     const keys = answers ? Object.keys(answers) : false
@@ -65,6 +80,7 @@ class ViewAnswers extends React.Component {
         <Link className='button' to='/current'>Back</Link>
         <button className='button' onClick={e => this.reviewed(e, this.props.youngPerson._id)} >Set as Reviewed</button>
         <button className='button' onClick={e => this.delete(e, this.props.youngPerson._id)} >Delete</button>
+        {this.state.showModal && <ModalConfirm confirm={this.confirm} cancel={this.cancel} />}
       </div>
     )
   }

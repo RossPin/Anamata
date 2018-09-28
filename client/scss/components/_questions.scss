@@ -15,12 +15,16 @@
 }
 
 .qDiv .info {
-  font-size: 200%;
+  font-size: 2.5vw;
   color: $primary-purple; 
 }
 
 .qDiv form.listingForm {
   display: inline-block;
+}
+
+.qDiv .listing {
+color: #532c6e;
 }
 
 .ynifso {
@@ -33,6 +37,11 @@
 .ifso {
   margin-top: 4%;
   text-align: left;
+}
+
+.tooltipSection {
+  font-size: 2.5vw;
+
 }
 
 // .questionContainer {
@@ -56,7 +65,7 @@
   margin-bottom: 10%;
 }
 
-.speech-bubble :after {
+.speech-bubble::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -70,10 +79,10 @@
 	margin-left: -10px;
   margin-bottom: -20px;  
 }
-  .radio {
-    right: 5%;
-    top: 80%;
-  }
+  // .radio {
+  //   right: 5%;
+  //   top: 80%;
+  // }
   .emojiButtons {
     right: 5%;
     float: right;
@@ -102,6 +111,7 @@
     top: 20%;
     position: relative;
     float: right;
+    font-size: 1em;
   } 
   .qDiv {
     // margin-top: 20%;

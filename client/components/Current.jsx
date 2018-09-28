@@ -4,6 +4,7 @@ import { setYp } from '../actions/youngPerson'
 import { setStyle } from '../actions/style'
 import request from '../utils/api'
 import { getRisks, triage } from '../utils/eval'
+import { resetSubmit } from '../actions/newSubmission'
 
 class Current extends React.Component {
   constructor (props) {
@@ -24,6 +25,10 @@ class Current extends React.Component {
     this.props.dispatch(setStyle('current_background'))
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.newSubmission) this.updateList()
+  }
+
   updateList () {
     request('get', 'yp/view/current')
       .then((response) => {
@@ -31,6 +36,7 @@ class Current extends React.Component {
         current.map(yp => { yp.risk = getRisks(yp) })
         const { alert, high, normal } = triage(current)
         this.setState({ current, alert, high, normal })
+        this.props.dispatch(resetSubmit())
       })
   }
 
@@ -49,7 +55,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.alert.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `- ${yp.details.firstName} ${yp.details.lastName} -` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
@@ -59,7 +65,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.high.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `- ${yp.details.firstName} ${yp.details.lastName} -` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
@@ -69,7 +75,7 @@ class Current extends React.Component {
             <div className='listBox'>
               <ul>
                 {this.state.normal.map((yp, i) => (
-                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `${yp.details.firstName} ${yp.details.lastName}` : 'missing details'}</div></li>
+                  <li key={i}><div className='link' onClick={() => this.select(yp)}> {yp.details ? `- ${yp.details.firstName} ${yp.details.lastName} -` : 'missing details'}</div></li>
                 ))}
               </ul>
             </div>
@@ -80,8 +86,8 @@ class Current extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth }) => {
-  return { auth }
+const mapStateToProps = ({ auth, newSubmission }) => {
+  return { auth, newSubmission }
 }
 
 export default connect(mapStateToProps)(Current)

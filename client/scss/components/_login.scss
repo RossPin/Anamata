@@ -1,28 +1,61 @@
-* {
-  box-sizing: border-box;
-  // border: 0.5px solid red;
-}
+// * {
+//   box-sizing: border-box;
+//   // border: 0.5px solid red;
+// }
+
+// .login {
+// vertical-align: top;
+// width: 100%;
+// margin: 0 0 200 0;
+// background: $white-20;
+// box-shadow: 5px 8px 18px #888888;
+// border-radius: $border-radius;
+// }
+
+// .loginInput {
+//   background: $primary-blue;
+//   border-radius: $border-radius;
+// }
+
+// .loginLabel {
+// padding: 0 0 0 20;
+// }
+
+// h2 {
+//   font-size: 25px;
+//   padding: 5 5 5 5;
+// }
 
 .login {
-vertical-align: top;
-width: 100%;
-margin: 0 0 200 0;
-background: $white-20;
-box-shadow: 5px 8px 18px #888888;
-border-radius: $border-radius;
-}
-
-.loginInput {
-  background: $primary-blue;
+  background: $white-20;
+  box-shadow: 5px 8px 18px #888888;
   border-radius: $border-radius;
+  padding: 0px;
+  font-size: 1.5em;
+
+  h2 {
+    color: $primary-purple;
+    font-family: $itim;
+    font-size: 5vw;
+  }
+
+  .loginLabel {
+    text-align: left;
+    margin-bottom: 1em;
+    display: block;
+    font-size: 1.1em;
+    margin-left: 0.5em;
+  }
+
+form{
+  padding: 0em;
+  max-width: 80%;
+  margin: auto;
+  font-size: 1.5em;
+  }
 }
 
-.loginLabel {
-padding: 0 0 0 20;
-}
-
-h2 {
-  font-size: 25px;
-  padding: 5 5 5 5;
-}
-
+.textinput {
+  background-color: white;
+      margin-left: 1em;
+    }

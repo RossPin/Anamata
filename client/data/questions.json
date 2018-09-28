@@ -7,12 +7,7 @@
         "questions" : 
         [
             {
-                "question": "Are you registered with a dentist?",
-                "tooltip": {
-                  "questionArr": ["Are you", "with a", "?"],
-                  "wordArr": ["registered", "dentist"],
-                  "defArr": ["signed up with", "person that drills your teeth"]
-                },
+                "question": "Are you registered with a dentist?",                
                 "id": "1010",
                 "type": "YNifSo", 
                 "ifSo": 
@@ -144,16 +139,12 @@
             {
                 "question": "Is there someone at home you can talk to if you feel upset or who you could go to if you needed help with a problem?",
                 "id": "2050",
-                "type": "Radio", 
-                "responses": 
-                [
-                    {
-                        "answer": "Yes"
-                    },
-                    {
-                        "answer": "No"
-                    }
-                ]
+                "type": "YNifSo",
+                "ifSo": 
+                {
+                    "val": "Yes",
+                    "question": "Who?"
+                }
             },
             {
                 "question": "Have there been any big changes in your family or at home recently (e.g., moving, someone leaving, someone new)?",
@@ -590,7 +581,7 @@
                   "type": "YNifSo", 
                   "ifSo": {
                       "val": "Yes",
-                      "question": "What is presenting you from doing this?"
+                      "question": "What is stopping you from doing this?"
                   }
             }
         ]
@@ -811,7 +802,7 @@
           }
       ]
     },
-    {"question": "Are you getting any help from anyone for problems you've had (e.g., counselor)?",
+    {"question": "Are you getting any help from anyone for problems you've had (e.g., counsellor)?",
       "id": "8200",
       "type": "YNifSo", 
       "ifSo": 
@@ -906,10 +897,14 @@
 },
 "sexualHealth": 
     {
-        "title":"Sexuality and Sexual Health",
-        "description" : [ "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful. ", "This information will stay completely private. It does not get shared with anyone else other than the nurse." ],
+        "title":"Sexuality and Sexual Health",        
         "questions" : 
         [
+          {
+            "question": "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex. This information will stay confidential",
+            "id": "9000",
+            "type": "AddInfo"
+          },
             {
                 "question": "Is there anything in particular that you’d like to talk to the school health person about?",
                 "id": "9010",
@@ -945,7 +940,7 @@
                 "risk": 0.4,
                 "resiliency": 0.6,
                 "tooltip": {
-                    "questionArr": ["I feel comfortable talking about sex and", " with people I trust"],
+                    "questionArr": ["I feel comfortable talking about sex and", " with people I trust."],
                     "wordArr": ["sexuality"],
                     "defArr": ["one of those things you’re born with, you do not choose it, it’s just part of who you are, whether you be physically, emotionally and sexually attracted to males, female or both."]
                   },
@@ -1099,16 +1094,19 @@
                 "type": "AddInfo"                
             },
             {
-                "question": "Have you seen sexual images, (ie. porn) that you chose to view",
+                "question": "Have you seen sexual images (i.e., porn) that you chose to view?",
                 "id": "9160",
-                "type": "Slider",
-                "risk": 0.6,
-                "resiliency": 0.6,
-                "responses": 
+                "type": "Radio",
+                "responses": [
                     {
-                        "right": "Yes",
-                        "left": "No"
-                    }
+                        "answer": "Yes",
+                        "risk": 2
+                    },
+                    {
+                        "answer": "No",
+                        "resilency": 3
+                   }
+                ] 
             },
             {
                 "question": "How did you feel about this?",
@@ -1117,8 +1115,8 @@
                 "conditions": 
                 {
                     "target": "9160",
-                    "compare": ">",
-                    "value": 0
+                    "compare": "=",
+                    "value": "Yes"
                 },
                 "responses": 
                     {
@@ -1127,15 +1125,18 @@
                     }
             },
             {
-                "question": "Have you seen sexual images, (ie. porn) that you DIDN'T choose to view",
+                "question": "Have you seen sexual images (i.e., porn) that you DIDN'T choose to view?",
                 "id": "9171",
-                "type": "Slider",
-                "risk": 0.4,
-                "responses": 
+                "type": "Radio",
+                "responses": [
                     {
-                        "right": "Yes",
-                        "left": "No"
-                    }
+                        "answer": "Yes",
+                        "risk": 8
+                    },
+                    {
+                        "answer": "No"
+                   }
+                ] 
             },
             {
                 "question": "How did you feel about this?",
@@ -1144,8 +1145,8 @@
                 "conditions": 
                 {
                     "target": "9171",
-                    "compare": ">",
-                    "value": 0
+                    "compare": "=",
+                    "value": "Yes"
                 },
                 "responses": 
                     {
@@ -1234,22 +1235,9 @@
           ]
         },
         {
-          "question": "What do you do when you're angry? (E.g. Go to your room / shout / puch something)",
+          "question": "What do you do when you're angry? (E.g. Go to your room / shout / punch something)",
           "id": "10050",
           "type": "TextForm"
-        },
-        {
-          "question": "Have you ever been physically assaulted? (hit/punched/bashed)",
-          "id": "10060",
-          "type": "Radio",
-          "responses": [
-            {
-              "answer": "Yes"
-            },
-            {
-              "answer": "No"
-            }
-          ]
         },
         {
           "question": "Have you ever been physically assaulted? (hit/punched/bashed)",

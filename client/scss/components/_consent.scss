@@ -54,7 +54,9 @@
 }
 
 .modalFoot {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $primary-blue;
 }
 
@@ -78,4 +80,10 @@
 
 .modal p {
   margin: 0;
+}
+
+.modal-card-title {
+  font-family: $itim;
+  font-size: 6vw;
+  color: $primary-purple;
 }

@@ -82,7 +82,7 @@ class Questions extends React.Component {
     risk = Math.round(risk * 10) / 10
     resiliency = Math.round(resiliency * 10) / 10
     answers[id] = { id, question, answer: e.currentTarget.value, risk, resiliency }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateSelectionArray (val, id, questionObj) {
@@ -90,13 +90,14 @@ class Questions extends React.Component {
     let question = questionObj.question
     if (answers[id]) answers[id].answer.push(val)
     else answers[id] = { id, question, answer: [val] }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateIfSo (e, id, question) {
+    e.preventDefault()
     const { answers } = this.state
     Object.assign(answers[id], { ifSoQuestion: question, ifSoAnswer: e.target.value })
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   updateCheckbox (e, questionObj) {
@@ -113,7 +114,7 @@ class Questions extends React.Component {
       answer['resiliency'] = questionObj.resiliency
     }
     answers[id] = { id, question, answer }
-    this.setState({ answers })
+    this.setState({ answers, currentId: id })
   }
 
   createCheckboxArray (question) {
@@ -224,6 +225,9 @@ class Questions extends React.Component {
     const schoolId = 'testSchool'
     this.props.dispatch(addAlert({ name, msg }))
     socket.emit('trigger-alert', schoolId, { name, msg })
+    setTimeout(() => {
+      socket.disconnect()
+    }, 30000)
   }
 
   getIds (questions) {
@@ -242,15 +246,20 @@ class Questions extends React.Component {
 
     })
   }
+
   listining () {
-    window.addEventListener('keyup', (e) => {
-      if (e.keyCode === 40) {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === 40 || e.keyCode === 9) {
+        e.preventDefault()
         const ids = this.getIds(this.state.questions)
         const index = ids.findIndex(id => id === this.state.currentId) + 1
         if (index >= ids.length) return this.scroller(document.getElementById('submit'))
         const element = document.getElementById(ids[index])
         this.setState({ currentId: ids[index] })
         this.scroller(element)
+      } else if (e.keyCode === 32 || e.keyCode === 13) {
+        console.log(e.target.type)
+        if (e.target.type !== 'text' && e.target.type !== 'textarea') e.preventDefault()
       }
     })
   }
