@@ -11,7 +11,7 @@ class ModalConsent extends React.Component {
           </header>
           <section className='modal-card-body modalBody'>
             <div className='modalBackground'>
-              <p>Thanks for giving it a go! If you would like to chat feel free to pop in to see the school health professional.</p>
+              <p className='consentP'>Thanks for giving it a go! If you would like to chat feel free to pop in to see the school health professional.</p>
             </div>
           </section>
           <footer className='modal-card-foot modalFoot'>
