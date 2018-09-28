@@ -802,7 +802,7 @@
           }
       ]
     },
-    {"question": "Are you getting any help from anyone for problems you've had (e.g., counselor)?",
+    {"question": "Are you getting any help from anyone for problems you've had (e.g., counsellor)?",
       "id": "8200",
       "type": "YNifSo", 
       "ifSo": 
@@ -901,7 +901,7 @@
         "questions" : 
         [
           {
-            "question": "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex.  It also involves building emotional maturity, relationship skills and a healthy body image.  It helps you make the right decision for you about sex so that when you’re ready your sexual experiences and relationships are positive, safe and respectful. This information will stay completely private. It does not get shared with anyone else other than the nurse.",
+            "question": "We ask all young people about sexuality and sexual health because it's an important area of health and wellbeing. Having good sexual health is about being comfortable with your sexuality and the decisions you make about sex. This information will stay confidential",
             "id": "9000",
             "type": "AddInfo"
           },
