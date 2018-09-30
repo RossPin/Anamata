@@ -45,6 +45,7 @@ class Questions extends React.Component {
 
   componentDidMount () {
     window.scrollTo(0, 0)
+    if (!this.props.youngPerson.details) this.props.history.push('/details')
     this.props.dispatch(setStyle('questions_background'))
     this.listining()
   }
@@ -227,7 +228,7 @@ class Questions extends React.Component {
     socket.emit('trigger-alert', schoolId, { name, msg })
     setTimeout(() => {
       socket.disconnect()
-    }, 30000)
+    }, 15000)
   }
 
   getIds (questions) {
@@ -258,7 +259,6 @@ class Questions extends React.Component {
         this.setState({ currentId: ids[index] })
         this.scroller(element)
       } else if (e.keyCode === 32 || e.keyCode === 13) {
-        console.log(e.target.type)
         if (e.target.type !== 'text' && e.target.type !== 'textarea') e.preventDefault()
       }
     })
