@@ -18,6 +18,7 @@ class ViewAnswers extends React.Component {
 
   componentDidMount () {
     if (!this.props.youngPerson._id) this.props.history.push('/current')
+    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 
   delete (e) {
@@ -83,9 +84,6 @@ class ViewAnswers extends React.Component {
         {this.state.showModal && <ModalConfirm confirm={this.confirm} cancel={this.cancel} />}
       </div>
     )
-  }
-  componentDidMount () {
-    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 }
 
