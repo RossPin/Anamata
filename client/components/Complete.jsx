@@ -24,7 +24,7 @@ class Complete extends React.Component {
     socket.emit('submitted', schoolId)
     setTimeout(() => {
       socket.disconnect()
-    }, 15000)
+    }, 10000)
   }
 
   submit (e) {

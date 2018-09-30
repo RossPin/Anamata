@@ -16,6 +16,7 @@ class Consent extends React.Component {
   }
 
   componentDidMount () {
+    if (!this.props.youngPerson.details) this.props.history.push('/details')
     this.props.dispatch(setStyle('consent_background'))
     window.scrollTo(0, 0)
   }
@@ -69,8 +70,8 @@ class Consent extends React.Component {
   }
 }
 
-const mapStateToProps = ({ questions }) => {
-  return { questions }
+const mapStateToProps = ({ youngPerson }) => {
+  return { youngPerson }
 }
 
 export default connect(mapStateToProps)(Consent)
