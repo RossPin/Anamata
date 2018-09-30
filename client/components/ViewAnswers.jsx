@@ -16,8 +16,8 @@ class ViewAnswers extends React.Component {
     this.cancel = this.cancel.bind(this)
   }
 
-  componentWillReceiveProps (nextProps) {
-    this.setState({ answers: nextProps.youngPerson.answers })
+  componentDidMount () {
+    if (!this.props.youngPerson._id) this.props.history.push('/current')
   }
 
   delete (e) {
