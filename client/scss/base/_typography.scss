@@ -34,7 +34,7 @@ h3 {
     font-size: 2vw;
 }
 
-p {
+p{
     font-family: $pt;
     font-size: 2vw;
     padding: 4%;
@@ -55,4 +55,10 @@ p {
 
 label {
     color: $primary-purple;
+}
+
+li {
+  font-family: $pt;
+  font-size: 2vw;  
+  color: $primary-purple;
 }
