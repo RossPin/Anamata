@@ -15,7 +15,7 @@ class Listing extends React.Component {
 
   submit (e) {
     e.preventDefault()
-    this.props.update(this.state.input, this.props.question.id, this.props.question.question)
+    this.props.update(this.state.input, this.props.question.id, this.props.question)
     this.setState({ input: '' })
   }
 
