@@ -16,8 +16,9 @@ class ViewAnswers extends React.Component {
     this.cancel = this.cancel.bind(this)
   }
 
-  componentWillReceiveProps (nextProps) {
-    this.setState({ answers: nextProps.youngPerson.answers })
+  componentDidMount () {
+    if (!this.props.youngPerson._id) this.props.history.push('/current')
+    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 
   delete (e) {
@@ -78,14 +79,11 @@ class ViewAnswers extends React.Component {
           </div>
         ))}
         <Link className='button' to='/current'>Back</Link>
-        <button className='button' onClick={e => this.reviewed(e, this.props.youngPerson._id)} >Set as Reviewed</button>
+        {!this.props.youngPerson.resolved && <button className='button' onClick={e => this.reviewed(e, this.props.youngPerson._id)} >Set as Reviewed</button>}
         <button className='button' onClick={e => this.delete(e, this.props.youngPerson._id)} >Delete</button>
         {this.state.showModal && <ModalConfirm confirm={this.confirm} cancel={this.cancel} />}
       </div>
     )
-  }
-  componentDidMount () {
-    this.props.dispatch(setStyle('viewAnswers_background'))
   }
 }
 
