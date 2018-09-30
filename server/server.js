@@ -10,31 +10,4 @@ server.use('/api/users', users)
 server.use('/api/yp', yp)
 server.use(express.static(path.join(__dirname, '../public')))
 
-server.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-})
-
-server.get('/current', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-})
-
-server.get('/reviewed', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-})
-
-server.get('/questions', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-})
-server.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-})
-
-server.get('/viewanswers', (req, res) => {
-  res.redirect('/current')
-})
-
-server.get('/*', (req, res) => {
-  res.redirect('/')
-})
-
 module.exports = server
